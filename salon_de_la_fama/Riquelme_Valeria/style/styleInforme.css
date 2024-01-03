@@ -1,0 +1,39 @@
+*{
+    box-sizing: border-box;
+}
+body {
+    
+    background-color: white;
+    font-family: 'Lato', sans-serif;
+    color: #221B21;
+}
+
+h1{
+    text-align: center;
+}
+.first-part, .second-part, .third-part{
+    width: 50%;
+    margin: auto;
+}
+
+.negrita{
+    font-weight: bold;
+}
+.div-table {
+    display: table;         
+    width: auto;         
+    background-color: #eee;         
+    border: 1px solid #221B21;         
+    border-spacing: 5px; /* cellspacing:poor IE support for  this */
+  }
+  .div-table-row {
+    display: table-row;
+    width: auto;
+    clear: both;
+  }
+  .div-table-col {
+    float: left; /* fix for  buggy browsers */
+    display: table-column;         
+    width: 300px;         
+    background-color: #FFDEF6;  
+  }

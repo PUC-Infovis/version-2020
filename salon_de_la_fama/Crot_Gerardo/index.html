@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exámen</title>
+        <link rel="icon" href="./assets/images/logo.ico">
+        <meta charset="UTF-8">
+        <link href="assets/styles/style.css" rel="stylesheet" type="text/css">
+        <link href="https://allfont.es/allfont.css?fonts=montserrat" 
+            rel="stylesheet" type="text/css" 
+        />
+    </head>
+    <body>
+        <div id="navbar">
+            <div id="logo">
+                <a href="index.html#title">Exámen</a>
+            </div>
+            <ul>
+                <li><a href="#general">Cons. Generales</a></li>
+                <li><a href="#domain">1er Nivel</a></li>
+                <li><a href="#dat-task">2do Nivels</a></li>
+                <li><a href="#visual">3er Nivel</a></li>
+                <li><a href="visualization.html#visualization">Visualización</a></li>
+            </ul>
+        </div>
+        <div id="title">
+            <h1>Visualización de Estadísticas en Pokémon</h1>
+            <h3>Por: Gerardo Crot Rojas</h3>
+            <h3>IIC2026 2020-2</h3>
+        </div>
+        <div id="general">
+            <h2>Consideraciones generales</h2>
+            <p>
+                Este trabajo de visualización consiste en un panel de vista para una selección específica.
+                Se hizo con la intención de tener la información recopilada de los pokémon en un lugar 
+                centralizado y sin tantas cargas de por medio usando el dinamismo que provee D3 y JavaScript.
+                Se logró todo lo solicitado en el enunciado y la visualización corresponde a lo planteado a 
+                las tareas e idioms específicos.
+            </p>
+            <p>
+                Personalmente he sido un gran fanático de los videojuegos de esta saga desde que tuve un 
+                computador (y un emulador de Gameboy Advance), y me interesó ocupar este dataset de 
+                estadísticas para tener una base de datos local y con una visualización intuitiva, y 
+                así tener un mayor conocimiento de los pokemones actuales y poder ver sus estadísticas 
+                tanto para entrenar y armar equipos en el juego. En resumen, me gusta pokémon y quise 
+                armarme una visualización que me sirviera cuando juegue.
+            </p>
+        </div>
+        <div id="domain">
+            <h2>Caracterización de dominio</h2>
+            <p>
+                Pokémon es una franquicia reconocida tanto por sus videojuegos, series de animación, 
+                objetos coleccionables, etc, que significa monstruos de bolsillo. En este caso el 
+                enfoque principal se encuentra en los videojuegos. Desde las primeras entregas, 
+                pokémon se ha destacado por ser ocupar muchas estadísticas para caracterizar a cada 
+                uno de sus monstruos (denominados pokémon), otorgandoles ciertas variaciones para los 
+                combates estilo RPG por turnos. Donde en un equipo de 6 pokemones se debe computar
+                tanto para definir debilidades según sus tipos, y calcular cuanto daño harán o recibirán 
+                dependiendo del caso (igual depende de como uno entrene a su equipo pero acá nos enfocaremos
+                en lo base).
+            </p>
+            <p>
+                Para esta entrega se ocuparon dos datasets, uno para las estadísticas 
+                (<a href="https://www.kaggle.com/mariotormo/complete-pokemon-dataset-updated-090420?select=pokedex_%28Update_05.20%29.csv">Pokemon Stats</a>) 
+                y otro para las imágenes 
+                (<a href="https://www.kaggle.com/kvpratama/pokemon-images-dataset">Pokemon Images</a>). 
+                El primero contiene datos de los juegos de pokémon hasta la 8va generación (sin 
+                contar los DLC), donde muestra las estadísticas por cada pokémon y su forma respectiva
+                (si la tiene). El segundo dataset contiene imágenes provenientes de ilustraciones 
+                oficiales de la franquicia hasta la 6ta generación. Todos estos son datos oficiales,
+                los cuales tuve que rellenar personalmente para actualizarlos y que se pudiesen 
+                hacer joins entre si.
+            </p>
+            <p>
+                Toda esta información se usa en el juego para calcular sus funcionalidades internas, 
+                pero a nivel de consumidor este tiene un fuerte lazo dentro del área del juego competitivo 
+                de pokémon, donde conocer las estadísticas, tipos, grupos de crianza, etc., son una 
+                parte muy importante a la hora de armarse equipos. Por eso actualmente se deben buscar 
+                guías online poco intuitivas para poder conocer esta información, y que centralizar 
+                los datos y mostrarlos puede ser propicio a una mejor experiencia en este nivel.
+            </p>
+            <p>
+                Por eso, se define al usuario específico como un jugador de pokémon veterano con 
+                intereses en la crianza dentro del juego, la forma competitiva para armarse un equipo 
+                según sus necesidades, y/o en el conocimiento para armar estratégias según sus 
+                necesidades. Pese a esto, la visualización está completamente abierta y entendible 
+                para usuarios que se sientan curiosos por estos juegos.  
+            </p>
+        </div>
+        <div id="dat-task">
+            <h2>Abstracción de datos y tareas</h2>
+            <p>
+                Inicialmente podemos encontrar una tarea relacionada a los usuarios más expertos en el juego,
+                con una acción de analizar de consumir, principalmente para disfrutar dentro de este ámbito. 
+                Luego en su acción de búsqueda, esta será para sondear, específicamente para armarse 
+                un equipo viendo los pokémon. Finalmente, en su acción de consulta esta es para comparar 
+                los datos. En resumen, la primera acción es: <span class="bold">"Consumir y disfrutar los datos para sondear 
+                y comparar distintos pokémon y sus estadísticas para un equipo"</span>.
+            </p>
+            <p>
+                Además, podemos encontrar una segunda tarea para un usurio menos experto en el tema, donde 
+                su acción principal será nuevamente consumir y disfrutar. Pero en la búsqueda van a explorar
+                los datos para descubrir los pokémon. Finalmente, su acción de consulta será resumir los 
+                datos. En conclusión, la segunda tarea sería: <span class="bold">"Consumir y disfrutar los datos para explorar
+                y resumir los distintos pokémon y sus estadísticas en los juegos"</span>.
+            </p>
+            <p>
+                Por último, tenemos una tercera tarea para un usuario conocedor de los juegos, que
+                le interesa o conocer más de los juegos o conocer sobre un pokemon en específico para,
+                o completar la pokédex, o para conocer sus estadísticas. En este caso su acción principal 
+                será consumir y disfrutar. Luego, como acción de búsqueda está el ubicar, sabiendo qué 
+                encontrar y dónde está. Por último, su acción de consulta será resumir los datos. En resumen,
+                la tercera tarea sería: <span class="bold">"Consumir y disfrutar los datos para ubicar y resumir 
+                los distintos pokémon que pueden haber en el juego"</span>.
+            </p>
+            <p>
+                Sobre los datos usados en esta visualización, se partió con un <span class="bold">dataset tabular</span> que 
+                indicaba cada pokémon y sus estadísticas respectivas, además de ciertos atributos
+                encargados de darle identidad dentro del juego. Junto a este, tenemos un segundo 
+                <span class="bold">dataset de imágenes</span>, que se usará para realizarle un join al otro dataset para vincular
+                los id de los pokemones con sus respectivos diseños. Estos dos dataset estaban 
+                incompletos inicialmente y tuvieron que ser rellenados para poder guardar los datos 
+                más recientes y ser útiles para los usuarios finales. Finalmente, ambos dataset son
+                estáticos, lo que implica que no irán cambiando durante la visualización.
+            </p>
+            <p>
+                Dentro de los datos que se usarán en esta visualización, nos centraremos en los
+                atributos pertenecientes en el dataset tabular. En específico, especificaremos cada
+                atributo que usará en esta visualización:
+            </p>
+            <div id="data-abstraction">
+                <div id="dataset-info">
+                    <div id="attribute" class="header">
+                        <div class="table">
+                            <p>Atributo</p>
+                        </div>
+                        <div class="table">
+                            <p>Descripción</p>
+                        </div>
+                        <div class="table">
+                            <p>Tipo de Atributo</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="table">
+                            <p class="mono">pokedex_number</p>
+                        </div>
+                        <div class="table">
+                            <p>Número de la pokedex del pokémon. Funciona como id dentro del juego.</p>
+                        </div>
+                        <div class="table">
+                            <p>
+                                Es un atributo de tipo ordenado, ya que posee un orden intrínseco. 
+                                Dentro de este tipo, es ordinal porque no tiene comparación aritmética,
+                                es secuencial porque va desde el 1 en adelante y es no cíclico. Es un 
+                                atributo de tipo llave.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="table">
+                            <p class="mono">name</p>
+                        </div>
+                        <div class="table">
+                            <p>Nombre inglés del pokémon.</p>
+                        </div>
+                        <div class="table">
+                            <p>
+                                Es un atributo de tipo categórico ya que no posee orden intrínseco. 
+                                Además es de tipo llave, y podría actuar como índice.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="table">
+                            <p class="mono">japanese_name</p>
+                        </div>
+                        <div class="table">
+                            <p>Nombre japonés del pokémon.</p>
+                        </div>
+                        <div class="table">
+                            <p>
+                                Es un atributo de tipo categórico ya que no posee orden intrínseco. 
+                                Además es de tipo llave, y podría actuar como índice.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="table">
+                            <p class="mono">region</p>
+                        </div>
+                        <div class="table">
+                            <p>Región a en la cual fue introducida esa especie de pokémon.</p>
+                        </div>
+                        <div class="table">
+                            <p>
+                                Atributo derivado de la <span class="mono">generación</span>. Es 
+                                de tipo categórico y es de tipo valor.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="table">
+                            <p class="mono">status</p>
+                        </div>
+                        <div class="table">
+                            <p>Indica el rango del pokémon, puede ser normal, legendario, etc.</p>
+                        </div>
+                        <div class="table">
+                            <p>
+                                Es un atributo de tipo categórico ya que no posee orden intrínseco. 
+                                Además es de tipo valor, y no podría actuar como índice.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="table">
+                            <p class="mono">species</p>
+                        </div>
+                        <div class="table">
+                            <p>Indica el nombre de la especie del pokémon.</p>
+                        </div>
+                        <div class="table">
+                            <p>
+                                Es un atributo de tipo categórico ya que no posee orden intrínseco. 
+                                Además es de tipo valor, y no podría actuar como índice.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="table">
+                            <p class="mono">type_1</p>
+                        </div>
+                        <div class="table">
+                            <p>Primer tipo del pokémon.</p>
+                        </div>
+                        <div class="table">
+                            <p>
+                                Es un atributo de tipo categórico ya que no posee orden intrínseco. 
+                                Además es de tipo valor, y no podría actuar como índice.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="table">
+                            <p class="mono">type_2</p>
+                        </div>
+                        <div class="table">
+                            <p>Segundo tipo del pokémon (si es que lo tiene).</p>
+                        </div>
+                        <div class="table">
+                            <p>
+                                Es un atributo de tipo categórico ya que no posee orden intrínseco. 
+                                Además es de tipo valor, y no podría actuar como índice.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="table">
+                            <p class="mono">height_m</p>
+                        </div>
+                        <div class="table">
+                            <p>Altura del pokémon en metros.</p>
+                        </div>
+                        <div class="table">
+                            <p>
+                                Es un atributo de tipo ordenado, ya que posee un orden intrínseco. 
+                                Dentro de este tipo, es cuantitativo porque tiene comparación aritmética,
+                                es secuencial porque va desde el 1 en adelante y es no cíclico. Es un 
+                                atributo de tipo valor.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="table">
+                            <p class="mono">weight_kg</p>
+                        </div>
+                        <div class="table">
+                            <p>Peso del pokémon en kilogramos.</p>
+                        </div>
+                        <div class="table">
+                            <p>
+                                Es un atributo de tipo ordenado, ya que posee un orden intrínseco. 
+                                Dentro de este tipo, es cuantitativo porque tiene comparación aritmética,
+                                es secuencial porque va desde el 1 en adelante y es no cíclico. Es un 
+                                atributo de tipo valor.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="table">
+                            <p class="mono">ability_1</p>
+                        </div>
+                        <div class="table">
+                            <p>Primera habilidad del pokémon.</p>
+                        </div>
+                        <div class="table">
+                            <p>
+                                Es un atributo de tipo categórico ya que no posee orden intrínseco. 
+                                Además es de tipo valor, y no podría actuar como índice.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="table">
+                            <p class="mono">ability_2</p>
+                        </div>
+                        <div class="table">
+                            <p>Segunda habilidad del pokémon (si es que la tiene).</p>
+                        </div>
+                        <div class="table">
+                            <p>
+                                Es un atributo de tipo categórico ya que no posee orden intrínseco. 
+                                Además es de tipo valor, y no podría actuar como índice.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="table">
+                            <p class="mono">ability_hidden</p>
+                        </div>
+                        <div class="table">
+                            <p>Indica la habilidad oculta del pokémon (si es que la posee).</p>
+                        </div>
+                        <div class="table">
+                            <p>
+                                Es un atributo de tipo categórico ya que no posee orden intrínseco. 
+                                Además es de tipo valor, y no podría actuar como índice.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="table">
+                            <p class="mono">total_points</p>
+                        </div>
+                        <div class="table">
+                            <p>Indica el total de puntos base del pokémon.</p>
+                        </div>
+                        <div class="table">
+                            <p>
+                                Es un atributo de tipo ordenado, ya que posee un orden intrínseco. 
+                                Dentro de este tipo, es cuantitativo porque tiene comparación aritmética,
+                                es secuencial porque va desde el 1 en adelante y es no cíclico. Es un 
+                                atributo de tipo valor.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="table">
+                            <p class="mono">hp</p>
+                        </div>
+                        <div class="table">
+                            <p>Indica la cantidad de puntos base del pokémon en su estadística de vida.</p>
+                        </div>
+                        <div class="table">
+                            <p>
+                                Es un atributo de tipo ordenado, ya que posee un orden intrínseco. 
+                                Dentro de este tipo, es cuantitativo porque tiene comparación aritmética,
+                                es secuencial porque va desde el 1 en adelante y es no cíclico. Es un 
+                                atributo de tipo valor.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="table">
+                            <p class="mono">attack</p>
+                        </div>
+                        <div class="table">
+                            <p>Indica la cantidad de puntos base del pokémon en su estadística de ataque.</p>
+                        </div>
+                        <div class="table">
+                            <p>
+                                Es un atributo de tipo ordenado, ya que posee un orden intrínseco. 
+                                Dentro de este tipo, es cuantitativo porque tiene comparación aritmética,
+                                es secuencial porque va desde el 1 en adelante y es no cíclico. Es un 
+                                atributo de tipo valor.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="table">
+                            <p class="mono">defense</p>
+                        </div>
+                        <div class="table">
+                            <p>Indica la cantidad de puntos base del pokémon en su estadística de defensa.</p>
+                        </div>
+                        <div class="table">
+                            <p>
+                                Es un atributo de tipo ordenado, ya que posee un orden intrínseco. 
+                                Dentro de este tipo, es cuantitativo porque tiene comparación aritmética,
+                                es secuencial porque va desde el 1 en adelante y es no cíclico. Es un 
+                                atributo de tipo valor.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="table">
+                            <p class="mono">sp_attack</p>
+                        </div>
+                        <div class="table">
+                            <p>Indica la cantidad de puntos base del pokémon en su estadística de ataque especial.</p>
+                        </div>
+                        <div class="table">
+                            <p>
+                                Es un atributo de tipo ordenado, ya que posee un orden intrínseco. 
+                                Dentro de este tipo, es cuantitativo porque tiene comparación aritmética,
+                                es secuencial porque va desde el 1 en adelante y es no cíclico. Es un 
+                                atributo de tipo valor.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="table">
+                            <p class="mono">sp_defense</p>
+                        </div>
+                        <div class="table">
+                            <p>Indica la cantidad de puntos base del pokémon en su estadística de defensa especial.</p>
+                        </div>
+                        <div class="table">
+                            <p>
+                                Es un atributo de tipo ordenado, ya que posee un orden intrínseco. 
+                                Dentro de este tipo, es cuantitativo porque tiene comparación aritmética,
+                                es secuencial porque va desde el 1 en adelante y es no cíclico. Es un 
+                                atributo de tipo valor.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="table">
+                            <p class="mono">speed</p>
+                        </div>
+                        <div class="table">
+                            <p>Indica la cantidad de puntos base del pokémon en su estadística de velocidad.</p>
+                        </div>
+                        <div class="table">
+                            <p>
+                                Es un atributo de tipo ordenado, ya que posee un orden intrínseco. 
+                                Dentro de este tipo, es cuantitativo porque tiene comparación aritmética,
+                                es secuencial porque va desde el 1 en adelante y es no cíclico. Es un 
+                                atributo de tipo valor.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="table">
+                            <p class="mono">catch_rate</p>
+                        </div>
+                        <div class="table">
+                            <p>Indica el ratio de captura que posee el pokémon.</p>
+                        </div>
+                        <div class="table">
+                            <p>
+                                Es un atributo de tipo ordenado, ya que posee un orden intrínseco. 
+                                Dentro de este tipo, es cuantitativo porque tiene comparación aritmética,
+                                es secuencial porque va desde el 1 en adelante y es no cíclico. Es un 
+                                atributo de tipo valor.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="table">
+                            <p class="mono">base_friendship</p>
+                        </div>
+                        <div class="table">
+                            <p>Indica los puntos de amistad base que posee el pokémon.</p>
+                        </div>
+                        <div class="table">
+                            <p>
+                                Es un atributo de tipo ordenado, ya que posee un orden intrínseco. 
+                                Dentro de este tipo, es cuantitativo porque tiene comparación aritmética,
+                                es secuencial porque va desde el 1 en adelante y es no cíclico. Es un 
+                                atributo de tipo valor.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="table">
+                            <p class="mono">base_experience</p>
+                        </div>
+                        <div class="table">
+                            <p>Indica los puntos de experiencia base que posee el pokémon.</p>
+                        </div>
+                        <div class="table">
+                            <p>
+                                Es un atributo de tipo ordenado, ya que posee un orden intrínseco. 
+                                Dentro de este tipo, es cuantitativo porque tiene comparación aritmética,
+                                es secuencial porque va desde el 1 en adelante y es no cíclico. Es un 
+                                atributo de tipo valor.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="table">
+                            <p class="mono">growth_rate</p>
+                        </div>
+                        <div class="table">
+                            <p>Indica la facilidad con la que se le puede subir de nivel al pokémon.</p>
+                        </div>
+                        <div class="table">
+                            <p>
+                                Es un atributo de tipo ordenado, ya que posee un orden intrínseco. 
+                                Dentro de este tipo, es ordinal porque no tiene comparación aritmética,
+                                es secuencial y es no cíclico. Es un atributo de tipo valor.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="table">
+                            <p class="mono">egg_type_1</p>
+                        </div>
+                        <div class="table">
+                            <p>Indica el primer grupo huevo del pokémon.</p>
+                        </div>
+                        <div class="table">
+                            <p>
+                                Es un atributo de tipo categórico ya que no posee orden intrínseco. 
+                                Además es de tipo valor, y no podría actuar como índice.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="table">
+                            <p class="mono">egg_type_2</p>
+                        </div>
+                        <div class="table">
+                            <p>Indica el segundo grupo huevo del pokémon (si es que tiene).</p>
+                        </div>
+                        <div class="table">
+                            <p>
+                                Es un atributo de tipo categórico ya que no posee orden intrínseco. 
+                                Además es de tipo valor, y no podría actuar como índice.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="table">
+                            <p class="mono">percentage_male</p>
+                        </div>
+                        <div class="table">
+                            <p>Indica la proporción de género masculino en la especie de pokémon.</p>
+                        </div>
+                        <div class="table">
+                            <p>
+                                Es un atributo de tipo ordenado, ya que posee un orden intrínseco. 
+                                Dentro de este tipo, es cuantitativo porque tiene comparación aritmética,
+                                es secuencial porque va desde el 1 en adelante y es no cíclico. Es un 
+                                atributo de tipo valor.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="table">
+                            <p class="mono">egg_cyles</p>
+                        </div>
+                        <div class="table">
+                            <p>Indica la cantidad ciclos que poseen los huevos de esa especie de pokémon para eclosionar.</p>
+                        </div>
+                        <div class="table">
+                            <p>
+                                Es un atributo de tipo ordenado, ya que posee un orden intrínseco. 
+                                Dentro de este tipo, es cuantitativo porque tiene comparación aritmética,
+                                es secuencial porque va desde el 1 en adelante y es no cíclico. Es un 
+                                atributo de tipo valor.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="visual">
+            <h2>Codificación visual y de interacción</h2>
+            <p>
+                Para armar la visualización, se pensó en generarla de tal forma que, seleccionando un 
+                pokémon, se muestren los datos de este específicamente. Esto para poder visualizar de 
+                una forma más ordenada y selectiva, de acuerdo a la segunda y tercera tarea de ubicar 
+                y resumir, junto a la de explorar y resumir, ya que así se pueden ver los valores de 
+                cada pokémon conociendo su ubicación respectiva en la visualización. Y por otro lado 
+                está la lista de selección, donde se le quiere implementar un buscador para la tarea 
+                de sondear y comparar las estadísticas, para facilitar el encuentro de la ubicación, e
+                incluso ayudando para la primera tarea de sondear y comparar, donde además se va a 
+                implementar una opción de ordenar por estadísticas los pokémon, para encontrar el 
+                necesario para el equipo.  
+            </p>
+            <div class="codification">
+                <h4>Panel de Pokémon:</h4>
+                <p>
+                    Como codificación visual, para este panel se decidió usar una marca de grilla en 
+                    general, y una de glifo de spiderchart para la visualización de las estadísticas 
+                    por cada pokémon, donde el máximo sería el del pokémon con la estadística más 
+                    alta en esa. De esta forma se podrá comparar de mejor manera al pokémon. Para 
+                    los demás datos se prefirió ordenar la visualización usando un canal de identidad
+                    para cada atributo, donde se explicíta mediante texto qué es cada cosa. Finalmente,
+                    y como canal importante a considerar, se usó el color en distintas partes de la 
+                    visualización para indicar diferencias, donde en status indicará el rango del 
+                    pokémon, la barra y los tipos cambiarán según lo especificado por el pokémon, la 
+                    región también será distinta, y finalmente el spiderchart tendrá un color distinto 
+                    dependiendo de la cantidad de puntos base totales en el pokémon, esto para poder 
+                    indicar cuando un pokémon sea mucho mejor, bueno, promedio, etc.
+                </p>
+                <p>
+                    Especificando un poco más sobre los colores, los tipos calzan con los colores 
+                    oficiales dentro del juego, para poder llevar un tono más familiar a quien lo
+                    esté viendo, por eso mismo se cambia el color de la decoración en el panel a estos.
+                    Sobre los status, este se divide en 4 categorias yendo de normal, sub legendario,
+                    legendario y mítico, con colores respectivos a su nivel, pasando de gris, a plateado,
+                    dorado y magenta para adaptar la categoría al pokémon.
+                </p>
+                <p>
+                    Por último, con los colores y especificandolo aparte, para el spiderchart se definió
+                    una selección que calzara con su cantidad total de puntos base, haciendo calzar los 
+                    colores como rangos entendibles de acuerdo al poder de los pokémon. En este caso van 
+                    desde los 0 puntos totales a más de 700 puntos, pasando por los colores: gris, bronce,
+                    plateado, dorado, zafiro, rubí, esmeralda (en honor a los juegos) y magenta. De esta forma
+                    se espera representar una diferenciación de rango intuitiva para el usuario que los esté 
+                    comparando y sondeando (o ubicando) para ver más facilmente cuáles son considerados de los
+                    más fuertes.
+                </p>
+                <p>
+                    Sobre la codificación de interacción, esta parte de la visualización no la posee,
+                    ya que mostrará datos que no cambiarán por pokémon.
+                </p>
+            </div>
+            <div class="codification">
+                <h4>Panel de Visualización:</h4>
+                <p>
+                    Como codificación visual, en si se decidió usar un glifo de grilla nuevamente para
+                    subdividir la visualización total en dos secciones. En la sección de la lista de 
+                    selección se usaron rectángulos horizontales con glifos de texto para mostrar los 
+                    nombres de los pokémon junto a sus números en la pokédex. Además, se usó el canal 
+                    de la posición vertical para indicar diferencias.
+                </p>
+                <p>
+                    Sobre la codificación de interacción, se implementó que al momento de hacerle click 
+                    al nombre de un pokémon en la sección de selección, el panel de pokémon mostrará sus
+                    estadísticas respectivas. Esta se hizo para poder cumplir de mejor manera con las 
+                    tareas de sondear y explorar, viendo de forma más intuitiva y seleccionable los pokémon
+                    en general. 
+                </p>
+                <p>
+                    Además de esto, se le implementó una barra de búsqueda por texto, 
+                    donde al apretar el botón se buscará por nombre o por número de la pokédex si son
+                    letras o si son números. Todo esto se hizo para mejorar la interacción con el usuario
+                    y también para complacer de mejor manera la ubicación de las tareas. Junto a este, se le
+                    implementó un filtro de orden según estadísticas, esto para mejorar el sondeo y exploración,
+                    ayudando de mejor manera a cumplirse todas las tareas de los usuarios y mejorando la 
+                    visualización para el usuario. Se implementó el color turquesa en esta parte para que combinara
+                    con el resto de colores, no hubo otra razón de visualización dentro.
+                </p>
+            </div>
+            <p>
+                Dentro del proceso de creación de esta visualización se crearon unos bocetos como guías,
+                de los cuales los finales se muestran acá abajo. Los colores indican a que se refiere 
+                cada frase, celeste es para comentarios, morado para atributos del dataset, amarillo 
+                para el título y verde para datos derivados o modificados desde el dataset original
+                para que tenga mejor relación con el usuario.
+            </p>
+            <div id="images">
+                <div id="image-one"></div>
+                <div id="image-two"></div>
+            </div>
+        </div>
+        <div id="footer">
+            <h4>Gerardo Crot Rojas ©</h4>
+        </div>
+    </body>
+</html>

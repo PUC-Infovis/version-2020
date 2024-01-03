@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Daniel Leal</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Karla&amp;display=swap">
+    <link rel="stylesheet" href="css/index.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="main-header">
+        <h1 class="title is-1 is-centered">
+          Informe Examen IIC2026
+        </h1>
+        <h4 class="title is-4 is-centered">
+          Daniel Leal
+        </h4>
+      </div>
+      <section class="section">
+        <h3 class="title is-3 is-accent">
+          Caracterización de dominio
+        </h3>
+
+        <div class="card">
+          <div class="task">
+            Para realizar la visualización, se escogieron bases de
+            datos de contraseñas filtradas que contienen la contraseña filtrada y
+            la cantidad de veces que ha sido filtrada dicha contraseña. Además,
+            se calculó cuánto se demoraría una máquina en hacer un ataque de
+            <span class="italic">bruteforcing</span> sobre cada contraseña, dependiendo
+            de la potencia de la máquina (la herramienta misma habla un poco más en
+            detalle sobre esto). Dado que todos utilizamos contraseñas, los datos
+            expuestos nos conciernen a todos por igual, por lo que las posibilidades
+            para hacer herramientas de exploración son casi ilimitadas. Es relevante
+            recalcar que se utilizan solamente las 350 contraseñas más utilizadas,
+            dado que hay millones en el dataset original y se espera que la interacción
+            sea lo más fluída posible.
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h3 class="title is-3 is-accent">
+          Abstracción de datos
+        </h3>
+
+        <div class="description">
+          <span class="italic">
+            A continuación, se describen las clasificaciones para cada columna
+            del dataset escogido (notar que las últimas 3 columnas fueron pre-procesadas
+            y agrupadas en un arreglo en todas las instancias del dataset, pero serán
+            descritas por separado):
+          </span>
+        </div>
+
+        <div class="card">
+          <div class="column-data">
+            <h4 class="title is-4">password</h4>
+            <ul>
+              <li><span class="bold">Categórico</span>, ya que este tipo de dato no tiene un orden intrínseco.</li>
+              <li>El resto de las clasificaciones <span class="bold">no aplica</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+            <div class="column-data">
+            <h4 class="title is-4">count</h4>
+            <ul>
+              <li><span class="bold">Ordenado</span>, ya que este tipo de dato posee un orden.</li>
+              <li><span class="bold">Cuantitativo</span>, ya que se pueden hacer comparaciones aritméticas exactas valores pertenecientes a este tipo de dato.</li>
+              <li><span class="bold">Secuencial</span>, ya que los valores aumentan desde un valor mínimo.</li>
+              <li><span class="bold">No cíclico</span>, ya que los valores de este tipo de dato siguen un orden que aumenta indefinidamente.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+            <div class="column-data">
+            <h4 class="title is-4">1-gpu-breakpoint</h4>
+            <ul>
+              <li><span class="bold">Ordenado</span>, ya que este tipo de dato posee un orden.</li>
+              <li><span class="bold">Cuantitativo</span>, ya que se pueden hacer comparaciones aritméticas exactas valores pertenecientes a este tipo de dato.</li>
+              <li><span class="bold">Secuencial</span>, ya que los valores aumentan desde un valor mínimo.</li>
+              <li><span class="bold">No cíclico</span>, ya que los valores de este tipo de dato siguen un orden que aumenta indefinidamente.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+            <div class="column-data">
+            <h4 class="title is-4">25-gpus-breakpoint</h4>
+            <ul>
+              <li><span class="bold">Ordenado</span>, ya que este tipo de dato posee un orden.</li>
+              <li><span class="bold">Cuantitativo</span>, ya que se pueden hacer comparaciones aritméticas exactas valores pertenecientes a este tipo de dato.</li>
+              <li><span class="bold">Secuencial</span>, ya que los valores aumentan desde un valor mínimo.</li>
+              <li><span class="bold">No cíclico</span>, ya que los valores de este tipo de dato siguen un orden que aumenta indefinidamente.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+            <div class="column-data">
+            <h4 class="title is-4">nsa-breakpoint</h4>
+            <ul>
+              <li><span class="bold">Ordenado</span>, ya que este tipo de dato posee un orden.</li>
+              <li><span class="bold">Cuantitativo</span>, ya que se pueden hacer comparaciones aritméticas exactas valores pertenecientes a este tipo de dato.</li>
+              <li><span class="bold">Secuencial</span>, ya que los valores aumentan desde un valor mínimo.</li>
+              <li><span class="bold">No cíclico</span>, ya que los valores de este tipo de dato siguen un orden que aumenta indefinidamente.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h3 class="title is-3 is-accent">
+          Abstracción de tareas
+        </h3>
+
+        <div class="description">
+          <span class="italic">
+            A continuación, se describen las abstracciones de las 3 tareas
+            identificadas:
+          </span>
+        </div>
+
+        <div class="card">
+          <div class="task">
+            <p>
+              <span class="bold">Sondear valores individuales</span> de algunas de las
+              contraseñas más filtradas.
+            </p>
+            <p>
+              <span class="bold">Justificación:</span> La acción indicada es
+              <span class="bold">sondear</span>, buscamos encontrar un elemento
+              conociendo su ubicación (en este caso, qué tanto se ha filtrado) pero
+              no su valor. El objetivo indicado es
+              <span class="bold">valores individuales</span>, ya que se busca
+              descubrir los valores de los datos sondeados.
+            </p>
+            <p>
+              <span class="bold">Datos relacionados:</span> count.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="task">
+            <p>
+              <span class="bold">Comparar valores individuales</span> de tiempo de
+              <span class="italic">bruteforcing</span> para distintas contraseñas.
+            </p>
+            <p>
+              <span class="bold">Justificación:</span> La acción indicada es
+              <span class="bold">comparar</span>, ya que buscamos encontrar
+              similaridades y/o diferencias entre elementos seleccionados. El objetivo
+              indicado es <span class="bold">valores individuales</span>, ya que se
+              busca utilizar los valores de los datos seleccionados.
+            </p>
+            <p>
+              <span class="bold">Datos relacionados:</span> 1-gpu-breakpoint,
+              25-gpus-breakpoint, nsa-breakpoint.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="task">
+            <p>
+              <span class="bold">Comparar similitud</span> de tiempo de
+              <span class="italic">bruteforcing</span> en distinta capacidad
+              de cómputo.
+            </p>
+            <p>
+              <span class="bold">Justificación:</span> La acción indicada es
+              <span class="bold">comparar</span>, ya que buscamos encontrar
+              similaridades y/o diferencias entre elementos seleccionados. El objetivo
+              indicado es <span class="bold">similitud</span>, ya que se
+              busca descubrir cuán similares en valores son distintos atributos.
+            </p>
+            <p>
+              <span class="bold">Datos relacionados:</span> 1-gpu-breakpoint,
+              25-gpus-breakpoint, nsa-breakpoint.
+            </p>
+          </div>
+        </div>
+
+        <div class="description">
+          <span class="bold">Bonus</span>:
+          <span class="italic">
+            Existe una tarea extra que puede ser identificada y resuelta en la
+            herramienta de visualización:
+          </span>
+        </div>
+
+        <div class="card">
+          <div class="task">
+            <p>
+              <span class="bold">Localizar valores individuales</span> de algunas de las
+              contraseñas más filtradas.
+            </p>
+            <p>
+              <span class="bold">Justificación:</span> La acción indicada es
+              <span class="bold">localizar</span>, buscamos encontrar un elemento
+              conociendo su valor (en este caso, la contraseña misma) pero
+              no su ubicación. El objetivo indicado es
+              <span class="bold">valores individuales</span>, ya que se busca
+              descubrir los valores de los datos localizados.
+            </p>
+            <p>
+              <span class="bold">Datos relacionados:</span> password.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h3 class="title is-3 is-accent">
+          Codificación visual y de interacción
+        </h3>
+
+        <div class="card">
+          <div class="task">
+            Las únicas marcas que utilizaremos serán líneas, dado que con ellas podemos
+            representar toda la información relevante de cada ítem de nuestro
+            dataset. Con respecto a los canales que utilizaremos, serán todos canales
+            de identidad, particularmente canales de posición, dado que solamente
+            debemos representar datos ordenados para cada ítem, por lo que con dichos
+            canales cumplimos con los principios de expresividad y efectividad.
+          </div>
+          <div class="task">
+            En la herramienta, existe también un buscador que muestra todas las
+            contraseñas del dataset ordenadas por cantidad de veces que se ha filtrado
+            una contraseña, de mayor a menor. Éste buscador nos ayuda a resolver la
+            primera tarea, dado que podemos buscar qué contraseñas han sido más
+            o menos filtradas en el dataset sin conocer la contraseña misma. Además,
+            dado que la lista tiene un buscador, podemos resolver también la tarea
+            bonus, buscando una contraseña directamente para ver dónde se ubica dentro
+            de la lista (dado que podemos saber cuántas veces ha sido filtrada al
+            encontrarla en el buscador).
+          </div>
+          <div class="task">
+            El <span class="italic">idiom</span> más relevante de la herramienta
+            es un gráfico de líneas que se encuentra en la parte superior derecha
+            de la pantalla. Este gráfico de líneas contiene una línea por cada
+            contraseña mostrándose en la lista izquierda, por lo que al utilizar el
+            buscador, la lista disminuye y la cantidad de líneas en el gráfico
+            disminuye también, permitiéndonos comparar los tiempos de
+            <span class="bold">bruteforcing</span> de distintas contraseñas que sean
+            similares (por ejemplo, <span class="italic">iloveyou</span>
+            contra <span class="italic">iloveyou1</span>). Esta comparación resuelve
+            nuestra segunda tarea, dado que ahora podemos comparar la curva de
+            tiempo para distintas contraseñas. Por último, al seleccionar con un
+            <span class="italic">click</span> una contraseña en el panel izquierdo,
+            el <span class="italic">idiom</span> de la derecha mostrará únicamente
+            una curva, correspondiente a dicha contraseña. Con esto, podemos
+            comparar la lejanía en el tiempo que tomaría hacer un ataque de
+            <span class="bold">bruteforcing</span> a dicha contraseña dependiendo
+            del <span class="italic">hardware</span> con el que se está atacando,
+            resolviendo nuestra tercera tarea.
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

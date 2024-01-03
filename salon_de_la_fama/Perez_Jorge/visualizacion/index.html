@@ -1,0 +1,182 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Examen</title>
+    <link rel="stylesheet" href="./styles.css" type="text/css" />
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+  </head>
+  <body>
+    <div id="helpSection">
+      <button id="toggleHelp">Ocultar Sección de Ayuda</button>
+      <div id="helpPanel">
+        <h1>Sección de ayuda</h1>
+        <p>
+          En este panel encontrarás la leyenda e instrucciones de como funciona
+          la visualización. Puedes cerrarlo con el botón de encima.
+        </p>
+        <h2>Leyenda</h2>
+        <div class="leyendLabel">
+          <span>Menor Rating</span><span>Mayor Rating</span>
+        </div>
+        <div id="leyend"></div>
+        
+        <div class="leyendLabel">
+          <span>Menor Popularidad</span><span>Mayor Popularidad</span>
+        </div>
+        <div class="leyendLabel">
+          <svg id="circleLabel" width=400 height=80 >
+            <g>
+              <circle r="5" cy=40 cx=5></circle>
+            </g>
+            <g>
+              <circle r="10" cy=40 cx=27></circle>
+            </g>
+            <g>
+              <circle r="15" cy=40 cx=59></circle>
+            </g>
+            <g>
+              <circle r="20" cy=40 cx=101></circle>
+            </g>
+            <g>
+              <circle r="25" cy=40 cx=153></circle>
+            </g>
+            <g>
+              <circle r="30" cy=40 cx=215></circle>
+            </g>
+            <g>
+              <circle r="40" cy=40 cx=295></circle>
+            </g>
+          </svg>
+        </div>
+        <p>Mientras más similares los animes, menor distancia entre ellos</p>
+        <h2>Instrucciones</h2>
+        <span>Hay varias formas de interactuar con la visualización</span>
+        <ul>
+          <li>
+            Puedes hacer zoom-in y out con la rueda del ratón o haciendo doble
+            click
+          </li>
+
+          <li>Puedes arrastras los nodos si los mantienes presionados</li>
+          <li>
+            Si clickeas un nodo, se mostrarán solamente los nodos que estén
+            conectados al que seleccionaste. Puedes hacer que el resto de nodos
+            se escondan, o bien que se quiten de la visualización. Esto lo
+            puedes elegir en el panel de control, el cual se abre con el botón a
+            la derecha de la pantalla.
+          </li>
+          <li>
+            Cuando clickeas un nodo, se muestra abajo a la izquierda un recuadro
+            con información acerca del anime de ese nodo.
+          </li>
+          <li>
+            Para des-seleccionar un nodo, simplemente hazle click otra vez al
+            mismo nodo que tenias seleccionado. También puedes des-seleccionarlo
+            utilizando el botón de reiniciar simulación en el panel de control.
+            También puedes seleccionar otro nodo directamente sin necesidad de
+            de-seleccionar el anterior.
+          </li>
+          <li>
+            Si pasas el cursor por encima de un nodo, se resaltarán todos los
+            nodos conectados a el. Si la opción de selección es remover, puedes
+            cambiar el comportamiento del resaltado en el panel de control, en
+            podrás elegir si se resaltan solo los nodos conectados actualmente
+            en la simulación, o bien todos los nodos que esten conectados en la
+            base de datos (independiente de si estan conectados actualmente en
+            la simulación). Esta opción no tiene ningún efecto para la opción
+            esconder, debido a que ahí siempre están todos los nodos conectados
+            (incluso aunque no se muestre).
+          </li>
+          <li>
+            Puedes filtrar por año con el dropdown que se encuentra en el panel
+            de control. Este filtro hará que se reinicie la simulación y que
+            solamente se agreguen animes que hayan empezado a emitirse en el año
+            especificado.
+          </li>
+          <li>
+            Puedes modificar el valor de la fuerza eléctrica en el panel de control.
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="controlSection">
+      <button id="toggleControl">Mostrar Sección de Control</button>
+      <div id="controlPanel">
+        <div class="methodSelectorContainer">
+          <h2>Comportamiento de la seleccion</h2>
+          <p>Al cambiar de método se reiniciará la simulación</p>
+          <div>
+            <input
+              type="radio"
+              name="method"
+              id="hideNodes"
+              value="hideNodes"
+              checked="checked"
+            />
+            <label for="hideNodes">Esconder nodos al seleccionar</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              name="method"
+              id="removeNodes"
+              value="removeNodes"
+            />
+            <label for="removeNodes">Remover nodos al seleccionar</label>
+          </div>
+        </div>
+        <div class="methodSelectorContainer">
+          <h2>Comportamiento del destacado</h2>
+          <p>
+            Esta opción sólo influye si la opción "Remover nodos al seleccionar"
+            se encuentra marcada
+          </p>
+          <div>
+            <input
+              type="radio"
+              name="highlight"
+              id="onlyConnected"
+              value="onlyConnected"
+              checked="checked"
+            />
+            <label for="onlyConnected"
+              >Destacar solo los conectados
+              <strong>en la simulación</strong></label
+            >
+          </div>
+          <div>
+            <input
+              type="radio"
+              name="highlight"
+              id="allNodes"
+              value="allNodes"
+            />
+            <label for="allNodes"
+              >Destacar todos los nodos conectados
+              <strong>en la base de datos</strong></label
+            >
+          </div>
+        </div>
+        <h2>Filtrar por año</h2>
+        <select id="yearSelector" name="yearSelector">
+          <option value="none">No filtrar</option>
+        </select>
+        <h2>Modificar Fuerza Eléctrica</h2>
+        <input type="range" min="-2000" max="200" value="-600" class="slider" id="electricSlider">
+        <h2>Utilidades</h2>
+        <button id="resetSimulation">Reiniciar Simulación</button>
+        <p>
+          Recuerda que tambien puedes des-seleccionar a un nodo haciendole click
+          otra vez
+        </p>
+        
+      </div>
+    </div>
+    <div id="infoSection">
+      <div class="titleContainer"></div>
+      <div class="infoContainer"></div>
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>

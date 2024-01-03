@@ -1,0 +1,56 @@
+.main-section {
+    display: grid;
+    place-items: center;
+    margin: 5px;
+}
+
+.lateral-section {
+    /* background-color: lightpink; */
+    top: 0;
+    height: 100vh;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: 1fr minmax(200px, 40%);
+}
+
+body {
+    margin: 0 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.center {
+    text-align: center;
+}
+
+div.tooltip {	
+    position: absolute;			
+    text-align: center;			
+    width: 170px;					
+    height: 120px;					
+    padding: 2px;				
+    font: 12px sans-serif;		
+    border: 2px solid black;				
+    pointer-events: none;
+    background-color: white;			
+}
+
+div.tooltip p {
+    margin-bottom: 0;
+    margin-top: 4px;
+}
+
+.tooltip-text {
+    text-align: left;
+}
+
+svg text {
+    cursor: default;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

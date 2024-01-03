@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Informe Examen</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body>
+    <div class="mainContainer">
+      <h1 class="title">Informe Examen</h1>
+      <div class="container">
+        <h2>Caracterización de Dominio</h2>
+        <p>
+          Para todo amante del anime, la búsqueda de nuevas series para ver es
+          una tarea difícil debido a la gran cantidad de animes existentes, y
+          más aún fuera de Japón debido a la barrera lingüistica y geográfica
+          que existe. Es por esto que muchas páginas como
+          <a href="https://www.myanimelist.net">MyAnimeList</a>
+          se dedican a recopilar catálogos de anime junto con descripciones en
+          Inglés de dichos anime. Además, la página permite a cada usuario
+          llevar un recuento con todos los animes que ha visto, e incluso darle
+          un puntaje a cada uno de estos.
+        </p>
+        <p>
+          De esta página proviene el set de datos que utilizaré en este exámen,
+          el cuál consiste en un dataset con información de 2544 animes
+          distintos y otro dataset con conexiones de a pares entre estos animes,
+          en donde cada conexión significa que una persona agrego a su lista a
+          ambos animes. Por ejemplo, una posible conexión puede ser:
+        </p>
+        <div class="tableContainer">
+          <table>
+            <tr>
+              <th>Anime 1</th>
+              <th>Anime 2</th>
+              <th>Cantidad</th>
+            </tr>
+            <tr>
+              <td>Katanagatari</td>
+              <td>Bakemonogatari</td>
+              <td>50</td>
+            </tr>
+          </table>
+        </div>
+        <p>
+          Dicha conexión significa que 50 personas han visto el anime
+          Katanagatari y el anime Bakemonogatari
+          <strong>al mismo tiempo</strong>.
+        </p>
+        <p>
+          De esta forma, el usuario objetivo es cualquier persona que le guste
+          el anime y desee encontrar algo nuevo para ver, y el tipo de uso que
+          se le daría es explorar distintos animes basados en lo que haya visto
+          el resto de la gente, con el fin de encontrar algo que no haya visto
+          antes.
+        </p>
+        <p>
+          El dataset original proviene de kaggle y se puede encontrar
+          <a href="https://www.kaggle.com/azathoth42/myanimelist">aqui.</a> La
+          versión que se utiliza en este exámen la preprocese para reducir el
+          conjunto y obtener las conexiones
+        </p>
+      </div>
+      <div class="container">
+        <h2>Abstracción de tareas</h2>
+        <p>
+          <strong>Tarea 1: Sondear</strong> un anime desconocido que me pueda
+          gustar basado en otro anime que haya visto.
+        </p>
+        <p>
+          Esta tarea proviene de un problema muy habitual: Cuando uno ve un
+          anime que le gusta, muchas veces uno busca otro animes similares para
+          ver a continuación. La idea es que la visualización sea capaz de
+          ayudar al usuario a encontrar algo nuevo en base a otro anime que
+          posiblemente ya haya visto
+        </p>
+        <p>
+          <strong>Tarea 2: Identificar</strong> la información de un anime en
+          particular.
+        </p>
+        <p>
+          Si estamos en el proceso de búsqueda de un anime que nunca hayamos
+          visto , es muy relevante que podamos obtener información acerca de
+          dicho anime como el número de capítulos, el género, etc, con el fin de
+          que podamos decidir si efectivamente es lo que estabamos buscando o
+          no.
+        </p>
+        <p>
+          <strong>Tarea 3: Comparar</strong> la popularidad de los animes
+          disponibles.
+        </p>
+        <p>
+          En practicamente cualquier cosa siempre se busca comparar items para
+          ver cual es el más popular, desde las canciones mas populares, la ropa
+          que esta de moda, las series de netflix más famosas, etc, y desde
+          luego los animes no son la excepción. Por lo tanto, una tarea
+          interesante es permitir a los usuarios fácilmente comparar la
+          popularidad los distintos animes.
+        </p>
+        <h2>Tareas Extras (para el bonus)</h2>
+        <p>
+          <strong>Tarea Extra 1: Comparar</strong> el ranking de los animes
+          disponibles.
+        </p>
+        <p>
+          En casi la mayoría de las cosas en la vida, que algo sea popular no
+          necesariamente significa que sea mejor. Por lo tanto, otra tarea
+          relevante es poder comparar el ranking de cada uno de los animes, es
+          decir poder ver que animes son los mejores evaluados por la comunidad.
+        </p>
+        <p>
+          <strong>Tarea Extra 2: Descubrir</strong> tendencias de consumo entre
+          los distintos animes.
+        </p>
+        <p>
+          Si bien para un observador externo puede parecer que todos los
+          consumidores de anime entrar en la misma categoría, en realidad
+          existen distintos perfiles de usuarios según los gustos que tienen.
+          Por ejemplo en el caso de las películas, hay gente que consume muchos
+          más dramas que thrillers debido a que simplemente le gustan más. Esto
+          mismo ocurre con los animes, por lo que puede ser una tarea muy
+          interesante ver a grandes rasgos que grupos de anime se forman en base
+          a lo que consume la gente.
+        </p>
+        <p>
+          <strong>Tarea Extra 3: Comparar</strong> los objetivos anteriores en
+          un año específico.
+        </p>
+        <p>
+          Hasta el momento casi todas las tareas consideran el cuerpo completo
+          de datos, sin embargo puede ser interesante ver la información de un
+          año en particular, ya que a partir de esto se puede obtener mucha
+          información distinta a la que normalmente ofrecería la visualización.
+          Por ejemplo podríamos saber el anime más popular del año, las
+          tendencias que hubieron en un año específico, o encontrar animes
+          nuevos para ver que sean específicamente de un año que quiera el
+          usuario. En el fondo, esta tarea corresponde a filtrar por año los
+          datos.
+        </p>
+        <h2>Abstracción de datos</h2>
+        <h3>Dataset Animes</h3>
+        <p>
+          El primer dataset corresponde a un dataset <strong>tabular</strong> de
+          <strong>items</strong>, en donde cada uno de estos items corresponde a
+          un anime distinto. A continuación se muestra una tabla que describe
+          los atributos de los items de este dataset. Ninguno de los atributos
+          es cíclico por lo que se omitirá dicha clasificación. Todos los
+          atributos cuantitativos son secuenciales a menos que se indique lo
+          contrario.
+        </p>
+        <div class="tableContainer">
+          <table class="table2">
+            <tr>
+              <th></th>
+              <th>anime_id</th>
+              <th>title</th>
+              <th>source</th>
+              <th>score</th>
+              <th>members</th>
+              <th>episodes</th>
+              <th>genre</th>
+              <th>aired_from_year</th>
+            </tr>
+            <tr>
+              <td>Tipo de dato</td>
+              <td>Llave</td>
+              <td>Categórico</td>
+              <td>Categórico</td>
+              <td>Cuantitativo</td>
+              <td>Cuantitativo</td>
+              <td>Cuantitativo</td>
+              <td>Categorico</td>
+              <td>Categórico**</td>
+            </tr>
+            <tr>
+              <td>Explicación</td>
+              <td>Identificador del anime</td>
+              <td>Título del anime</td>
+              <td>
+                Fuente original del anime. Puede ser un manga, novela ligera,
+                etc
+              </td>
+              <td>
+                Puntuación promedio del anime basado en los ratings de los
+                usuarios
+              </td>
+              <td>Cantidad de usuarios que han visto el anime</td>
+              <td>Número de episodios que posee el anime</td>
+              <td>Géneros que posee el anime</td>
+              <td>Año en que comenzó a ser emitido el anime</td>
+            </tr>
+          </table>
+        </div>
+        <p>
+          ** Es un poco ambiguo identificar el tipo de dato del año de emisión.
+          Podría ser ordinal con un orden cronológico, también cuantitativo como
+          una cantidad de años y dentro de eso puede ser tanto divergente
+          partiendo desde un año específico hacia ambos lados o bien secuencial
+          desde el primer año en que se emitió un anime. Sin embargo, se decidió
+          dejarlo como categórico debido a que para efectos de esta
+          clasificación no nos interesa el orden de los años realmente, sino que
+          simplemente sea parte del grupo de animes de dicho año. Es por esto
+          que se facilita mucho más el análisis de este dato si simplemente se
+          le considera como un atributo categórico.
+        </p>
+        <h3>Dataset interacciones</h3>
+        <p>
+          Este dataset corresponde a un dataset de <strong>red</strong> en donde
+          sus datos son <strong>enlaces</strong>
+          de 2 animes. Aquí, cada enlace posee dos identificadores de animes,
+          los cuales son atributos categóricos (y de hecho coinciden con los
+          anime_id del otro dataset) y además el enlace posee un tercer atributo
+          count, el cual es cuantitativo, secuencial y no cíclico.
+        </p>
+        <p>
+          Cada enlace del dataset básicamente significa que alguien vio ambos
+          animes a la vez, y el atributo count es la cantidad de gente que los
+          vio a la vez. Para un ejemplo ilustrativo revisar el primera parte del
+          informe.
+        </p>
+      </div>
+      <div class="container">
+        <h2>Codificación visual y de interacción</h2>
+        <p>
+          Antes de ir tarea por tarea, primero mencionaré las marcas que se
+          utilizarán para representar a los datos de ambos datasets. Dada la
+          naturaleza de red que tienen los datos, la visualización en general
+          será como un grafo. Un item, el cuál corresponde a un anime en
+          específico, corresponde a un nodo del grafo y se codificará utilizando
+          un glifo que se compone de un texto con un circulo por debajo, en
+          donde el texto es simplemente el título del anime, y el circulo sirve
+          como nodo fisico, además de proveer otros canales para codificar
+          información como el tamaño o el color. Por otro lado, los enlaces del
+          segundo dataset corresponderán a las aristas del grafo, siendo
+          codificados con lineas.
+        </p>
+        <p>
+          Tarea 1: Esta tarea es probablemente la más importante de la
+          visualización, debido a que es lo que le da un valor directo al
+          usuario al ayudarle a encontrar nuevo contenido para ver. Por lo
+          tanto, esta tarea contará con 2 codificaciones:
+        </p>
+        <ol>
+          <li>
+            Interacción al seleccionar un nodo mediante click: Se esconderan
+            todos los nodos y enlaces que no esten conectados al nodo. La
+            justificación de esta interacción es básicamente realizar una
+            <strong>selección</strong>
+            con el fin de ver de manera más clara los elementos que están
+            ligados al item en particular, sin que el resto de los items y
+            enlaces ofusquen esta vista. De esta manera, al reducir la cantidad
+            de elementos en pantalla al usuario le será mucho más fácil
+            encontrar los nodos que se encuentren relacionados al nodo
+            seleccionado, lo cuál en nuestro contexto se traduce en que se
+            mostrarán solo los animes que suelan ser visto en conjunto con el
+            seleccionado. Esta interacción tiene 2 variantes distintas: La
+            primera consiste en simplemente ocultar el resto de nodos, pero
+            técnicamente seguiran ahí y por lo tanto la forma del grafo original
+            se mantendrá. Esta versión sirve más por si a uno le interesa la
+            topografía del grupo considerando el resto de los nodos que no están
+            conectados. La segunda versión consiste en quitar de la simulación a
+            los nodos que no estén conectados con el nodo seleccionado,
+            provocando una nueva simulación de fuerzas tomando en consideración
+            sólo los nodos conectados. Esta versión sirve para comparar de mejor
+            forma las distancias (más explicación de que significa la distancia
+            en la segunda codificación, osea el párrafo de abajo) debido a que
+            ya no habrán otros nodos que estén interfiriendo con las distancias
+            entre nodos y haciendo que cambien de posición. Con esta versión si
+            un nodo está más alejado que otro entonces es 100% seguro que está
+            menos relacionado.
+            <br />
+            Para controlar ambas versiones se agrego un panel de control a la
+            derecha.
+          </li>
+          <li>
+            Distancia entre nodos para cuantificar que tan relacionados están:
+            Utilizando el atributo count de los enlaces, es posible saber que
+            tan relacionados están los items. De esta manera, mientras mayor sea
+            dicho valor, más cercanos estarán los nodos entre si, lo cuál
+            significará que son más parecidos entre si. Esta decisión se
+            justifíca debido a que la proximidad de los elementos implica una
+            relación entre ellos, por lo cuál es lógico que mientras más
+            cercanos este signifique que están más relacionados. Además, la
+            distancia es uno de los canales más efectivos, por lo cuál se elige
+            este canal para la tarea más importante de la visualización (esta
+            tarea) con el fin de que pueda transmitir fácilmente dicha
+            información.
+          </li>
+        </ol>
+        <p>
+          Tarea 2: Para esta tarea simplemente se requiere mostrar información
+          de un anime en específico. Para esto, se utilizará una interacción al
+          momento de seleccionar un nodo con click, la cual básicamente mostrará
+          en la interfaz un recuadro con la información que se posee de dicho
+          anime. La justificación de porque mostrar la información simplemente
+          así es que no se requiere nada más que obtener los valores específicos
+          de los atributos del anime. Por lo tanto, en este caso es mucho más
+          claro simplemente entregarles dicha información sin ningún tipo de
+          marca o canal especial (más alla del texto) debido a que no van a
+          entregar la información tan clara como se necesita. Además, la
+          variedad de información hace imposible elegir una marca común para
+          todos los atributos a mostrar, a excepción claramente del texto. Por
+          otro lado, la justificación de la interacción es que claramente al
+          haber una gran cantidad de nodos no se puede mostrar toda la
+          información al mismo tiempo, por lo que es importante que se pueda
+          seleccionar el nodo específico para el cuál se quiera obtener la
+          información.
+        </p>
+        <p>
+          Tarea 3: Para esta tarea lo que se hará será codificar la popularidad
+          de cada anime como el <strong>tamaño (área) del círculo</strong>. Es
+          decir, mientras más popular sea un anime, su nodo será de un mayor
+          tamaño. Además, también se va a aumentar el tamaño de fuente del
+          título del anime en el nodo, con el fin de que se pueda leer más
+          fácilmente. Esta decisión es debido a que luego de la distancia, el
+          siguiente canal que mejor expresa magnitudes aplicable a esta
+          visualización es el área. Además, si bien el área no va a comunicar la
+          cantidad exacta de gente que haya visto dicho anime, si servira para
+          comparar aproximadamente con el resto de animes, la cuál es el
+          objetivo principal de esta tarea. Con un tamaño significativo va a ser
+          muy fácil separar a los animes más populares del resto de los animes
+          menos populares.
+        </p>
+        <p>
+          Tarea extra 1: Para comparar el ranking, el cuál se representa según
+          el score que tenga dicho anime, se utilizará el
+          <strong>color del círculo</strong> para codificar su valor. Al ser un
+          valor continuo, se utilizará un colormap que irá mapeando a los nodos
+          por color según su score total. Esta codificación se justifica debido
+          a que luego del tamaño el color es un canal fácilmente diferenciable.
+          Por otro lado, el colormap a elegir será uno secuencial, debido a que
+          el dato a mapear en este caso también resulta ser secuencial.
+        </p>
+        <p>
+          Tarea extra 2: Esta tarea es bastante abstracta, pero se puede resumir
+          en estudiar la topología de la red formada, y de los clusters que
+          naturalmente se forman. Con lo realizado en la tarea 1 ya se cumple en
+          parte lo de poder ver la topología de la red, debido a que
+          naturalmente los animes que se consuman en conjunto estarán más cerca
+          que los otros. Para mejorar la visualización de los clusters, se
+          utilizará el <strong>borde de los círculos</strong> para codificar el
+          cluster, y una interacción para ir formando los clusters. La
+          interacción en cuestión se va a gatillar cuando se ponga el ratón
+          encima de un nodo (sin clickear), y lo que va a hacer es simplemente
+          pintar el borde de todos los nodos que se encuentren a una distancia D
+          del nodo en donde se encuentra el ratón. La distancia D de momento
+          será igual a 1, debido a que su implementación algoritmica puede ser
+          muy compleja para D > 1. La justificación de esto es que los bordes de
+          los circulos es un canal que no se ha utilizado anteriormente, por lo
+          que va a ser fácilmente diferenciable del resto de nodos que no
+          tendrán un borde. Además, es algo que va a permitir facilmente
+          diferenciar entre grupos de items (dentro o fuera del cluster),
+          independiente del resto de codificaciones utilizadas.
+          <br />
+          Además, dado a que al seleccionar un nodo existe la opción de remover
+          el resto de nodos, se agregará una opción para controlar si se
+          destacan todos los nodos con los que tenga conexión en la base de
+          datos (incluso si esa conexión se quitó producto de una selección) o
+          si solamente se destacan los que realmente tengan la conexión agregada
+          a la visualización. Esta opción solo influye si es que la opción de
+          selección es remover, ya que para la versión de ocultar siempre estan
+          todos los enlaces en la simulación (aunque no se muestren algunos).
+        </p>
+        <p>
+          Tarea extra 3: Para esta tarea realmente no es necesario implementar
+          ninguna codificación visual extra, sino que simplemente una
+          interacción que permita filtrar los datos según un año. De esta
+          manera, dicha interacción será en forma de un selector de año, el cuál
+          filtrará a los datos para dejar solamente a los que coincidan con el
+          año en cuestión. Todo el resto de interacciones y codificaciones se
+          deben mantener. La justificación de esto es que la manera más fácil de
+          ver en específico items de un determinado año es no mostrando el
+          resto. Aunque es cierto que con esto se puede perder la capacidad de
+          comparar entre varios años al mismo tiempo, no se cuenta con una
+          codificación visual cuantitativa que no haya sido utilizada y que no
+          interrumpa con el resto de codificaciones. También se podría haber
+          usado alternativamente una codificación categórica como la forma del
+          nodo, pero de igual forma esto interrumpiría con el resto de tareas
+          debido a que ya no sería tan fácil, por ejemplo, comparar los tamaños
+          si las formas son distintas.
+        </p>
+      </div>
+      <div class="container">
+        <h2>Dataset extra</h2>
+        <p>
+          Adicional al dataset que viene en la entrega, tambien hay otro llamado
+          anime_final5.json y interaction5.json. Estos son una versión mucho más
+          grande que el dataset predeterminado. No se espera que se utilicen
+          para la correccion de este examen, debido a que por el tamaño es mucho
+          más lenta la visualización, pero ciertamente forma cosas más
+          interesantes y en general es más útil si se quieren encontrar
+          recomendaciones. Abajo muestro una foto del grafo utilizando ese
+          dataset. Si quieren utilizar ese dataset por curiosidad, deben
+          comentar las lineas 354, 355, 231, 232, 236 de main.js y descomentar
+          las lineas 233, 234, 237 ,356, 357 de main.js. Disfruten!
+        </p>
+      </div>
+    </div>
+    <img src="fullvis.png" />
+  </body>
+</html>

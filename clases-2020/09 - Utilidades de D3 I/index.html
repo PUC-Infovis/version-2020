@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Selecciones y join de datos en D3.js</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../dist/reveal.css">
+		<link rel="stylesheet" href="../dist/theme/fdo.css" id="theme">
+		<link rel="stylesheet" href="../plugin/highlight/dracula.css">
+
+		<style>
+      .link {
+        stroke: #969696;
+      }
+
+      .join, .link, .node rect {
+        fill: none;
+        stroke: #636363;
+        stroke-width: 1.5px;
+      }
+
+      .node .element rect {
+        fill: #bdbdbd;
+        stroke: none;
+      }
+
+      svg {
+        font: 10px sans-serif;
+      }
+
+      circle {
+        fill: none;
+        fill-opacity: .2;
+        stroke: black;
+        stroke-width: 1.5px;
+      }
+		</style>
+	</head>
+
+	<body>
+
+		<!-- ?print-pdf -->
+
+		<div class="reveal">
+
+			<div class="slides">
+
+				<section data-auto-animate data-auto-animate-unmatched="fade">
+					<h3>¡Hola 👋! Espera mientras comienza la sesión.</h3>
+				</section>
+
+				<section data-auto-animate data-auto-animate-unmatched="fade">
+					<h3>Antes que todo, ¿cómo están?</h3>
+				</section>
+
+				<section data-auto-animate data-auto-animate-unmatched="fade">
+					<h1>Visualización de Información</h1>
+					<h2 style="color: black;">IIC2026 2020-2</h2>
+				</section>
+
+				<section data-auto-animate data-auto-animate-unmatched="fade">
+					<h1>Utilidades en D3.js I</h1>
+					<h1 style="font-size: 1.6em; color: black;">Visualización de Información</h1>
+					<h2 style="font-size: 1.3em; color: black;">IIC2026 2020-2</h2>
+				</section>
+
+				<section data-auto-animate data-auto-animate-unmatched="fade">
+					<h3>Repaso</h3>
+				</section>
+
+				<section data-auto-animate data-auto-animate-unmatched="fade">
+					<h3>Repaso</h3>
+
+					<br>
+
+					<h4 style="color: black;">1. Cargado de datos en D3.js</h4>
+					<h4 style="color: black;">2. Escalas de D3.js</h4>
+					<h4 style="color: black;">3. Ejes de D3.js</h4>
+        </section>
+        
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+
+          <pre data-id="code2"><code data-trim data-line-numbers class="js">
+const svg = d3.select("body").append("svg");
+
+function joinDeDatos(datos) {
+  svg.attr("width", 50 + datos.length * 100).attr("height", 500);
+
+  svg
+    .selectAll("rect")
+    .data(datos)
+    .join("rect")
+    .attr("width", 50)
+    .attr("fill", "magenta")
+    .attr("height", (d) => d)
+    .attr("x", (_, i) => 50 + i * 100);
+}
+
+const datos = [10, 20, 30, 40];
+joinDeDatos(datos);
+
+          </code></pre>
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+          <img src="./assets/vis1.png" height="400px"/>
+				</section>
+        
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+
+          <pre data-id="code2"><code data-trim data-line-numbers class="js">
+const width = 600;
+const height = 400;
+const margin = {
+  top: 70,
+  bottom: 70,
+  right: 30,
+  left: 30,
+};
+
+const svg = d3
+  .select("body")
+  .append("svg")
+  .attr("width", width)
+  .attr("height", height);
+
+const contenedor = svg
+  .append("g")
+  .attr("transform", `translate(${margin.left} ${margin.top})`);
+
+function joinDeDatos(datos) {
+  const maximaFrecuencia = d3.max(datos, (d) => d.frecuencia);
+
+  const escalaAltura = d3
+    .scaleLinear()
+    .domain([0, maximaFrecuencia])
+    .range([0, height - margin.top - margin.bottom]);
+
+  const escalaY = d3
+    .scaleLinear()
+    .domain([0, maximaFrecuencia])
+    .range([height - margin.top - margin.bottom, 0]);
+
+  const ejeY = d3.axisLeft(escalaY);
+
+  svg
+    .append("g")
+    .attr("transform", `translate(${margin.left}, ${margin.top})`)
+    .call(ejeY)
+    .selectAll("line")
+    .attr("x1", width - margin.right - margin.left)
+    .attr("stroke-dasharray", "5")
+    .attr("opacity", 0.5);
+
+  const escalaX = d3
+    .scaleBand()
+    .domain(datos.map((d) => d.categoria))
+    .rangeRound([0, width - margin.right - margin.left])
+    .padding(0.5);
+
+  const ejeX = d3.axisBottom(escalaX);
+
+  svg
+    .append("g")
+    .attr("transform", `translate(${margin.left}, ${height - margin.bottom})`)
+    .call(ejeX)
+    .selectAll("text")
+    .attr("font-size", 20);
+
+  contenedor
+    .selectAll("rect")
+    .data(datos)
+    .join("rect")
+    .attr("width", escalaX.bandwidth())
+    .attr("fill", "magenta")
+    .attr("height", (d) => escalaAltura(d.frecuencia))
+    .attr("x", (d) => escalaX(d.categoria))
+    .attr("y", (d) => escalaY(d.frecuencia));
+}
+
+d3.json("datos.json")
+  .then((datos) => {
+    console.log(datos);
+    joinDeDatos(datos);
+  })
+  .catch((error) => console.log(error));
+          </code></pre>
+        </section>
+        
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+          <img src="./assets/vis2.png" height="400px"/>
+        </section>
+        
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+
+          <pre data-id="code3"><code data-trim data-line-numbers="70-75|21|23-26|28-31|44-48|63,65-67|3-8|16-18|33-38|50-55|39-42|56-57" class="js">
+const width = 600;
+const height = 400;
+const margin = {
+  top: 70,
+  bottom: 70,
+  right: 30,
+  left: 30,
+};
+
+const svg = d3
+  .select("body")
+  .append("svg")
+  .attr("width", width)
+  .attr("height", height);
+
+const contenedor = svg
+  .append("g")
+  .attr("transform", `translate(${margin.left} ${margin.top})`);
+
+function joinDeDatos(datos) {
+  const maximaFrecuencia = d3.max(datos, (d) => d.frecuencia);
+
+  const escalaAltura = d3
+    .scaleLinear()
+    .domain([0, maximaFrecuencia])
+    .range([0, height - margin.top - margin.bottom]);
+
+  const escalaY = d3
+    .scaleLinear()
+    .domain([0, maximaFrecuencia])
+    .range([height - margin.top - margin.bottom, 0]);
+
+  const ejeY = d3.axisLeft(escalaY);
+
+  svg
+    .append("g")
+    .attr("transform", `translate(${margin.left}, ${margin.top})`)
+    .call(ejeY)
+    .selectAll("line")
+    .attr("x1", width - margin.right - margin.left)
+    .attr("stroke-dasharray", "5")
+    .attr("opacity", 0.5);
+
+  const escalaX = d3
+    .scaleBand()
+    .domain(datos.map((d) => d.categoria))
+    .rangeRound([0, width - margin.right - margin.left])
+    .padding(0.5);
+
+  const ejeX = d3.axisBottom(escalaX);
+
+  svg
+    .append("g")
+    .attr("transform", `translate(${margin.left}, ${height - margin.bottom})`)
+    .call(ejeX)
+    .selectAll("text")
+    .attr("font-size", 20);
+
+  contenedor
+    .selectAll("rect")
+    .data(datos)
+    .join("rect")
+    .attr("width", escalaX.bandwidth())
+    .attr("fill", "magenta")
+    .attr("height", (d) => escalaAltura(d.frecuencia))
+    .attr("x", (d) => escalaX(d.categoria))
+    .attr("y", (d) => escalaY(d.frecuencia));
+}
+
+d3.json("datos.json")
+  .then((datos) => {
+    console.log(datos);
+    joinDeDatos(datos);
+  })
+  .catch((error) => console.log(error));
+          </code></pre>
+        </section>
+				
+				<section data-auto-animate data-auto-animate-unmatched="fade">
+					<h3> <code>d3-fetch</code></h3>
+
+					<br>
+
+          <ul>
+            <li><code>d3.csv(archivo)</code>: Para leer archivo CSV.</li>
+            <br>
+            <li><code>d3.json(archivo)</code>: Para leer archivo JSON.</li>
+            <br>
+            <li><code>d3.tsv(archivo)</code>: Para leer archivo TSV.</li>
+            <br>
+            <li><code>d3.dsv(delimitador, archivo)</code>: Para leer archivo separado por un delimitdor común.</li>
+            <br>
+            <li>...</li>
+          </ul>
+          
+          <br>
+          <br>
+          <br>
+          
+          <p>¡Revisa la <a href="https://github.com/d3/d3-fetch">documentación</a>!</p>
+          
+        </section>
+        
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+					<h3> <code>d3-scale</code></h3>
+
+					<br>
+
+          <ul>
+            <li><code>d3.scaleLinear()</code>: Escalas continuas lineales.</li>
+            <br>
+            <li><code>d3.scalePow()</code>: Escalas continuas de potencia.</li>
+            <br>
+            <li><code>d3.scaleLog()</code>: Escalas continuas logarítmicas.</li>
+            <br>
+            <li><code>d3.scaleTime()</code>: Escalas que reciben fechas.</li>
+            <br>
+            <li><code>d3.scaleOrdinal()</code>: Escalas de dominio y rango discreto.</li>
+            <br>
+            <li><code>d3.bandScale()</code>: Escalas de dominio y rango discreto, pero donde el rango tiene valores numéricos y continuos. Pensado para generar barras en un espacio continuo.</li>
+            <br>
+            <li><code>d3.scalePoint()</code>: Escalas de dominio y rango discreto, pero donde el rango tiene valores numéricos y continuos. Pensado para generar puntos en un espacio continuo.</li>
+            <br>
+            <li>...</li>
+          </ul>
+          
+          <br>
+          <br>
+          <br>
+          
+          <p>¡Revisa la <a href="https://github.com/d3/d3-scale">documentación</a>!</p>
+          
+        </section>
+        
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+					<h3> <code>d3-axis</code></h3>
+
+					<br>
+
+          <ul>
+            <li><code>d3.axisTop()</code>: Eje horizontal con leyenda sobre eje.</li>
+            <br>
+            <li><code>d3.axisBottom()</code>: Eje horizontal con leyenda bajo eje.</li>
+            <br>
+            <li><code>d3.axisRight()</code>: Eje vertical con leyenda a la izquierda de eje.</li>
+            <br>
+            <li><code>d3.axisLeft()</code>: Eje vertical con leyenda a la derecha de eje.</li>
+            <br>
+            <li>...</li>
+          </ul>
+          
+          <br>
+          <br>
+          <br>
+          
+          <p>¡Revisa la <a href="https://github.com/d3/d3-axis">documentación</a>!</p>
+          
+        </section>
+        
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+					<h3> <code>d3-time</code> y <code>d3-time-format</code></h3>
+
+					<br>
+
+          <ul>
+            <li><code>d3.timeDay.count(inicio, fin)</code>: Cuenta cuantos días han pasado entre dos fechas.</li>
+            <br>
+            <li><code>d3.timeFormat(formato)</code>: Para transformar fechas en strings en cierto formato.</li>
+            <br>
+            <li><code>d3.timeParse(formato)</code>: Para obtener fechas desde strings en cierto formato.</li>
+            <br>
+            <li>...</li>
+          </ul>
+          
+          <br>
+          <br>
+          <br>
+          
+          <p>¡Revisa la documentación <a href="https://github.com/d3/d3-time">aquí</a> y <a href="https://github.com/d3/d3-time-format">acá</a>!</p>
+          
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+					<h3> <code>d3-array</code> </h3>
+
+					<br>
+
+          <ul>
+            <li><code>d3.extent(arreglo)</code>: Para obtener valor mínimo y máximo de arreglo datos.</li>
+            <br>
+            <li><code>d3.median(arreglo)</code>: Para mediana de arreglo de datos.</li>
+            <br>
+            <li><code>d3.variance(arreglo)</code>: Para varianza de arreglo de datos.</li>
+            <br>
+            <li><code>d3.group(arreglo)</code>: Agrupa datos de un arreglo según sus valores.</li>
+            <br>
+            <li>...</li>
+          </ul>
+          
+          <br>
+          <br>
+          <br>
+          
+          <p>¡Revisa la <a href="https://github.com/d3/d3-array">documentación</a>!</p>
+          
+        </section>
+
+
+				<section data-auto-animate data-auto-animate-unmatched="fade">
+					<h3>¡Visualización del día!</h3>
+				</section>
+
+				<section data-auto-animate data-auto-animate-unmatched="fade">
+					<h3>¡Visualización del día!</h3>
+
+					<br>
+
+					<img src="./assets/shots.jpg" height="300px"/>
+
+          
+          <p>Visualización de frecuencia de lanzamientos de basketball en la NBA. </p>
+          <p>Propuesta por estudiante Juan Dlugoszewski.</p>
+					<p style="font-size: 0.5em; color: grey">(Fuente: <a href="https://247sports.com/college/saint-josephs/board/105444/Contents/shot-chart-dramatically-shows-the-change-in-the-nba-game-142252841/">Shot chart dramatically shows the change in the NBA game</a>)</p>
+
+        </section>
+        
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+					<h3>¡Visualización del día!</h3>
+
+					<br>
+
+					<img src="./assets/d3-court-shots.png" height="300px"/>
+
+          
+          <p style>¡Hay personas que han publicado código para generar este tipo de visualizaciones! <a href="http://tothemean.com/tools/shot-charts/#/">Aquí algunas en uso</a></p>
+					<p style="font-size: 0.5em; color: grey">(Fuente: <a href="https://github.com/virajsanghvi/d3.basketball-shot-chart">d3.basketball-shot-chart</a>)</p>
+
+				</section>
+
+				<section data-auto-animate data-auto-animate-unmatched="fade">
+					<h3>¿Más dudas?</h3>
+
+				</section>
+
+				<section data-auto-animate data-auto-animate-unmatched="fade">
+          <h3>Próximos eventos:</h3>
+          
+					<br>
+					
+					<p>Viernes 11 de septiembre (20:00) termina plazo de <span style="color: #f92696;">Hito 1</span>.</p>
+					
+        </section>
+        
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+          <h3>Próximos eventos:</h3>
+          
+					<br>
+					
+          <p>Viernes 11 de septiembre (20:00) termina plazo de <span style="color: #f92696;">Hito 1</span>.</p>
+          
+          <br>
+
+          <p>Sesión de martes 15 de septiembre revisamos <span style="color: #f92696;">Utilidades en D3.js II</span>.</p>
+					
+        </section>
+        
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+          <h3>Próximos eventos:</h3>
+          
+					<br>
+					
+          <p>Viernes 11 de septiembre (20:00) termina plazo de <span style="color: #f92696;">Hito 1</span>.</p>
+          
+          <br>
+
+          <p>Sesión de martes 15 de septiembre revisamos <span style="color: #f92696;">Utilidades en D3.js II</span>.</p>
+          
+          <br>
+
+          <p>¡Sesión de jueves 17 de septiembre es libre! Me conectaré de todas formas por si tienen preguntas :)</p>
+					
+				</section>
+
+				<section data-auto-animate data-auto-animate-unmatched="fade">
+					<h1>Utilidades en D3.js I</h1>
+					<h1 style="font-size: 1.6em; color: black;">Visualización de Información</h1>
+					<h2 style="font-size: 1.3em; color: black;">IIC2026 2020-2</h2>
+					<br>
+					<h2 style="font-size: 1.3em;">¡Deja tus preguntas en los comentarios!</h2>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="../dist/reveal.js"></script>
+		<script src="../plugin/highlight/highlight.js"></script>
+		<script>
+			Reveal.initialize({
+				center: true,
+				hash: true,
+				plugins: [ RevealHighlight ]
+			});
+		</script>
+
+	</body>
+</html>

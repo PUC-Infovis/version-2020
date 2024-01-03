@@ -1,0 +1,390 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Informe Vis</title>
+  <meta name="description" content="informe">
+  <meta name="author" content="mframos3">
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body>
+  <h1>Informe</h1>
+  <img src='logo.png'></img>
+  <h2>Caracterización de dominio</h2>
+
+    <p>
+      Se trabaja con los datos tabulares de features de tracks de Spotify obtenidos mediante análisis de audio. Las features son medidas de confianza respecto a características implicitas o ligadas a la percepción 
+      como puede ser qué tan bailable es una canción, su energía, etc. Estos datos permiten caracterizar bajo un mismo criterio a una selección de canciones
+       lo que permite compararlas entre ellas. Particularmente, se trabajará con datos sobre las top canciones por año según billboard desde 2010 hasta 2019. Se complementarán estos datos con 
+       las features promedio por año. Estos datos potencialmente pueden responder la pregunta: ¿Qué hace una canción exitosa?
+    </p>
+    <p>
+      El usuario objetivo es aquel que tiene el interés de responder la pregunta antes planteada. Un posible perfil de usuario puede ser un artista que quiere que sus lanzamientos sean un 
+      éxito. Para ello, está dispuesto a investigar qué características deben tener sus canciones para tener más chances de lanzar un hit del año. Entonces se busca proveer al usuario de una herramienta 
+      que permita el análisis para descubrir aquellas características con mayor facilidad. El uso que se espera de la plataforma es que el usuario explore las features y pueda discriminar aquellas relevantes para  
+       realizar conclusiones que sean eventuales respuestas de la pregunta planteada.
+    </p>
+
+  <h2>Abstracción de datos y tareas</h2>
+  <p>
+    Los datasets utilizar son de tipo tabular y estáticos. Estos conjuntos de datos corresponden a una colección de ítems que se describen según varios atributos.
+    Se trabajará con dos datasets tabulares. El principal corresponde al dataset de las features de canciones top por año. Este dataset se complementa con otro dataset que contiene el promedio de las mismas features agrupadas por año de lanzamiento.
+    Esto permitirá comparar una canción según sus features con las features promedio de su año de lanzamiento.
+  </p>
+  <p>
+    A continuación se detallan los datos de los dos datasets. El dataset de canciones incluye adicionalmente metadata como título de la canción y artista que el dataset agregado por año no posee.
+  </p>
+
+  <table>
+    <tr>
+      <th>Atributo</th>
+      <th>Descripción</th>
+      <th>Tipo</th>
+    </tr>
+    <tr>
+      <td>year*</td>
+      <td>año de lanzamiento del track (solo en dataset de canciones).</td>
+      <td>int</td>
+    </tr>
+    <tr>
+      <td>title*</td>
+      <td>título del track (solo en dataset de canciones).</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td>artist*</td>
+      <td>artista del track (solo en dataset de canciones).</td>
+      <td>string</td>
+    </tr>
+    <!-- <tr>
+      <td>explicit*</td>
+      <td>1 si contiene letra explicita, 0 en otro caso (solo en dataset de canciones).</td>
+      <td>int</td>
+    </tr> -->
+    <tr>
+      <td>genre*</td>
+      <td>Nombre del género musical(solo en dataset de canciones).</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td>acousticness</td>
+      <td>Medida de confianza desde 0 a 1 si el track es acústico o no</td>
+      <td>float</td>
+    </tr>
+    <tr>
+      <td>danceability</td>
+      <td>Indica qué tan adecuado es el track para bailar. El valor 0 indica 
+        menos bailable, 1 lo más bailable
+      </td>
+      <td>float</td>
+    </tr>
+    <!-- <tr>
+      <td>duration_ms</td>
+      <td>Duración del track en milisegundos
+      </td>
+      <td>int</td>
+    </tr> -->
+    <tr>
+      <td>energy</td>
+      <td>Percepción de intensidad y actividad del track.
+        Rango 0 a 1.
+      <td>float</td>
+    </tr>
+    <!-- <tr>
+      <td>instrumentalness</td>
+      <td>Medida de confianza desde 0 a 1 si el track es instrumental o no
+      </td>
+      <td>float</td>
+    </tr> -->
+    <!-- <tr>
+      <td>key</td>
+      <td>Indica la tonalidad de la canción en notación entera (0:C, 1: C#, 2:D, etc..)</td>
+      <td>int</td>
+    </tr> -->
+    <tr>
+      <td>liveness</td>
+      <td>Medida de confianza desde 0 a 1 si el track es una grabación en vivo.</td>
+      <td>float</td>
+    </tr>
+    <!-- <tr>
+      <td>loudness</td>
+      <td>Nivel de intensidad promedio del track medida en decibeles (intensidad como percepción de la amplitud).</td>
+      <td>float</td>
+    </tr> -->
+    <!-- <tr>
+      <td>mode</td>
+      <td>Indica si la modalidad del track es mayor (1) o menor (0).</td>
+      <td>int</td>
+    </tr> -->
+    <tr>
+      <td>popularity</td>
+      <td>Puntuación de 0 a 100 de la popularidad del track</td>
+      <td>float</td>
+    </tr>
+    <tr>
+      <td>speechiness</td>
+      <td>Valor de 0 a 1 de presencia de discurso hablado en un track.</td>
+      <td>float</td>
+    </tr>
+    <!-- <tr>
+      <td>tempo</td>
+      <td>Tempo estimado del track</td>
+      <td>float</td>
+    </tr> -->
+    <tr>
+      <td>valence</td>
+      <td>Positividad emocional de del track. Rango 0 a 1.
+      </td>
+      <td>float</td>
+    </tr>
+  </table>
+  
+  <div class="atributos">
+    <h6>Atributos: acousticness,
+      danceability, energy, liveness, loudness, popularity, speechiness, valence</h6>
+    <ul>
+      <li>
+        <p>Ordenado: poseen un orden intrínseco.</p>
+      </li>
+      <li>
+        <p>Cuantitativo: se pueden comparar aritméticamente.</p>
+      </li>
+      <li>
+        <p>Secuencial: sus valores se distribuyen desde el valores mínimos a máximos en una sola dirección. Rango 0 a 1 a
+          excepción de popularity que tiene rango 0 a 100.
+        </p>
+      </li>
+      <li>
+        <p>No cíclico: sus valores tienen un solo sentido de incremento.</p>
+      </li>
+    </ul>
+  </div>
+
+  <div class="atributos">
+    <h6>Atributos: title*, artist*, explicit*, genre*</h6>
+    <ul>
+      <li>
+        <p>Categórico: Solo sirven de identificación. No poseen orden intrínseco o numérico.
+        </p>
+      </li>
+      <li>
+        <p>El resto de las clasificaciones no aplican a estos atributos.</p>
+      </li>
+    </ul>
+  </div>
+  <div class="atributos">
+    <h6>Atributo: year</h6>
+    <ul>
+      <li>
+        <p>Cuantitativo: posee un orden intrínseco.
+        </p>
+      </li>
+      <li>
+        <p>Ordinal: No tiene sentido realizar comparaciones aritméticas.</p>
+      </li>
+      <li>
+        <p>Secuencial: los valores de edad se distribuyen entre el año 2010 hasta el 2019.
+        </p>
+      </li>
+      <li>
+        <p>No cíclico: El incremento es en un solo sentido dentro del rango acotado.</p>
+      </li>
+    </ul>
+  </div>
+
+  <p>
+    Para lograr el objetivo de responder la pregunta inicial, es necesario presentar la información de tal manera que se pueda discriminar los elementos relevantes de una canción con facilidad tomando en cuenta su 
+    año de lanzamiento para contextualizarla. Se presentan a continuación tres tareas mínimas para poder cumplir el objetivo.
+  </p>
+  <div class="Tareas">
+    <h6>Tarea 1</h6>
+    <blockquote>
+      <p>Sondear las features de las canciones top de cada año y su relación con la popularidad para encontrar aquellas que sus valores expliquen 
+        un efecto claro en la popularidad.
+      </p>
+    </blockquote>
+    Justificación:
+    <p>
+      El usuario objetivo tiene el objetivo de saber qué hace una canción exitosa. Se tiene planeado presentar al usuario las features de 
+      modo que sepa como ubicarlas en la vista. El usuario entonces deberá encontrar aquella que muestre claramente una asociación entre su valor y 
+      la popularidad. Esto significa que se encuentre con features que su valor ya sea alto o bajo indique un impacto positivo o negativo en la popularidad.
+      De este modo sabrá cuáles features hay que tener con alto valor o bajo valor para que la canción tenga mayor chance de éxito. Esto tiene que estar sujeto
+      a cada año por lo tanto se debe presentar la información separada por año.
+    </p>
+
+    Datos o derivaciones correspondientes:
+
+    <p>Se deben utilizar los features de las canciones top del año junto a su popularidad.
+    </p>
+  </div>
+
+  <div class="Tareas">
+    <h6>Tarea 2</h6>
+    <blockquote>
+      <p>Identificar la tendencia del valor promedio de cada feature a través de los años de las canciones top.</p>
+    </blockquote>
+    Justificación:
+    <p>En conjunto a conocer el impacto de las features en la popularidad, es importante tambien conocer las tendencias de las top canciones respecto a cada feature. De este modo se puede estimar 
+      los valores de estas en los años siguientes. Canciones que se encuentren cercanos a estos valores indicarían con mayor probabilidad el éxito de una cancion cumpliendo con el objetivo del usuario.
+    </p>
+
+    Datos o derivaciones correspondientes:
+
+    <p>Se debe utilizar las features de las canciones top por año y derivar sus promedios como dato agregado.
+    </p>
+  </div>
+
+  <div class="Tareas">
+    <h6>Tarea 3</h6>
+    <blockquote>
+      <p>Comparar el promedio de cada feature por año entre las canciones top y todas las canciones.</p>
+    </blockquote>
+    Justificación:
+    <p> Se quiere saber qué features de las canciones top tienen una diferencia con el resto de las canciones. Además de saber en qué sentido se diferencian 
+      ya sea positiva o negativamente y en qué magnitud. De esto se pueden desprender conclusiones como cuáles 
+      features en general tienen un valor menor en las canciones top , un valor mayor o poca/nula variación. De reconocerlas, 
+      se puede saber que requiere o no requiere una canción para que tenga mayor probabilidad de éxito tal como busca saber el usuario objetivo.
+
+    </p>
+
+    Datos o derivaciones correspondientes:
+
+    <p>Se requieren los promedios por año derivados de las features de las canciones y las features del dataset por año.</p>
+  </div>
+
+  <div class="Tareas">
+    <h6>Tarea 4 (adicional)</h6>
+    <blockquote>
+      <p>Comparar la relación entre feature y popularidad de las canciones top con el promedio de las canciones.</p>
+    </blockquote>
+    Justificación:
+    <p> Esta tarea permite complementar la primera tarea ya que además de sondear features de canciones top con clara relación entre su valor y popularidad, se 
+      puede saber cómo estas se diferencian con el promedio de las canciones. Esta información adicional permite saber en qué sentido se diferencia y qué magnitud de modo que 
+      se pueda saber el efecto promedio en las canciones normales de una feature sobre la popularidad versus el efecto de los valores de estas features en canciones top con su popularidad.
+      Esto permite ver al usuario qué valores de features se diferencian más del promedio con una mayor popularidad. Esto indica que tales valores de features pueden asociarse a un éxito de la canción, 
+      cumpliendo su objetivo. Además si se complementa con la identificación de cada canción, el usuario puede reconocer canciones por su título, arista y género con el fin de desprender conclusiones adicionales 
+      respecto a la ubicación de ese título, artista o género en relación al promedio de canciones.
+    </p>
+
+    Datos o derivaciones correspondientes:
+
+    <p>Se requieren los datos de features y popularidad del dataset de promedio por año.</p>
+  </div>
+
+  <h2>Codificación visual y de interacción</h2>
+
+  <div class="Tareas">
+    <h6>Codificación Tarea 1</h6>
+  
+    <p>
+      Idiom visual:Se utiliza un scatter plot con eje horizontal una feature seleccionada y eje vertical la popularidad. Cada canción top se representa mediante 
+      puntos* como marca y se codifica el valor de la feature seleccionada y su popularidad en la posición de ésta que coincide con lo que indican los ejes según corresponda.
+      El canal de color y tamaño se utiliza solo para diferenciarlo con la marca que representa al promedio de canciones que corresponde a la tarea 4. En esta tarea estos canales 
+      son utilizados.
+    </p>
+
+    <p>
+      Idiom de interacción: Se incluye una tarjeta en la herramienta para ubicar los elementos de manipulación e interacción. En esta se incluye dos selectores dropdown 
+      con la feature a seleccionar y el año respectivamente. Al seleccionar una feature y año, el idiom visual antes descrito se debe actualizar mostrando la información correspondiente.
+      Adicionalmente se agrega interacción al realizar hover sobre la marca de una canción. El puntero al tocar la marca, la destaca mediante cambio en el canal de color y 
+      despliega texto en la tarjeta antes mencionada. El texto corresponde al título, artista y género de la canción.
+    </p>
+
+    <p>
+      Se toman estas decisiones de diseño dado que es fácil interactuar con los dropdown e interpretar un scatter plot. El canal de posición de los puntos tiene un nivel alto de discriminalidad que 
+      facilita la comparación entre las distintas canciones y sus diferencias en valor de feature y popularidad. Tambien poseen un grado de exactitud suficiente para determinar qué valores de los
+       features reportan una mayor o menor popularidad. Los dos valores a comparar estan codificados mediante posición en ejes ortogonales por lo tanto la separabilidad del canal de posición X para feature 
+       y popularidad Y es buena.
+    </p>
+
+    <p>
+      Respecto a la interacción es intuitivo asociar la atención en un c particular con el dirigir el puntero a donde esta ubicado. Al realizar dicha acción se gatilla el evento de proporcionar 
+      mayor información sobre la canción. Esta información se dispone en la tarjeta al costado de la herramienta para que el texto no sea interrumpido por otra figura en la herramienta. Los dropdowns
+      dan a conocer las opciones disponibles desde el principio y apenas se selecciona una, la herramienta se ajusta para minimizar la cantidad de movimientos por acción.
+    </p>
+
+    <p>
+      * Es necesario decir que en perspectiva de tareas independientes, la marca es un punto porque se considera como elemento no dimensional. Si se entiende la herramienta con todas 
+      las tareas como conjunto, se considera como círculo dado que el canal área del 'punto' (ahora círculo) sirve para diferenciar los puntos que codifican canciones top con el punto que 
+      codifica el promedio del resto de canciones ubicado en el mismo gráfico correspondiente a la tarea 4 (opcional). En esta tarea me referiré a punto y en la opcional como círculo.
+    </p>
+
+
+
+  </div>
+  <div class="Tareas">
+    <h6>Codificación Tarea 2</h6>
+    <p>
+      Idiom visual: Para codificar la tendencia a través de los años del valor promedio de cada feature se utilizo un line plot. Las marcas utilizadas son puntos y lineas. Los puntos representan el dato 
+      del promedio de la feature en un año y las lineas conectan los puntos de modo de interpolar punto a punto y ayudar a identificar una tendencia. El canal utilizado es la posición del punto donde 
+      la posición horizontal codifica el año y la vertical el valor promedio del feature.
+    </p>
+    <p>
+      Idiom de interacción: La utilización del dropdown de features permite cambiar la feature del eje horizontal apenas se seleccione.
+    </p>
+    <p>
+      La utilización de un line plot para mostrar la tendencia a través de los años es correcto dado que los line chart precisamente estan diseñados para realizar esta tarea. 
+      Se utiliza el canal de color solo con el motivo de diferenciar los puntos de la linea y los puntos entre sí. Diferenciar los puntos permite brindar mayor exactitud en la lectura 
+      de su altura que corresponde al valor del feature. El color de la linea se utiliza para diferenciarla de otra linea de tendencia que será comentada en la codificación de otra tarea.
+      
+      Con este idiom se permite comparar posiciones de puntos de la misma linea para identificar tendencias y tambien la altura de la linea en su conjunto comunica el rango del valor de la feature 
+      a través de los años. Se puede apreciar la tendencia de las features y saber por lo general en que valores oscilan. Así se puede generar mejores estimaciones.
+    </p>
+
+
+  </div>
+  <div class="Tareas">
+    <h6>Codificación Tarea 3</h6>
+    <p>
+      Idiom visual: Se agrega otra linea de tendencia con la misma elección de marcas y canales pero se utiliza sobre los datos del promedio del valor de las features de todas las canciones del año.
+      Adicionalmente se incorporan lineas verticales entre los puntos de las dos lineas de tendencia como marcas que representan la diferencia de los promedios en cada año. El canal largo representa 
+      la magnitud de esa diferencia y su color codifica el sentido (signo) de esa diferencia. Color amarillo para diferencia positiva, es decir, cuando la linea de las canciones top esta por encima de 
+      la linea de todas las canciones y color rojo para diferencia positiva en el caso contrario.
+    </p>
+    <p>
+      Idiom de interacción: Al hacer hover sobre una de las lineas verticales que codifica la diferencia de un año, su opacidad se aumenta para destacarla y en la tarjeta lateral de la herramienta 
+      se despliega un texto que muestra la diferencia porcentual relativa entre el promedio de canciones top y promedio de todas las canciones.
+    </p>
+
+    <p>
+      Se decide utilizar una linea de tendencia para presentar los datos del promedio de features por año de todas las canciones de manera análoga con el promedio de canciones top. Así se mantienen constantes 
+      todas las elecciones de marcas y canales de modo que la unica variable sea los datos que representan. Esto facilita y hace que la comparación sea más acertada. Además permite comparar no solo los valores  
+      entre los promedios por año sino también comparar sus tendencias.
+
+      La incorporación de lineas verticales focaliza la atención a la diferencia entre las lineas. Se escoge bajar la opacidad y que al seleccionar una se hagan más visibles para no contaminar mucho la vista.
+      Codificar la diferencia mediante un aumento lineal del largo de una linea tiene baja distorsión en la representación. Según la psicología del color, el amarillo esta asociado 
+      a lo positivo y lo rojo a lo negativo. El cambio de color permite entender fácilmente que la diferencia de las canciones top es 'por arriba' del promedio de las canciones o 'por debajo'. 
+
+      El seleccionar una de estas lineas tambien muestra la diferencia pero en este caso es relativa porcentual. Esta medida de comparación relativa sirve para tener una forma uniforme de medir las diferencias 
+      independiente del valor absoluto de las features que se escoga visualizar.
+    </p>
+  </div>
+  <div class="Tareas">
+    <h6>Codificación Tarea 4 (adicional)</h6>
+    
+    <p>
+      Idiom visual: Se agrega un círculo como marca y su posición como canal para el valor de feature (horizontal) y popularidad (vertical). El canal área y color se utiliza solo para diferenciar esta marca que representa 
+      al promedio de los valores de los features de todas las canciones respecto de las marcas de las canciones top. 
+    </p>
+
+    <p>
+      Idiom de interacción: Al seleccionar el feature y año en los dropdown, el punto se desplaza actualizando la información que entrega acorde a la selección.
+    </p>
+
+    <p>
+      Se escoge agregar un círculo que represente al valor del feature y popularidad promedio en el scatter plot mencionado en la codificación de la tarea 1 porque permite comparar la ubicación de las 
+      canciones top con el promedio de las canciones de manera inmediata. La selección de otro color y tamaño permite rápidamente discriminar este punto del resto para identificar facilmente su posición 
+      en el gráfico y cómo se ubica respecto a las canciones top. No se decide agregar funcionalidad en el hover como se hace con la tarea 1 ya que no hay necesidad de destacar el punto (ya está destacado) 
+      y tampoco hay necesidad de identificarlo (su único identificador: año, ya está presente en la selección del dropdown que el mismo usuario escogió).
+    </p>
+  </div>
+  
+</body>
+</html>

@@ -1,0 +1,77 @@
+.searcher {
+  font-family: 'IBM Plex Mono', monospace;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.searcher-area {
+  position: absolute;
+  height: 10%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.searcher-area input {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: bold;
+  width: 70%;
+  height: 2em;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  border: 1px solid var(--accent);
+}
+
+.searcher-area input:focus {
+  outline: none;
+}
+
+.searcher-results {
+  position: absolute;
+  height: 90%;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  padding: 1em;
+  overflow: auto;
+
+  /* Hide ugly scrollbar */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Hide ugly scrollbar */
+.searcher-results::-webkit-scrollbar {
+  display: none;
+}
+
+.password-element {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.password-content {
+  font-size: 1.1em;
+  padding: 0.4em;
+  margin: 0.2em 0;
+  border-radius: 5px;
+  cursor: pointer;
+  user-select: none;
+  color: var(--light-font);
+  background-color: var(--accent);
+}
+
+.password-content:hover {
+  background-color: var(--accent-hover);
+}
+
+.password-frequency {
+  font-size: 0.6em;
+  color: var(--dark-font);
+}

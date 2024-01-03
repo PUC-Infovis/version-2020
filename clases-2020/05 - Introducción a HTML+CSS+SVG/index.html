@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Introducción a HTML, CSS y SVG</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../dist/reveal.css">
+		<link rel="stylesheet" href="../dist/theme/fdo.css" id="theme">
+		<link rel="stylesheet" href="../plugin/highlight/dracula.css">
+	</head>
+
+	<body>
+
+		<!-- ?print-pdf -->
+
+		<div class="reveal">
+
+			<div class="slides">
+
+				<section data-auto-animate data-auto-animate-unmatched="fade">
+					<h3>¡Hola 👋! Espera mientras comienza la sesión.</h3>
+				</section>
+
+				<section data-auto-animate data-auto-animate-unmatched="fade">
+					<h3>Antes que todo, ¿cómo están?</h3>
+				</section>
+
+				<section data-auto-animate data-auto-animate-unmatched="fade">
+					<h1>Visualización de Información</h1>
+					<h2 style="color: black;">IIC2026 2020-2</h2>
+				</section>
+
+				<section data-auto-animate data-auto-animate-unmatched="fade">
+					<h1>Introducción a HTML, CSS y SVG</h1>
+					<h1 style="font-size: 1.6em; color: black;">Visualización de Información</h1>
+					<h2 style="font-size: 1.3em; color: black;">IIC2026 2020-2</h2>
+				</section>
+
+				<section data-auto-animate data-auto-animate-unmatched="fade">
+					<h3>Repaso</h3>
+				</section>
+
+				<section data-auto-animate data-auto-animate-unmatched="fade">
+					<h3>Repaso</h3>
+
+					<br>
+
+					<h4 style="color: black;">1. HTML</h4>
+					<h4 style="color: black;">2. CSS</h4>
+					<h4 style="color: black;">3. SVG</h4>
+					<h4 style="color: black;">4. Desarrollo web</h4>
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+					<h3>¿Visualización o desarrollo web? 🤔</h3>
+
+					<br>
+
+					<ul>
+						<li>La web es uno de los medios de comunicación más importantes.</li>
+						<li>La web es transitada de forma masiva todos los días.</li>
+						<li>La web permite formas de interacción que sobrepasan otros medios.</li>
+						<li>¡La web es un lugar perfecto para visualización!</li>
+					</ul>
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+
+					<h3>Implementación algorítmica</h3>
+					<ul>
+						<li>Código.</li>
+						<li>Nivel técnico tecnológico.</li>
+						<li>Se revisa eficiencia, escalabilidad y dificultad.</li>
+					</ul>
+					
+					
+
+					<div data-id="1" style="background: rgba(255, 165, 0, 0.3); color: rgba(0, 0, 0, 0.3); width: 55%; padding: .5em; margin: .5em; opacity: 0.8; margin-top: 3em;">
+						Caracterización de dominio
+						<div style="background: rgba(255, 255, 0, 0.3); color: rgba(0, 0, 0, 0.3); width: 90%; padding: .5em; margin: .5em;">
+							Abstracción de datos y tareas
+							<div style="background: rgba(173, 255, 47, 0.3); color: rgba(0, 0, 0, 0.3); width: 90%; padding: .5em; margin: .5em;">
+								Codificación visual y de interacción
+								<div style="background: rgba(216, 112, 147, 1); color: rgba(0, 0, 0, 1); width: 90%; padding: .5em; margin: .5em;">
+									Implementación algorítmica
+								</div>
+							</div>
+						</div>
+					</div>
+					
+				</section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+					<h3>Desarrollo web</h3>
+
+					<br>
+
+					<ul>
+						<li>Disciplina de quienes crean páginas web.</li>
+						<li>Utilizan técnologías web: HTML, CSS y JavaScript (al menos).</li>
+						<li>¡Un mundo gigante para aprender!</li>
+					</ul>
+        </section>
+        
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+					<h3>HTML</h3>
+
+					<br>
+
+					<pre data-id="code"><code data-trim data-line-numbers class="html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;Título de documento completo&lt;/title&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;
+    
+    &lt;h1&gt; Un t&iacute;tulo &lt;/h1&gt;
+
+    &lt;p&gt; Un p&aacute;rrafo &lt;/p&gt;
+
+    &lt;h2&gt; Un subt&iacute;tulo &lt;/h2&gt;
+
+    &lt;p&gt; Otro p&aacute;rrafo &lt;/p&gt;
+
+    &lt;ul&gt; 
+      &lt;li&gt;Primer elemento de lista.&lt;/li&gt;
+      &lt;li&gt;Segundo elemento de lista.&lt;/li&gt;
+      &lt;li&gt;Tercer elemento de lista.&lt;/li&gt;
+    &lt;/ul&gt;
+    
+  &lt;/body&gt;
+
+&lt;/html&gt;
+					</code></pre>
+
+        </section>
+        
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+					<h3>CSS</h3>
+
+					<br>
+
+					<pre data-id="code"><code data-trim data-line-numbers class="css">
+p {
+  color: blue;
+}
+
+li, h1, h2 {
+  color: blue;
+}
+
+.importante {
+  color: red;
+}
+
+#principal {
+  color: green;
+}
+
+body {
+  background-color: #eeeeee;
+  font-family: monospace;
+  font-size: 20px;
+}
+					</code></pre>
+
+        </section>
+        
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+
+          <h3>SVG</h3>
+
+          <br>
+
+					<pre data-id="code1"><code data-trim data-line-numbers class="html">
+<svg width="500" height="500">
+  <rect x="200" y="100" width="300" height="100" fill="red"></rect>
+  <circle cx="100" cy="100" r="50" fill="blue"></circle>
+  <text x="100" y="300">¡Hola!</text>
+</svg>
+          </code></pre>
+          
+          <svg width="450" height="400">
+            <rect x="100" y="100" width="200" height="200" fill="white" stroke="black"></rect>
+            <rect x="180" y="140" width="120" height="40" fill="red"></rect>
+            <circle cx="140" cy="140" r="20" fill="blue"></circle>
+            <text x="140" y="220" style="font-size: 0.5em;">¡Hola!</text>
+
+            <text x="50" y="80">(0, 0)</text>
+						<text x="300" y="80">(500, 0)</text>
+						<text x="30" y="330">(0, 500)</text>
+            <text x="300" y="330">(500, 500)</text>
+
+            <line x1="110" y1="75" x2="290" y2="75" stroke="black" stroke-dasharray="4"></line>
+            <line x1="280" y1="70" x2="290" y2="75" stroke="black"></line>
+            <line x1="280" y1="80" x2="290" y2="75" stroke="black"></line>
+
+            <line x1="75" y1="95" x2="75" y2="300" stroke="black" stroke-dasharray="4"></line>
+            <line x1="70" y1="290" x2="75" y2="300" stroke="black"></line>
+            <line x1="80" y1="290" x2="75" y2="300" stroke="black"></line>
+          </svg>
+        </section>
+
+
+				<section data-auto-animate data-auto-animate-unmatched="fade">
+					<h3>Inspector de elementos</h3>
+				</section>
+        
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+					<h3>Desarrollo web</h3>
+
+					<br>
+
+					<p>¡Un mundo gigante para aprender!</p>
+
+					<ul>
+						<li><a href="https://developer.mozilla.org/es/">Tutoriales de MDN web docs</a></li>
+						<li><a href="https://developer.mozilla.org/es/docs/Learn/Getting_started_with_the_web/HTML_basics">HTML (MDN web docs)</a></li>
+						<li><a href="https://developer.mozilla.org/es/docs/Learn/Getting_started_with_the_web/CSS_basics/">CSS (MDN web docs)</a></li>
+						<li><a href="https://developer.mozilla.org/es/docs/Glossary/SVG ">SVG (MDN web docs)</a></li>
+					</ul>
+				</section>
+        
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+					<h3>¿Más dudas?</h3>
+
+				</section>
+
+
+				<section data-auto-animate data-auto-animate-unmatched="fade">
+					<h3>¡Visualización del día!</h3>
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+					<h3>¡Visualizaciones del día!</h3>
+        </section>
+        
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+					<h3>¡Visualizaciones del día!</h3>
+          
+          <img src="./assets/piratas.svg" height="400px"/>
+
+          <p style>Propuesto por entidad anónima.</p>
+					<p style="font-size: 0.5em; color: grey">(Fuente: <a href="https://commons.wikimedia.org/wiki/File:PiratesVsTemp(en).svg">Commons de Wikimedia</a>)</p>
+				
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+					<h3>¡Visualizaciones del día!</h3>
+          
+          <img src="./assets/the_economist.png" height="400px"/>
+
+          <p style>Propuesto por estudiante Luciano Aguilera.</p>
+					<p style="font-size: 0.5em; color: grey">(Fuente: <a href="https://projects.economist.com/us-2020-forecast/president">The Economist: Forecasting the US elections</a>)</p>
+				
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+          <h3>Próximos eventos:</h3>
+          
+          <br>
+
+          <p>Jueves 27 de agosto termina plazo de <span style="color: #f92696;">Entrega 1</span>.</p>
+
+          
+        </section>
+        
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+          <h3>Próximos eventos:</h3>
+          
+          <br>
+
+          <p>Jueves 27 de agosto termina plazo de <span style="color: #f92696;">Entrega 1</span>.</p>
+
+          <p>Jueves 27 de agosto se publica el enunciado de <span style="color: #f92696;">Hito 1</span>.</p>
+
+          
+        </section>
+        
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+          <h3>Próximos eventos:</h3>
+          
+          <br>
+          <p>Jueves 27 de agosto termina plazo de <span style="color: #f92696;">Entrega 1</span>.</p>
+
+          <p>Jueves 27 de agosto se publica el enunciado de <span style="color: #f92696;">Hito 1</span>.</p>
+
+          <p>Ya que nos encontramos en semana universitaria (hasta viernes 28 de agosto), la fecha de entrega de <span style="color: #f92696;">Hito 1</span> queda para dos semanas a partir de viernes 28 de agosto. </p>
+          
+				</section>
+        
+
+				<section data-auto-animate data-auto-animate-unmatched="fade">
+					<h1>Introducción a HTML, CSS y SVG</h1>
+					<h1 style="font-size: 1.6em; color: black;">Visualización de Información</h1>
+					<h2 style="font-size: 1.3em; color: black;">IIC2026 2020-2</h2>
+					<br>
+					<h2 style="font-size: 1.3em;">¡Nos vemos!</h2>
+				</section>
+
+
+			</div>
+
+		</div>
+
+		<script src="../dist/reveal.js"></script>
+		<script src="../plugin/highlight/highlight.js"></script>
+		<script>
+			Reveal.initialize({
+				center: true,
+				hash: true,
+				plugins: [ RevealHighlight ]
+			});
+		</script>
+
+	</body>
+</html>

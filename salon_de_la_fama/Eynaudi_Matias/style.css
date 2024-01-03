@@ -1,0 +1,145 @@
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+.title {
+  text-align: center;
+}
+
+.context-container {
+  padding: 12px;
+}
+
+.paper {
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid grey;
+  width: 55%;
+}
+
+.paper > * {
+  margin: 0;
+  padding: 0;
+}
+
+.paper > h4 {
+  margin-bottom: 12px;
+}
+
+.divider {
+  height: 2px;
+  background-color: grey;
+  margin: 0px 12px;
+}
+
+.task-container {
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: auto;
+}
+
+.subtitle {
+  margin: 24px 12px 0 12px;
+}
+
+.data-type-container {
+  padding: 12px;
+}
+
+.data-type-container > .subtitle {
+  margin: 12px 0;
+}
+
+.attr-type-container {
+  padding: 12px;
+}
+
+.attr-type-container > .subtitle {
+  margin: 12px 0;
+}
+
+.task {
+  padding: 12px;
+  width: 350px;
+  border: 1px solid grey;
+  border-radius: 12px;
+}
+
+.task > h4 {
+  margin-bottom: 12px;
+}
+
+.bonus-task {
+  width: 50%;
+  margin: auto;
+  padding: 12px;
+  border: 1px solid grey;
+  border-radius: 12px;
+}
+
+.bonus-task > h4 {
+  margin-bottom: 12px;
+}
+
+h4 {
+  margin: 0
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.small-divider {
+  height: 1px;
+  background-color: grey;
+  margin: 12px 0;
+}
+
+.tag {
+  width: 100px;
+  border-radius: 24px;
+  background: lightblue;
+  padding: 6px 12px;
+}
+
+.attr-element-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.attr-type-card {
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid grey;
+  margin: 6px;
+  min-width: 400px
+}
+
+.attr-name {
+  font-weight: 600;
+  font-style: italic;
+}
+
+p {
+  margin: 0;
+  line-height: 1.75rem;
+  text-align: justify;
+}
+
+.attr-element-container :nth-child(2) {
+  font-style: italic;
+}

@@ -1,0 +1,71 @@
+#value-range {
+    margin-left: 28%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    fill: gray;
+    color: #545454;
+    margin-bottom: 0px;
+}
+
+.col-sm {
+    text-align: center;
+    align-items: center;
+    fill: tomato;
+    background-color: #545454;
+    margin: 0px;
+}
+
+#titulo {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    fill: #545454;
+    /* text-align: center; */
+    margin-left: 20%;
+    color: #545454;
+    margin-top: 0px;
+    /* background-color: white; */
+}
+/* body{
+    background-color: black;
+} */
+#legend-line-chart{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+}
+
+div.tooltip {   
+    position: absolute;           
+    text-align: center;           
+    width: 60px;                  
+    height: fit-content;                 
+    padding: 2px;             
+    font: 12px sans-serif;        
+    background: lightsteelblue;   
+    border: 0px;      
+    border-radius: 8px;           
+    pointer-events: none;    
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+  
+  }
+
+  body { 
+      /* background-color: #545454; */
+      margin: 0px;
+  }
+ 
+#contenedorSVG {
+    /* box-shadow: -15px 14px 20px -10px rgba(0,0,0,1); */
+    height: 601px;
+    /* margin-top: 10px; */
+    background-color: white;
+}
+/* #contenedorSVG:before {
+    content: "";
+    background-color: white;
+    top: -100px;
+    height: 100px;
+    width: 100%;
+    position: absolute;
+ } */

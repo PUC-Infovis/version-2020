@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Visualización Pokémon</title>
+        <link rel="stylesheet" href="visualization.css" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/d3/6.2.0/d3.min.js"
+            integrity="sha512-C2RveGuPIWqkaLAluvoxyiaN1XYNe5ss11urhZWZYBUA9Ydgj+hfGKPcxCzTwut1/fmjEZR7Ac35f2aycT8Ogw=="
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body>
+      <div class="sidebar">
+        <div class="text-container">
+          <h2 class="title">Pokemon Types</h2>
+          <p class="caption">Select one or more types to filter</p>
+        </div>
+        <div class="types" id="types"></div>
+        <div class="divider white"></div>
+        <div class="text-container">
+          <p >Search by name</p>
+          <input type="text" class="input" id="search-bar" placeholder="Nombre..." />
+        </div>
+        <div class="divider white"></div>
+        <!-- <div class="text-container">
+          <p class="title">Build your own Poke-Team!</p>
+        </div>
+        <div id="team" class="team-container">
+
+        </div> -->
+      </div>
+      <div class="content">
+          <div class="cards" id="cards"></div>
+        <div class="footer" id="footer">
+            <div class="comparator" id="comparator">
+              <h4 class="comp-name"></h4>
+              <p class="comp-type-1"></p>
+              <p class="comp-type-2"></p>
+            </div>
+            <!-- <div class="add-button" id="add-button" onclick="addToTeam()">
+              <p>Add to Team</p>
+            </div> -->
+        </div>
+      </div>
+    </body>
+    <script src="main.js"></script>
+    <script src="footer_logic.js"></script>
+</html>

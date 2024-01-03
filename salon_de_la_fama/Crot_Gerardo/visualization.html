@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exámen</title>
+        <link rel="icon" href="./assets/images/logo.ico">
+        <meta charset="UTF-8">
+        <link href="assets/styles/style.css" rel="stylesheet" type="text/css">
+        <link href="https://allfont.es/allfont.css?fonts=montserrat" 
+            rel="stylesheet" type="text/css" 
+        />
+        <script src="https://d3js.org/d3.v6.min.js"></script>
+    </head>
+    <body>
+        <div id="navbar">
+            <div id="logo">
+                <a href="index.html#title">Exámen</a>
+            </div>
+            <ul>
+                <li><a href="#general">Cons. Generales</a></li>
+                <li><a href="#visualization">Visualización</a></li>
+                <li><a href="index.html">Informe</a></li>
+            </ul>
+        </div>
+        <div id="title">
+            <h1>Visualización de Estadísticas en Pokémon</h1>
+            <h3>Por: Gerardo Crot Rojas</h3>
+            <h3>IIC2026 2020-2</h3>
+        </div>
+        <div id="general">
+            <h2>Consideraciones generales</h2>
+            <p>
+                Este trabajo de visualización consiste en un panel de vista para una selección específica.
+                Se hizo con la intención de tener la información recopilada de los pokémon en un lugar 
+                centralizado y sin tantas cargas de por medio usando el dinamismo que provee D3 y JavaScript.
+                Se logró todo lo solicitado en el enunciado y la visualización corresponde a lo planteado a 
+                las tareas e idioms específicos.
+            </p>
+            <p>
+                Personalmente he sido un gran fanático de los videojuegos de esta saga desde que tuve un 
+                computador (y un emulador de Gameboy Advance), y me interesó ocupar este dataset de 
+                estadísticas para tener una base de datos local y con una visualización intuitiva, y 
+                así tener un mayor conocimiento de los pokemones actuales y poder ver sus estadísticas 
+                tanto para entrenar y armar equipos en el juego. En resumen, me gusta pokémon y quise 
+                armarme una visualización que me sirviera cuando juegue.
+            </p>
+        </div>
+        <div id="visualization">
+            <h2>Implementación algorítmica</h2>
+            <div id="pokemon-container">
+                <div id="pokemon-list" class="svg-visualization">
+                    <div id="filters">
+                        <div id="search-container" class="filters">
+                            <p>Busca por texto:</p>
+                            <input id="text-search" type="text" placeholder="Buscar...">
+                            <a id='search-button'>Buscar</a>
+                        </div>
+                        <div id='sort-container' class="filters">
+                            <p>Ordenar por:</p>
+                            <select id="sort-pokemon-filter">
+                                <option>Ninguna</option>
+                                <option>Puntos Totales</option>
+                                <option>HP</option>
+                                <option>Ataque</option>
+                                <option>Defensa</option>
+                                <option>Ataque Esp.</option>
+                                <option>Defensa Esp.</option>
+                                <option>Velocidad</option>
+                            </select>
+                        </div>
+                        <div id='clear-container' class="filters">
+                            <a id='clear-button'>Limpiar búsqueda</a>
+                        </div>
+                    </div>
+                    <div id="pokemon-selections"></div>
+                </div>
+                <div id="pokemon-stats" class="svg-visualization"></div>
+            </div>
+        </div>
+        <div id="footer">
+            <h4>Gerardo Crot Rojas ©</h4>
+        </div>
+        <script src="assets/scripts/index.js" type="module"></script>
+    </body>
+</html>

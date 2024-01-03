@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Informe</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style/styleInforme.css'>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,400;0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">    
+</head>
+<body>
+
+    <h1>Informe Examen</h1>
+    <div class="first-part">
+        <h2>
+            Caracterización de Dominio
+        </h2>
+        <p>
+            En esta entrega la situación a modelar es "qué tan amadas se sienten las personas de distintas nacionalidades". 
+            Estableciendo además una relación entre el sentimiento de amor por país con el nivel de felicidad de cada uno. 
+            <br>            
+            <br>
+            Los datos provenien de dos datasets distintos. El del amor fue obtenido a través de una encuesta realizada por Gallup (empresa de análisis y asesoría)
+            entre los años 2006 y 2007 en distintos países del mundo. Por lo tanto, este dataset entrega información acerca de la percepción que tienen
+            las personas. 
+            <br>
+            <br>
+            Por otro lado, el dataset de la felicidad surge de un estudio hecho en el 2015, en el que se consideran factores como el PIB per capita,
+            la expectativa de vida, la libertad, entre otros, para asignarle cierto nivel de felicidad a cada país.
+            <br>
+            <br>
+            Otro dataset que se ocupó es un geoJSON que entrega la ubicación espacial de los países.  
+            <br><br>
+            La situación se abordó con una perspectiva de poder ser presentada a cualquier usuario. Por lo tanto, esto se tendrá en mente a lo 
+            largo de todo los pasos del modelo. Por ejemplo, entregándole guías e instrucciones al usuario dentro de la herramienta. 
+            <br>
+            <br>
+            <span class="negrita">*Nota Personal:</span> Va especialmente dedicado a todos mis romantiques que aun creen en la fuerza del amor.
+            <br>
+            <br>
+            Por lo mismo, se intentará que la herramienta muestre información que sea desconocida por el usuario y que lo sorprenda.
+        </p>
+    </div>
+    <div class="second-part">
+        <h2>
+            Abstracción de Tareas
+        </h2>
+        <p>
+            Estas son las tareas que la herramienta le permitirá al usuario hacer:
+        </p>
+        <ul>
+            <li>
+                Descubrir si existe una correlación entre las Puntuaciones de Amor (Percent Feeling Love) y Felicidad (Happiness Score). 
+            </li>
+            <li>
+                Identificar extremos en la diferencia de las puntuaciones de amor y felicidad (Dif Love Happ).
+            </li>
+            <li>
+                Localizar a un país dentro del ranking de amor y del ranking de felicidad (característica).
+            </li>
+            <li>
+                Descubrir como distribuye la puntuación de amor por los países.
+            </li>
+        </ul>
+
+        <h2>
+            Abstracción de Datos
+        </h2>
+        <p>
+            Se ocuparon 2 datsets
+            <ul>
+                <li>
+                    lovehappy_data3.csv: 
+                    <ul>
+                        <li>
+                            Tabular
+                        </li>
+                        <li>
+                            Hay datos de tipo item (países) y atributos (Love Rank, Happy Rank, etc)
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    countries.geojson: 
+                    <ul>
+                        <li>
+                            Geométrico
+                        </li>
+                        <li>
+                            Hay datos de tipo item (países), atributos (ADMIN) y de posición (lat y long)
+                        </li>
+                    </ul>
+                </li>
+            </ul> 
+        </p>
+
+        <div>
+            <p>
+                <h4>Datos Primer Dataset</h4>
+            </p>
+            <p>
+                Country 
+                <ul>
+                    <li>
+                        Categórico: es un nombre, no se puede establecer un orden intrínseco.
+                    </li>
+                    <li>
+                        Llave: Para esta entrega se ocupó el nombre como identificador de este dataset. Debido a la extensión del dataset, 
+                        se pudo comprobar fácilmente que era un dato que no se repetía. 
+                    </li>
+                </ul>
+            </p>
+            <p>
+                Love Rank/Happiness Rank
+                <ul>
+                    <li>
+                        Ordenado: número que denota una posición dentro de un rango, se puede establecer un orden intrínseco.
+                    </li>
+                    <li>
+                        Ordinal: Es un ranking, por lo que no tiene comparación aritmética.
+                    </li>
+                    <li>
+                        Secuencial: Inicia en 0 y se extiende hasta el último país del ranking. No tiene puntos medios de divergencia de datos.
+                    </li>
+                    <li>
+                        No cíclico: No está en su naturaleza repetirse una vez alcanzado el final. 
+                    </li>
+                    <li>
+                        Valor: No ocurre en este caso, pero podría pasar que dos países tengan la misma cantidad de puntos. En cuyo caso ocuparían
+                        el mismo lugar en el ranking. Por lo tanto, no puede ser llave.  
+                    </li>
+                </ul>
+            </p>
+            <p>
+                Percent Feeling Love/Happiness Score 
+                <ul>
+                    <li>
+                        Ordenado: valor numérico que denota cantidades, tiene un orden intrínseco.
+                    </li>
+                    <li>
+                        Cuantitativo: Es un puntaje. Es posible realizar operaciones aritméticas (sacar promedios por ejemplo)
+                    </li>
+                    <li>
+                        Secuencial: Inicia en 0 y se extiende hasta el 10. No tiene puntos medios de divergencia de datos.
+                    </li>
+                    <li>
+                        No cíclico: No está en su naturaleza repetirse una vez alcanzado el final. 
+                    </li>
+                    <li>
+                       Valor: No es propio solo de un país.
+                    </li>
+                </ul>
+            </p> 
+            <p>
+                Dif Love Happ 
+                <ul>
+                    <li>
+                        Ordenado: valor numérico que denota cantidades, tiene un orden intrínseco.
+                    </li>
+                    <li>
+                        Cuantitativo: Es una diferencia. Es posible realizar operaciones aritméticas (sacar promedios por ejemplo)
+                    </li>
+                    <li>
+                        Secuencial: Inicia en 0 y se podría extender hasta 10. No tiene puntos medios de divergencia de datos.
+                    </li>
+                    <li>
+                        No cíclico: No está en su naturaleza repetirse una vez alcanzado el final. 
+                    </li>
+                    <li>
+                       Valor: No es propio solo de un país.
+                    </li>
+                </ul>
+            </p>  
+            <p>
+                <h4>Datos segundo dataset</h4>
+            </p>
+            <p>
+                ADMIN 
+                <ul>
+                    <li>
+                        Categórico: es un nombre, no se puede establecer un orden intrínseco.
+                    </li>
+                    <li>
+                        Llave: Para esta entrega se ocupó el nombre como identificador de este dataset. Debido a la extensión del dataset, 
+                        se pudo comprobar fácilmente que era un dato que no se repetía. 
+                    </li>
+                </ul>
+            </p>            
+        </div>
+        <p>
+        
+            latitud, longitud:
+            <ul>
+                <li>
+                    <span>Ordenado:</span> es un valor numérico que representa distancia (en grados) por lo que tiene un orden intrínseco.
+                </li>
+                <li>
+                    <span>Cuantitativo:</span> al ser grados que miden distancia las operaciones aritméticas que se hagan tienen sentido. La diferencia entre las latitudes/longitudes tiene un significado (distancia en grados entre lugares). 
+                </li>
+                <li>
+                    <span>Divergencia:</span> hay un cero asociado a la latitud/longitud (ecuador/meridiando de greenwitch).
+                </li>
+                <li>
+                    <span>Cíclico:</span> por la forma de la tierra, al recorrerla en su totalidad, se vuelve a llegar al punto inicial. 
+                </li>                <li>
+                    <span>Valor:</span> tiene un rol de posicionamiento más que de identificación. 
+                </li>
+            </ul>
+        </p>
+
+    </div>
+    <div class="third-part">
+        <h2>
+            Codificación Visual y de Interacción
+        </h2>
+        <h4>
+            Para la tarea 1
+        </h4>
+        
+        <div class="negrita">
+            Idiom Visual: Gráfico de dispersión
+        </div>       
+        <div class="div-table">
+        <div class="div-table-row">
+            <div class="div-table-col">
+                MARCA
+            </div>
+            <div class="div-table-col">
+                CANAL
+            </div>
+        </div>
+        <div class="div-table-row">
+            <div class="div-table-col">
+                Puntos
+            </div>
+            <div class="div-table-col">
+                Canal Identidad > Posición en eje x e y, mustra en que puntuación de amor y felicidad se encuentra cada país (att categórico). 
+            </div>
+        </div>
+        <div class="div-table-row">
+            <div class="div-table-col">
+                línea diagonal
+            </div>
+            <div class="div-table-col">
+                Canal Magnitud > Posición en eje x e y (de su punto inicial y final), indica donde coinciden los valores de ambas puntuaciones (cantidades, att ordenado). Permite 
+                ver con mayor claridad si es que la puntación de amor de un punto disminuyó o aumentó en comparación con la puntuación de felicidad.
+            </div>
+        </div>
+        </div>
+        <h4>
+            Para la tarea 2
+        </h4>
+        
+        <div class="negrita">
+            Idiom Visual: Gráfico de dispersión
+        </div>   
+        <div class="div-table">
+            <div class="div-table-row">
+                <div class="div-table-col">
+                    MARCA
+                </div>
+                <div class="div-table-col">
+                    CANAL
+                </div>
+            </div>
+        <div class="div-table-row">
+            <div class="div-table-col">
+                Puntos
+            </div>
+            <div class="div-table-col">
+                Canal Identidad> Color, para mostrar los países con mínima y máxima diferencia entre las puntuaciones. Color como canal para distinguirlo de otros puntos.
+                Es un att categórico y se responde al "qué es" (máx o mín)
+            </div>
+        </div>
+
+        <div class="div-table-row">
+            <div class="div-table-col">
+                líneas verticales
+            </div>
+            <div class="div-table-col">
+                Canal Magnitud > largo, muestra cuanta diferencia hay entre ambas puntuaciones para cada país. Responde al "cuánto hay de algo". 
+            </div>
+        </div>
+        <div class="div-table-row">
+            <div class="div-table-col">
+                líneas verticales
+            </div>
+            <div class="div-table-col">
+                Canal Identidad > posición en eje x e y (de su punto inicial y final), para asociarlo al país que corresponde la diferencia. 
+                Responde al "qué es", se quiere asociar un att categórico a la línea. 
+            </div>
+        </div>
+        <div class="div-table-row">
+            <div class="div-table-col">
+                líneas verticales
+            </div>
+            <div class="div-table-col">
+                Canal Identidad > Color, para mostrar los países con mínima y máxima diferencia entre las puntuaciones. Se decide pintar también la línea 
+                para que quede claro que se está haciendo alusión a la "diferencia entre puntuaciones" y no al valor de las puntuaciones 
+                de forma particular.
+            </div>
+        </div>
+    </div>
+    <h4>
+        Para la tarea 3
+    </h4>
+    
+    <div class="negrita">
+        Idiom Visual: Gráfico de dispersión
+    </div>   
+    <div class="div-table">
+        <div class="div-table-row">
+            <div class="div-table-col">
+                Texto Nombres Países
+            </div>
+            <div class="div-table-col">
+                Canal Identidad > Posición en eje x e y, muestra en que puntuación de amor y felicidad se encuentra cada país (att categórico), 
+                lo ubica dentro de la jerarquía. 
+            </div>
+        </div>
+            
+        </div>
+        <br>
+        <br>
+        <div>
+            <span class="negrita">Idiom Interacción: </span>
+            <ul>
+                <li>
+                    Selección, despliega información detallada del país representado por un punto/texto
+                </li>
+                <li>
+                    Navegación (Zoom y Panning), permite agregar más información al idiom (que país representa cada punto) necesaria para facilitar la tarea 3.
+
+                </li>
+            </ul>
+        </div> 
+        
+        <h4>Para la tarea 4</h4>
+        
+        <div class="negrita">
+            Idiom Visual: Mapa
+        </div>
+        <div class="div-table">
+        <div class="div-table-row">
+        <div class="div-table-col">
+            MARCA
+        </div>
+        <div class="div-table-col">
+            CANAL
+        </div>
+        </div>
+        <div class="div-table-row">
+        <div class="div-table-col">
+            Área 
+        </div>
+        <div class="div-table-col">
+            Canal Magnitud > Matiz de Color, representa una cantidad, la puntuación de amor de cada país. 
+        </div>
+        </div>
+        </div>
+        <br>
+        <br>
+        <div>
+            <div><span class="negrita">Idiom Interacción: </span></div>
+            <ul>
+                <li>
+                    Selección, despliega a que país corresponde el área seleccionada e información detallada del país.
+                </li>
+                <li>
+                    Navegación (Zoom y Panning), para poder ver las áreas más pequeñas
+                </li>
+            </ul>
+ 
+
+        </div>
+    </div>
+    
+</body>
+</html>

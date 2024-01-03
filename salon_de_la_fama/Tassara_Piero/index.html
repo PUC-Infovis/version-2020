@@ -1,0 +1,45 @@
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Examen - Piero Tassara</title>
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <link rel="stylesheet" href="./styles/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="text-container">
+    <h1>Examen - IIC2026 - Visualización de Información</h1>
+    <div class="sub-title">
+      <p>Piero Stefano Tassara Bordagaray</p>
+    </div>
+    <h2>Incendios Forestales en Chile</h2>
+  </div>
+  
+  <div id="national-temp" class="vis-container">
+    <div id="time-plot"></div>
+  </div>
+
+  <div class="vis-container">
+    <div class="screen-container">
+      <h3>Superficie afectada por comuna (ha)</h3>
+      <h4>(2002 - 2020)</h4>
+        <div id="map-svg"></div>
+    </div>
+    <div class="screen-container" id="comunas-plot-container">
+      <h3>Tipo de superficie afectada por temporada</h3>
+      <div id="plot-svg"></div>
+      <div id="menu">
+        <p>Seleccione la temporada:</p>
+      </div>
+    </div>
+  </div>
+  <div class="informe">
+
+  </div>
+</body>
+<script src="scripts/mapa_comunas.js"></script>
+<script src="scripts/temporal_nacional.js"></script>
+
+</html>

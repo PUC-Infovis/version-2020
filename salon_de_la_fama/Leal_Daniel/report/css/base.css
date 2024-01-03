@@ -1,0 +1,23 @@
+:root {
+  --light-color: #f0f0f0;
+  --dark-color: #e6e6e6;
+  --accent-color: #6200ee;
+}
+
+body {
+  background-color: var(--light-color);
+  font-family: 'Karla', sans-serif;
+  text-align: justify;
+  font-size: 1.3em;
+  line-height: 1.3em;
+
+  /* No selection */
+}
+
+.container {
+  flex-grow: 1;
+  margin: 0 auto;
+  width: auto;
+  height: 100%;
+  max-width: 1100px;
+}

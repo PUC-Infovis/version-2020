@@ -1,0 +1,287 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Examen - Visualización de la Información</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/style.scss" />
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+  </head>
+
+  <body>
+    <div class="document-title">
+      <h1>Examen - Visualización de la Información</h1>
+      <p>Agustín Krebs Castro</p>
+    </div>
+    <div class="main-content">
+    <div class="music-trends-container">
+      <h2>Tendencias temporales en la música</h2>
+        <div class="music-trends-content-container">
+          <svg class="music-trends-svg"></svg>
+          <div class="checkboxes-container">
+            <div class="checkbox-and-text-container" id="valence">
+              <input class="attribute-checkbox" type="checkbox" name="valence" value="valence"><p class="checkbox-text">Valence</p>
+            </div>
+            <div class="checkbox-and-text-container" id="acousticness">
+              <input class="attribute-checkbox" type="checkbox" name="acousticness" value="acousticness"><p class="checkbox-text">Acousticness</p>
+            </div>
+            <div class="checkbox-and-text-container" id="danceability">
+              <input class="attribute-checkbox" type="checkbox" name="danceability" value="danceability"><p class="checkbox-text white">Danceability</p>
+            </div>
+            <div class="checkbox-and-text-container" id="energy">
+              <input class="attribute-checkbox" type="checkbox" name="energy" value="energy"><p class="checkbox-text white">Energy</p>
+            </div>
+            <div class="checkbox-and-text-container" id="explicit">
+              <input class="attribute-checkbox" type="checkbox" name="explicit" value="explicit"><p class="checkbox-text white">Explicit</p>
+            </div>
+            <div class="checkbox-and-text-container" id="instrumentalness">
+              <input class="attribute-checkbox" type="checkbox" name="instrumentalness" value="instrumentalness"><p class="checkbox-text white">Instrumentalness</p>
+            </div>
+            <div class="checkbox-and-text-container" id="liveness">
+              <input class="attribute-checkbox" type="checkbox" name="liveness" value="liveness"><p class="checkbox-text">Liveness</p>
+            </div>
+            <div class="checkbox-and-text-container" id="speechiness">
+              <input class="attribute-checkbox" type="checkbox" name="speechiness" value="speechiness"><p class="checkbox-text">Speechiness</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="artists-graph-container">
+        <h2>Similitud entre artistas</h2>
+        <svg class="artists-graph-svg"></svg>
+        <div class="graph-info-container">
+          <div class="hover-container">
+            <p class="artists-graph-hover-text"></p>
+          </div>
+          <table class="selected-artists-table">
+            <tr>
+              <th>Artist</th>
+              <th>Valence</th>
+              <th>Acousticness</th>
+              <th>Danceability</th>
+              <th>Energy</th>
+              <th>Instrumentalness</th>
+              <th>Liveness</th>
+              <th>Loudness</th>
+              <th>Speechiness</th>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="genres-filter-container">
+        <h2>Filtrado de géneros musicales</h2>
+        <div class="hover-container">
+          <p class="hover-genre-text"></p>
+        </div>
+        <div class="svg-and-sliders-container">
+          <svg class="genres-filter-svg"></svg>
+          <div class="atributes-sliders-container">
+            <div class="slider-container">
+              <input class="attribute-slider" min="0" max="1" step="0.01" value="0" type="range" id="min-valence">Min Valence
+            </div>
+            <div class="slider-container">
+              <input class="attribute-slider" min="0" max="1" step="0.01" value="1" type="range" id="max-valence">Max Valence
+            </div>
+            <div class="slider-container">
+              <input class="attribute-slider" min="0" max="1" step="0.01" value="0" type="range" id="min-acousticness">Min Acousticness
+            </div>
+            <div class="slider-container">
+              <input class="attribute-slider" min="0" max="1" step="0.01" value="1" type="range" id="max-acousticness">Max Acousticness
+            </div>
+            <div class="slider-container">
+              <input class="attribute-slider" min="0" max="1" step="0.01" value="0" type="range" id="min-danceability">Min Danceability
+            </div>
+            <div class="slider-container">
+              <input class="attribute-slider" min="0" max="1" step="0.01" value="1" type="range" id="max-danceability">Max Danceability
+            </div>
+            <div class="slider-container">
+              <input class="attribute-slider" min="0" max="1" step="0.01" value="0" type="range" id="min-energy">Min Energy
+            </div>
+            <div class="slider-container">
+              <input class="attribute-slider" min="0" max="1" step="0.01" value="1" type="range" id="max-energy">Max Energy
+            </div>
+            <div class="slider-container">
+              <input class="attribute-slider" min="0" max="1" step="0.01" value="0" type="range" id="min-instrumentalness">Min Instrumentalness
+            </div>
+            <div class="slider-container">
+              <input class="attribute-slider" min="0" max="1" step="0.01" value="1" type="range" id="max-instrumentalness">Max Instrumentalness
+            </div>
+            <div class="slider-container">
+              <input class="attribute-slider" min="0" max="1" step="0.01" value="0" type="range" id="min-liveness">Min Liveness
+            </div>
+            <div class="slider-container">
+              <input class="attribute-slider" min="0" max="1" step="0.01" value="1" type="range" id="max-liveness">Max Liveness
+            </div>
+            <div class="slider-container">
+              <input class="attribute-slider" min="0" max="1" step="0.01" value="0" type="range" id="min-speechiness">Min Speechiness
+            </div>
+            <div class="slider-container">
+              <input class="attribute-slider" min="0" max="1" step="0.01" value="1" type="range" id="max-speechiness">Max Speechiness
+            </div>
+          </div>
+        </div>
+        <div id="filtered-genres-names-container"></div>
+      </div>
+    </div>
+    <div id="report-container">
+      <h1>Informe</h1>
+      <h2>Primer nivel: Caracterización de dominio	</h2>
+      <p>Los datos ocupados para esta visualización corresponden a información asociada a canciones, artistas y géneros de Spotify. Estos datos fueron obtenidos a partir de la API pública de esta plataforma. Este proceso de obtención de datos consistió en obtener las 2000 canciones más populares de cada año entre 1920 y 2020 (100 años de música). Dado que para algunos años no fue posible obtener 2000 canciones (debido a que no habían más esa cantidad en la plataforma), se decidió ocupar un approach de “promedios”, para así no verse afectado por cantidades totales desproporcionadas. Lo más novedoso de este dataset es que cada canción contiene diversas métricas de su contenido creadas por Spotify (por ejemplo: nivel de instrumentalidad, energía, “danceabilidad”, entre otros). Así, teniendo las 2000 canciones más populares de los últimos 100 años, junto con estas métricas, resulta ser un dataset con información muy interesante a visualizar.</p>
+      <p>En particular, el usuario potencial de esta visualización es toda aquella persona que le interese explorar la música a través de estas métricas novedosas que expone Spotify. En fin, cualquier persona que tenga interés en poder ver gráficamente ciertos aspectos musicales de una canción, y cómo esta puede ser agregada a nivel de año de lanzamiento, artista, y género, para así obtener insights relevantes acerca de estos. Una herramienta de visualización es muy útil en este contexto, dado que al ser un dataset tan grande y con tanta información, se vuelve muy necesario poder resumirlo visualmente para poder comprenderlo.</p>
+      <p>El dataset puede ser encontrado en https://www.kaggle.com/yamaerenay/spotify-dataset-19212020-160k-tracks.</p>
+      <p>La documentación de la API de spotify puede ser encontrada en https://developer.spotify.com/documentation/web-api/reference/tracks/get-several-audio-features/</p>
+      
+      <h2>Segundo nivel: Abstracción de datos y tareas</h2>
+      <h3>Abstracción de tareas</h3>
+
+      <h4>Tarea 1:</h4>
+      <p><strong>Contexto: </strong>Esta primera tarea busca exponer la información de la música en base al tiempo. Representa a alguien que quiere saber cómo ha ido cambiando la música con métricas más objetivas. Así, permite al usuario sacar sus propias conclusiones, contrastarlas con su entendimiento previo del tema, y poder relacionarlo y asociarlo con su conocimiento de la historia del último siglo. Con esto en mente, la tarea 1 corresponde a:</p>
+      <p>
+        "<span class="action">Descubrir</span> <span class="objective">tendencias en diversas variables a lo largo del tiempo</span>"
+      </p>
+      <p><strong>Justificación: </strong>Es una acción de tipo descubrir porque el usuario no conoce a priori la información (o las conclusiones) que esta visualización arrojará.  El objetivo corresponde a tendencias en diversas variables a lo largo del tiempo puesto que acá se tiene pensado un usuario que estaría interesado en estas variables novedosas de la música y ver cómo han ido aumentando o disminuyendo a lo largo del tiempo.</p>
+      <p><strong>Datos necesarios: </strong>year, mean_valence, mean_acousticness, mean_danceability, mean_energy, mean_explicit, mean_instrumentalness, mean_liveness, mean_speechiness. Solo el primero de estos datos está presente directamente en el dataset original data, todos los otros son derivados (su obtención se explica en la sección de Abstracción de datos).
+      </p>
+
+      <h4>Tarea 2:</h4>
+      <p><strong>Contexto: </strong>Una segunda tarea interesante para un usuario de esta plataforma sería entender las relaciones que existen entre los artistas de las canciones del dataset. Más allá de saber quienes suelen hacer colaboraciones en conjunto, resulta interesante explorar las similaridades que existen entre artistas en base al contenido de sus canciones. Así, ocupando medidas de distancia de “la canción promedio” de cada artista, se intenta plasmar estas similaridades en un formato de grafo. Habiendo dicho esto, la tarea 2 corresponde a:</p>
+      <p>
+        "<span class="action">Explorar</span> <span class="objective">topología de una red.</span>"
+      </p>
+      <p><strong>Justificación: </strong>Es una acción de tipo explorar porque el usuario no conoce el elemento a buscar ni su ubicación. El objetivo corresponde a topología de una red puesto que el usuario además de querer conocer la similitud entre pares de artistas, acá buscaría entender la estructura más general de la red.</p>
+      <p><strong>Datos necesarios: </strong>artists, valence, acousticness, danceability, energy, instrumentalness, liveness, loudness, speechiness. Estos datos vienen todos directos en el dataset data_by_artists en donde la agregación de canciones en base a artistas ya fue hecha previamente. Como criterio de agrupación, se ocupó el promedio en cada variable.</p>
+
+      <h4>Tarea 3:</h4>
+      <p><strong>Contexto: </strong>Esta última tarea busca analizar la música pero a nivel de géneros musicales. Así, se busca que el usuario interesado pueda comprender cómo afectan estas métricas musicales a los distintos géneros musicales disponibles. En particular, lo ayuda a encontrar qué géneros musicales específicos cumplen con ciertas características definidas por el/ella en un espacio multidimensional. Dicho esto, la tarea 3 corresponde a:</p>
+      <p>
+        "<span class="action">Sondear</span> <span class="objective">distribuciones de grupos de atributos.</span>"
+      </p>
+      <p><strong>Justificación: </strong>Es una acción de tipo sondear ya que el usuario conoce los atributos de los elementos a buscar, pero no su identidad. El objetivo corresponde a distribuciones de grupos de atributos puesto que a este usuario le interesa saber cuáles y cómo es la distribución de géneros en muchos atributos.</p>
+      <p><strong>Datos necesarios: </strong>genres, valence, acousticness, danceability, energy, instrumentalness, liveness, speechiness. Estos datos vienen todos directos en el dataset data_by_genre en donde la agregación de canciones en base a géneros musicales ya fue hecha previamente. Nuevamente, como criterio de agrupación, se ocupó el promedio en cada variable.</p>
+
+      <h3>Abstracción de datos</h3>
+      <ul>
+        <li>
+          data:
+          <ul>
+            <li>
+              year:
+              <ul>
+                <li><strong>Ordenado</strong>, ya que el año de una fecha sí tiene un orden intrínseco y numérico.</li>
+                <li><strong>Cuantitativo</strong>, puesto que sí se pueden hacer operaciones numéricas exactas con el atributo, por ejemplo: años de diferencia.</li>
+                <li><strong>Divergente</strong>, puesto que los datos podrían corresponder a cualquier momento en el tiempo. Si bien en este dataset específico los sucesos son solo entre los años 1920 y 2020, la naturaleza de la variable no tiene cotas superiores ni inferiores. Si asumimos que los años 1920 y 2020 son restricciones fijas, entonces sería secuencial (porque tendría cota mínima y máxima).</li>
+                <li><strong>No cíclico</strong>, porque la edad aumenta sin volver nunca a un “punto inicial” (no hay ciclos involucrados).</li>
+              </ul>
+            </li>
+            <li>
+              mean_valence, mean_acousticness, mean_danceability, mean_energy, mean_instrumentalness, mean_liveness, mean_speechiness (datos derivados):
+              <ul>
+                <li>Corresponden al promedio de sus variables asociadas para todas las canciones de un mismo año. El análisis que sigue a continuación es para cada variable original, sin embargo casi todas tienen las mismas clasificaciones dado que corresponden a métricas numéricas de diferentes aspectos de una canción.</li>
+                <li>La variable valence es definida por la API de Spotify como: “una medida entre 0 y 1 que describe la positividad musical que transmite una canción. Las canciones con valencia alta suenan más positivas (por ejemplo, feliz, alegre, eufórico), mientras que las pistas con valencia baja suenan más negativas (por ejemplo, triste, deprimido, enojado)”.</li>
+                <li>La variable acousticness es definida por la API de Spotify como: “una métrica de confianza entre 0 y 1 de si la pista es acústica. 1.0 representa una alta confianza en que la pista es acústica.”</li>
+                <li>La variable danceability es definida por la API de Spotify como: “variable que describe qué tan adecuada es una pista para bailar en función de una combinación de elementos musicales que incluyen el tempo, la estabilidad del ritmo, la fuerza del ritmo y la regularidad general. Un valor de 0.0 es menos bailable y 1.0 es más bailable.”</li>
+                <li>La variable energy es definida por la API de Spotify como: “una medida de 0.0 a 1.0 y representa una medida perceptiva de intensidad y actividad. Por lo general, las pistas enérgicas se sienten rápidas, ruidosas y ruidosas. Por ejemplo, el death metal tiene mucha energía, mientras que un preludio de Bach tiene una puntuación baja en la escala. Las características de percepción que contribuyen a este atributo incluyen rango dinámico, volumen percibido, timbre, frecuencia de inicio y entropía general”.</li>
+                <li>La variable instrumentalness es definida por la API de Spotify como: “variable que predice si una pista no contiene voces. Los sonidos "Ooh" y "aah" se tratan como instrumentales en este contexto. Las pistas de rap o de palabra hablada son claramente "vocales". Cuanto más cercano esté el valor de instrumentalidad a 1.0, mayor será la probabilidad de que la pista no contenga contenido vocal. Los valores superiores a 0,5 están destinados a representar pistas instrumentales, pero la confianza es mayor a medida que el valor se acerca a 1,0.”</li>
+                <li>La variable liveness es definida por la API de Spotify como: “variable que detecta la presencia de una audiencia en la grabación. Los valores de vivacidad más altos representan una mayor probabilidad de que la pista se haya interpretado en vivo. Un valor superior a 0,8 proporciona una gran probabilidad de que la pista esté en vivo”.</li>
+                <li>La variable speechiness es definida por la API de Spotify como: “variable que detecta la presencia de palabras habladas en una pista. Cuanto más exclusivamente parecida a un discurso sea la grabación (por ejemplo, programa de entrevistas, audiolibro, poesía), más cercano a 1.0 será el valor del atributo. Los valores superiores a 0,66 describen pistas que probablemente estén compuestas en su totalidad por palabras habladas. Los valores entre 0,33 y 0,66 describen pistas que pueden contener tanto música como habla, ya sea en secciones o en capas, incluidos casos como la música rap. Los valores por debajo de 0.33 probablemente representen música y otras pistas que no se parecen al habla”.</li>
+                <li>Para todas las variables derivadas anteriores, se cumple la siguiente caracterización de datos:</li>
+                <li><strong>Ordenado</strong>, ya que un promedio sí tiene un orden intrínseco y numérico explícito.</li>
+                <li><strong>Cuantitativo</strong>, puesto que con un promedio sí se pueden hacer operaciones numéricas exactas, por ejemplo: diferencia entre dos promedios.</li>
+                <li><strong>Secuencial</strong>, puesto que existe un valor mínimo y máximo posible (0 y 1 respectivamente, asociados a las variables originales).</li>
+                <li><strong>No cíclico</strong>, porque el promedio de una variable no cíclica aumenta sin volver a un “punto inicial”.</li>
+              </ul>
+            </li>
+            <li>
+              mean_explicit:
+              <ul>
+                <li>Corresponde a la proporción de la variables asociada explicit para todas las canciones de un mismo año. La variable explicit es definida por la API de Spotify como: “valor binario asociado a si la pista contiene contenido explícito o no”.</li>
+                <li>El análisis que sigue a continuación es para la variable derivada.</li>
+                <li><strong>Ordenado</strong>, ya que las proporciones sí tienen un orden intrínseco y numérico.</li>
+                <li><strong>Cuantitativo</strong>, puesto que con las proporciones sí se pueden hacer operaciones numéricas exactas, por ejemplo: proporción de diferencia entre dos valores.</li>
+                <li><strong>Secuencial</strong>, puesto que existe una proporción mínima y máxima posible (0 y 1 respectivamente).</li>
+                <li><strong>No cíclico</strong>, porque una proporción aumenta sin volver a un “punto inicial”.</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          data_by_artist:
+          <ul>
+            <li>
+              artists:
+              <ul>
+                <li><strong>Categórico</strong>, puesto que los nombres de los artistas no tienen ningún orden intrínseco asociado.</li>
+              </ul>
+            </li>
+            <li>
+              valence, acousticness, danceability, energy, instrumentalness, liveness, speechiness:
+              <ul>
+                <li>Corresponden al promedio en cada variable para todas las canciones de un mismo artista. Así, el análisis es exactamente el mismo al anterior.</li>
+              </ul>
+            </li>
+            <li>
+              loudness:
+              <ul>
+                <li>La variable loudness es definida por la API de Spotify como: “el volumen general de una pista en decibelios (dB). Los valores de sonoridad se promedian en toda la pista y son útiles para comparar la sonoridad relativa de las pistas. La sonoridad es la cualidad de un sonido que es el principal correlato psicológico de la fuerza física (amplitud). Los valores típicos oscilan entre -60 y 0 db.”</li>
+                <li><strong>Ordenado</strong>, ya que es un dato que sí tiene un orden intrínseco y numérico explícito.</li>
+                <li><strong>Cuantitativo</strong>, puesto que con un promedio de decibelios sí se pueden hacer operaciones numéricas exactas, por ejemplo: diferencia entre promedios.</li>
+                <li><strong>Divergente</strong>, dado que teóricamente no existe un valor mínimo y máximo para la variable. Si bien la documentación dice que generalmente oscila entre -60 y 0 db, estas no son cotas mínimas ni máximas para la variable.</li>
+                <li><strong>No cíclico</strong>, porque un promedio de decibleios aumenta sin volver a un “punto inicial”.</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          data_by_genre:
+          <ul>
+            <li>
+              genres:
+              <ul>
+                <li><strong>Categórico</strong>, puesto que los géneros de la música no tienen ningún orden intrínseco asociado.</li>
+              </ul>
+            </li>
+            <li>
+              valence, acousticness, danceability, energy, instrumentalness, liveness, speechiness:
+              <ul>
+                <li>Corresponden al promedio en cada variable para todas las canciones con un mismo género. Así, el análisis es exactamente el mismo al anterior.</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <p>El dataset principal data es de tipo tabla ya que se organiza en filas (entidades, en este caso cada “canciones”) y columnas (atributos asociados a las canciones).</p>
+      <p>Por otro lado, si nos quedamos únicamente con el archivo csv que tenemos actualmente, podríamos considerarlo un dataset estático. Sin embargo, con el tiempo nuevas canciones podrían agregarse como nuevas filas al archivo, convirtiéndose en uno dinámico. Así, depende de si se va a planear actualizar en el tiempo (o no). En este caso son solo canciones entre los años 1920 y 2020, si analizamos eso como una restricción permanente, entonces sería estático.</p>
+      <p>Respecto a los tipos de datos singulares en el dataset, nos encontramos con:</p>
+      <ul>
+        <li>
+          <p><strong>Item: </strong>A priori, solo las canciones. Sin embargo, como se hace un proceso de agregación con artistas y géneros, estos se convierten en nuevos ítems del dataset.</p>
+          <p><strong>Atributo: </strong>Todas las variables que describen a los ítems. Es decir, valence, acousticness, danceability, energy, instrumentalness, liveness, speechiness. También, cuando no están agregados los datos, los datos artists, genres, year, datos también son atributos de las canciones.</p>
+          <p><strong>Enlace: </strong>En nuestro caso, solo la medida de distancia para asociar artistas, en la tarea 2.</p>
+        </li>
+      </ul>
+      <p>De posición y grilla no encontramos ningún dato.</p>
+      <p>Finalmente, no hay ningún atributo llave individual, pero sí el par (nombre, artista) de las canciones las identifican únicamente.</p>
+      <p>Cabe mencionar que todo el preprocesamiento de datos se hizo en un Jupyter Notebook el cual va junto con la entrega.</p>
+      <h2>Tercer nivel: Codificación visual y de interacción</h2>
+      <h3>Visualización 1: Tendencias temporales en la música</h3>
+      <p>Las marcas de esta visualización corresponden a los ítems de esta visualización, es decir, las métricas musicales. Por otro lado, se ocuparon canales de posición para las variables X (posición en el tiempo, ocupando el año) e Y (valor entre 0 y 1 de la variable), y un canal de color para diferenciar las métricas. También se aprovechó el hecho de que todos los ítems de esta visualización se movían en el mismo rango de valores (0 y 1), así, ocupar el mismo eje para codificar su información resulta fácil e intuitivo para el usuario.</p>
+      <p>Como idiom visual se eligió una línea de tendencia temporal dado que esta refleja intuitivamente los aumentos y disminuciones de variables en el tiempo. Así, con este idiom es fácil obtener un panorama general de las tendencias más macro, junto con la posibilidad de revisar detalles más específicos entre pares de puntos.</p>
+      <p>Como idioms de interacción se optó por una combinación entre selección y cambios en el tiempo, de tal manera que una selección permitiese un cambio en los elementos codificados visualmente. De esta manera, queda a decisión del usuario qué subconjunto de elementos (en este caso, métricas de la música) mostrar en la visualización. Así, mediante un click en los checkboxes, se invita al usuario a realizar la selección de uno o muchos ítems. La des-selección también se realiza mediante click, como es el uso común de un checkbox.</p>
+      <p>Las decisión de diseño más importantes fue el color utilizado para las líneas. Aquí, se optó por ocupar una mezcla de paleta de colores de spotify, en donde los 8 colores codificados fueran fácilmente diferenciables y asociables a sus respectivas líneas. Dada la ausencia de una leyenda, se intenta promover la idea de que el color no codifica ninguna variable numérica, sino que es solo sirve como identificador. Por otro lado, se decidió poner una pequeña transición de entrada para las líneas para hacer más amigable el cambio en la visualización. </p>
+      <h3>Visualización 2: Similitud entre artistas</h3>
+      <p>En esta visualización, las marcas o ítems principales corresponden a los artistas del dataset. En particular, todos aquellos artistas que pasaron un filtro de popularidad y que además cuentan con al menos una conexión dentro de este. También existen marcas de conexión, representadas por las líneas entre los nodos (aristas) del grafo. Estas conexiones también actúan como canales en el sentido en que son el único componente visual que transmite información al usuario (existe o no existe una similitud mínima entre dos artistas). Por otro lado, la segunda parte de la visualización corresponde a una tabla de comparación entre artistas seleccionados. Esta se agregó para favorecer la interacción panorámica-detalle, y así proveer al usuario de más información si es que este la demanda.</p>
+      <p>Como idiom visual se eligió representar esta red mediante un grafo dado que es la forma más intuitiva de representar relaciones entre ítems para un dataset relativamente pequeño. Acá es importante destacar que se tuvo que reducir mediante un filtrado previo para lograr 3 objetivos principales: cumplir con el principio anterior (corresponder a un grafo pequeño-mediano), entregar información verdaderamente relevante al usuario, y reducir la complejidad computacional del preprocesamiento. Así, se optó por filtrar aquellos artistas que no cumplían con un nivel de popularidad mínimo, y solo dejar aquellas conexiones que representaran distancias no mayores a cierto número. De esta manera, la información obtenida es más relevante para el usuario dado que se muestran artistas “conocidos” (los más populares) y que además son realmente parecidos en sus métricas (distancia máxima fue bastante exigente). Con todo esto, explorar la topología del grafo no es una labor compleja para el usuario.</p>
+      <p>También, se tomaron diversas decisiones para los idioms de interacción. La primera es el hover sobre los nodos. Aquí, cada vez se pone el cursor sobre un nodo en específico se pinta su borde (para diferenciarlo del resto), se cambia el color de sus enlaces, y se muestra el nombre del artista en la parte inferior. Con esto se facilita la navegación y la información que el usuario puede obtener de esta. Luego, al hacer click se pinta el nodo seleccionado y se va agregando la información de este a la tabla que se encuentra en la parte inferior. El principal rol interactivo de esta tabla es convencer al usuario de que efectivamente nodos conectados son parecidos en sus métricas. De esta forma, al mostrar una conexión inesperada para el usuario (por ejemplo: entre dos artistas que él consideraba muy distintos) pueda corroborar que al menos numéricamente sí se parecen. Por último, se añade la posibilidad de hacer zooming y panning sobre este grafo para promover la exploración sobre este. Esta navegación es limitada para que el usuario no se pierda (se ponen límites en ambas acciones).</p>
+      <p>Las decisiones de diseño más importantes en este caso tuvieron que ver con la disposición espacial del grafo. Luego de intentar diversas variaciones con los parámetros de simulación de fuerzas de d3, se optó por una distribución en donde los nodos no fueran ni muy grandes ni muy pequeños con respecto a los enlaces, y que no hubiese mucho aire entre los grupos disconexos del grafo. Así, no existe la necesidad de tener que moverse mucho para explorar otros grupos de datos. También, el tamaño de los nodos hace que sea no sea difícil identificar cuáles nodos han sido seleccionados. Por último, se ocupa un subconjunto de los colores utilizados en la visualización anterior para que haya una visión de continuidad o unión de toda la página.</p>
+      <h3>Visualización 3: Filtrado de géneros musicales</h3>
+      <p>En esta última visualización, las marcas/ítems pasan a ser los géneros de música, y los canales son las coordenadas horizontales asociadas a cada atributo numérico. Se optó por unificar cada género en una línea para así mostrar la atomicidad de estos a lo largo de distintas variables. Es algo similar a lo que se hace con un punto en un scatter plot tradicional, solo que ahora en un contexto de ejes paralelos en vez de ortogonales, lo cual termina generando una línea.</p>
+      <p>Si bien esta visualización es un cuanto innovadora o poco común, se optó por utilizarla dado que parecía un idiom interesante para representar datos multidimensionales. Generalmente es difícil representar más de 3 dimensiones al mismo tiempo, razón por la cual se suele optar por representar solo un subconjunto de los atributos. Sin embargo, con este idiom se logra poder poner todos los atributos al mismo tiempo (y codificados de la misma manera). A su vez, este idiom permite encontrar ciertas correlaciones entre varias variables, al analizar cuáles son los caminos más “gruesos” en este telar de líneas. Así, muestra una clara ventaja para encontrar patrones en más de 3 dimensiones. Otro detalle visual importante de esta visualización es el hecho de que además se presentan las distribuciones unidimensionales por variable. Para cada dimensión, se expone una sección de la cantidad de líneas que pasan por los distintos valores de ella. Esto es, la distribución individual para cada variable. Así permite una vista panorámica de correlaciones, y además el detalle de cada distribución.</p>
+      <p>Respecto a los idioms de interacción, el principal de ellos corresponde al filtrado de géneros a partir de sliders. La principal “gracia” de esto es que hay una correspondencia 1 a 1 con la acción de mover el slider con el acotar/agrandar el dominio del filtrado. Así, al mover cualquiera de estos sliders se puede ver paralelamente como el filtro del atributo codificado a la misma altura se achica o se agranda. De esta forma, esta interacción de “cuellos de botella móviles” resulta intuitiva una vez que se empieza a jugar con la visualización. Otro idiom de interacción ocurre al hacer hover sobre una de las líneas, en donde se pinta de un color (nuevamente, asociado a la misma paleta de colores anterior) y se muestra su nombre. Esto resulta útil para la detección de outliers o para la consulta de datos específicos que llamen la atención. Por último, y dado que la cantidad de géneros es mucha, abajo de la visualización se provee una lista de todos los géneros que están representados gráficamente arriba. Así, además de obtener estas “distribuciones en muchas dimensiones”, el usuario tiene la posibilidad de obtener los datos específicos de su filtrado.</p>
+      <p>Respecto a las decisiones de diseño, nuevamente se opta por ocupar el color como diferenciador de ítems, en vez de ocuparlo para codificar un atributo numérico. Esto se hace para permanecer consistente con esta decisión a lo largo de las 3 visualizaciones, y también porque codificar con color atributos numéricos en un espacio con tantos datos hubiese sido un tanto caótico visualmente (visual clutter). Otra decisión importante fue la del ancho de las líneas para cada género. Si bien una línea más gruesa promueve la identificación individual, se optó por una más delgada dado que visualmente se veía un tanto desagradable cuanto no había ningún filtro. Al optar por una línea más delgada, se aprecian de mejor manera las áreas de mayor concentración, en vez de una gran área negra como sucedía en el caso anterior.</p>
+    </div>
+    
+  </body>
+  <script src='script.js' charset='utf-8'></script>
+</html>

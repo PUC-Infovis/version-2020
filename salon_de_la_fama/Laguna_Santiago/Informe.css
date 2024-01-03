@@ -1,0 +1,19 @@
+.informe {
+    width: 100%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+p, h3, h4 {
+    text-align: justify;
+}
+
+.b { /*https://uniwebsidad.com/libros/referencia-css2/font-weight#:~:text=La%20propiedad%20font%2Dweight%20permite,Donec%20dignissim.*/
+    font-weight: bold;
+}
+
+body {  /* https://stackoverflow.com/questions/3942254/how-to-specify-font-attributes-for-all-elements-on-an-html-web-page */
+    font-family: sans-serif;
+}

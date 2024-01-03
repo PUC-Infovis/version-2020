@@ -1,0 +1,52 @@
+.idiom {
+  height: 70%;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 3em 3em 3em 8em;
+  overflow: visible;
+}
+
+.idiom svg {
+  overflow: visible;
+}
+
+.axis {
+  color: var(--dark-font);
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.x.axis {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.y.axis {
+  overflow: visible;
+  font-size: 18px;
+}
+
+.y.label {
+  fill: var(--dark-font);
+  font-size: 18px;
+  font-weight: bold;
+  transform: translate(10em, -1.3em);
+  white-space: pre-wrap;
+}
+
+.explanation {
+  height: 30%;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 2em;
+  line-height: 1.5em;
+  font-family: 'IBM Plex Mono', monospace;
+  text-align: justify;
+}
+
+.explanation bold {
+  font-weight: bold;
+}
+
+.explanation a {
+  color: var(--accent);
+}

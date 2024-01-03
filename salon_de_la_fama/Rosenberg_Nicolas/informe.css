@@ -1,0 +1,49 @@
+body {
+    text-align: justify;
+    font-family: sans-serif;
+    background-color: #c9ada7;
+    color: #22223b;
+    
+}
+
+h1, h2, h3, h4 {
+    text-align: center;
+    margin: 2;
+    color: #22223b;
+}
+
+
+.title {
+    
+    width: auto;
+}
+
+.part1 {
+    width: auto;
+    padding: 3px;
+    margin: 20px;
+    background-color: #f2e9e4;
+    border-radius: 10px;
+}
+
+.part2 {
+    background-color: #f2e9e4;
+    width: auto;
+    padding: 3px;
+    margin: 20px;
+    border-radius: 10px;
+      
+}
+
+.scroll {
+    overflow: scroll;
+    height: 500px;
+}
+
+ul, ol, p {
+    margin: 20px;
+}
+
+li {
+    margin: 4px;
+}

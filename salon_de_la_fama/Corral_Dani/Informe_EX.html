@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Informe examen ✨</title>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" type="text/css" href="style_inf.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet"> 
+</head>
+<body class="holy-grail">
+
+    <header>
+        <h1 id="title" > 
+            Wizarding world of Data Visualization ✨
+        </h1>
+        <h3 id="author"> Daniela Corral Gardella </h3>
+        <img src="triangle_w_bg_cutted.png" style="height:120px;" alt="Triangulo de las Reliquias"> 
+    </header>
+
+    <div class="holy-grail-body">
+
+        <section class="holy-grail-content">
+            <h1 class="subtitle">Nivel 1: Caracterización de dominio</h1>
+
+            <p>La saga cinematográfica de Harry Potter es la segunda franquicia cinematográfica más exitosa de todos los tiempos y acumula miles de fanáticos en todo el mundo, denominados
+                por sí mismos <i>Potterheads</i>. La saga ha recibido nominaciones a algunos de los más importantes premios de la industria cinematográfica (premios Oscar, BAFTA) y ha obtenido muy buenas
+                críticas en casi todas las películas que la conforman. 
+            </p>
+
+            <p>
+                Todo buen fanático de la ya mencionada saga ha hecho una maratón de sus películas e incluso puede haber memorizado algunos de sus diálogos. Es más, su 
+                conocimiento puede ir más allá cuando ha leído todos los libros y sigue de cerca todas las novedades del <i>fandom</i>. Pero ¿qué tanto podemos llegar a saber sobre nuestra película favorita? Esa es la pregunta que 
+                se planteó una potterhead, a la cual le llamó la atención leer un artículo de <a class="typed" href="https://pudding.cool/2017/03/film-dialogue/">The Pudding</a> que muestra 
+                cómo en la mayoría de las películas de la industria del cine prepondera el género masculino sobre el femenino. La fanática nunca se había percatado de un aspecto 
+                tan simple como ese en las películas que reconoció del artículo, e inmediatamente pensó en su saga de películas favorita: Harry Potter. Dada la curiosidad que la 
+                embargó, la chica obtuvo los guiones de varias de las películas de la saga y los datos de todos los personajes de la saga y le gustaría que algún Data Scientist le ayude a analizarlos y con ello ver aspectos nuevos de los que 
+                no se había percatado nunca (pese a haber visto muchas veces las cintas).
+            </p>
+            <p>
+                En primer lugar, a la fanática le gustaría contrastar las participaciones de los personajes de la saga y cómo este contraste va cambiando a medida que transcurre la saga.
+                Si bien indudablemente intuye que el protagonista Harry Potter será una figura importante en cada película, le gustaría poder apreciar cómo se va entretejiendo la historia
+                principal mediante la aparición de los nuevos personajes (además que ella ya sabe cómo termina la saga *risas*) e incrementación de importancia de otros que han estado desde la primera película.
+            </p>
+            <p>
+                Por otro lado, a la fanática le interesan las características de estos personajes: su género, de qué casa de Hogwarts son, cuál es su estatus de sangre o su trabajo en la saga. 
+                Si bien ella ha visto la saga, no lo sabe todo, por lo que le encantaría poder buscar información de sus personajes favoritos con la herramienta. También le gustaría poder ver
+                cómo es la participación de los personajes de acuerdo a estas características: ver en cuánto se diferencian los diálogos de los personajes Gryffindors versus los de las otras casas o si, 
+                al igual que en el artículo de <i>The Pudding</i>, el número de diálogos dichos por hombres es significativamente mayor al de las mujeres en la saga. En este sentido, la fanática puede tener
+                varias hipótesis tras haber visto las películas, como por ejemplo que el número de Hufflepuffs en las películas es prácticamente nulo, y le gustaría poder verificar si sus hipótesis son ciertas.
+            </p>
+            <p>En base a la definición del contexto anterior, la herramienta de visualización que se creará tendrá usos en contextos de disfrute, descubrimiento y exploración por lo general, tanto por cinéfilos o potterheads 
+                como para personas con simple curiosidad por ver la visualización de un dataset interesante. 
+                Los datos mencionados por la fanática son de naturaleza principalmente cualitativa ya que harán referencia a las características de los personajes de películas. Sin embargo, el conteo de los diálogos nos dará un 
+                dato de naturaleza cuantitativa.
+            </p>
+
+            <h1 class="subtitle">Nivel 2: Abstracción de datos y tareas</h1>
+            <h3>2.1 Abstracción de tareas</h3>
+            <p>Es posible extraer las siguientes tres tareas principales del enunciado entregado:</p>
+            <ol>
+                <li> <strong>Descubrir </strong> características de la distribución de los diálogos entre los personajes en las películas de Harry Potter
+                    <ul>
+                        <li>Descubrir: nuestro usuario objetivo, si bien puede conocer qué personajes participan en cada película o intuir quienes 
+                            tienen mayor participación (protagonistas), no conoce realmente en qué proporción se asignan los diálogos en cada película. Más aún, la 
+                            visualización le permitirá conocer aspectos de los cuales no se había percatado, como la distribución por casas o por género; quiénes son los 
+                            personajes secundarios con mayor participación e incluso  
+                            verificar su hipótesis ya existente de que ciertas casas de Hogwarts prácticamente tienen participación nula en la saga.
+                        </li>
+                        <li>Características: tanto el hecho de ver en qué personajes se recargan más o menos los diálogos, quiénes aparecen o no, cuáles casas son las que más participación tienen o cuál género, todas son características
+                            de la estructura de los guiones de las películas de Harry Potter, que al usuario objetivo (fanátic@s) les hacen sentido y que además podrá visualizar con nuestra herramienta de visualización.
+                        </li>
+                        <li>Distribución: la fanática desea ver cómo se distribuyen entre los personajes de la saga los diálogos de la película que desee analizar.
+                        Por ejemplo, ver si los valores observados del atributo se concentran en un único personaje (Harry Potter) y, sea o no así, en quiénes recae el peso de los diálogos luego del protagonista;
+                        si algún género biológico prepondera sobre otro, 
+                        si se aglomeran diálogos en torno a personajes de una casa particular, etc.</li>
+                        <li>Datos necesarios: se necesita derivar el dato <i>dialogs</i> para cada personaje que participe en cada película de la saga. Para ello se necesita preprocesar los <i class="typed">.csv</i> 
+                        que contienen los guiones de cada película. Asimismo se requieren los atributos <i class="typed">house</i>, <i class="typed">gender</i> y cualquier otro atributo categórico que se desee visualizar.
+                        </li>
+                    </ul>
+                </li>
+                <br>
+                <li> <strong>Localizar</strong> (valores individuales del) número de diálogos de personajes por película de la saga de Harry Potter</li>
+                    <ul>
+                        <li>Localizar: nuestro usuario objetivo tiene cierto nivel de conocimiento sobre qué personajes participan en cada película (elemento)
+                            pero no conoce cuántos más o menos diálogos tiene uno que otro. Si bien un fanático puede ubicar en la herramienta al protagonista
+                            rápidamente por saber que es quien lógicamente tendrá una buena parte de los diálogos, no es así con el resto de los personajes, a quienes 
+                            normalmente a medida que use la herramienta podrá descubrir sus posiciones.
+                        </li>
+                        <li>Valores individuales: la fanática declara que le gustaría poder buscar en la herramienta a sus personajes favoritos e identificar tanto
+                            su participación en las películas como su información personal.
+                        </li>
+                        <li>Datos necesarios: nuevamente se necesita el dato derivado <i>dialogs</i> para cada personaje que participe en cada película de la saga.
+                        Para el caso de la información personal de cada personaje se necesitarán todos los atributos cualitativos de personaje que se deseen mostrar (gender, patronus, house, especie, etc.) </li>
+                    </ul>
+                    <br>
+
+                    <li><strong>Comparar</strong> (valores individuales del) número de diálogos entre personajes de la saga dentro de una determinada película</li>
+                    <ul>
+                        <li>Comparar: la fanática busca contrastar el nivel de participación entre los personajes tanto dentro de una misma película como en la saga completa. Este contraste implica una comparación en que 
+                            estamos considerando múltiples objetivos y a partir de ello el usuario puede tener nuevas formas de percibir la información y ver nuevos datos de interés.
+                        </li>
+                        <li>Valores individuales: la fanática busca poder comparar los niveles de participación de los personajes entre sí, lo cual
+                            consiste en esencia en ver el valor de un único atributo singular (dialogs) para cada personaje.</li>
+                        
+                        <li>Datos necesarios: nuevamente se necesita el dato derivado <i>dialogs</i> para cada personaje que participe en cada película de la saga, pero además se necesita el atributo <i class="typed">gender</i> de cada personaje.</li>
+                    </ul>
+
+                    <br>
+                    <li> <strong>Resumir</strong> distribución de los diálogos de una determinada película de la saga por género</li>
+                    <ul>
+                        <li>Resumir: la fanática busca comprender el panorama completo respecto a los diálogos de las películas de la saga y con ello poder ella sacar sus propias conclusiones. Desea ver, en particular, cómo se 
+                            comporta la frecuencia de los diálogos viéndolos desde la perspectiva del género, por lo que se tiene en consideración para esta acción un conjunto 
+                            completo de objetivos.
+                        </li>
+                        <li>Distribución: la fanática desea ver cómo se distribuyen por género los diálogos de la película que desee analizar.
+                            Por ejemplo, en la contextualización la fanática declaraba que quería ser capaz de ver si el número de diálogos dichos por hombres es significativamente mayor al de las mujeres,
+                            o si en realidad los personajes femeninos y masculinos son más bien parejos. </li>
+                        <li>Datos necesarios: nuevamente se necesita el dato derivado <i>dialogs</i> para cada personaje que participe en cada película de la saga, pero además se necesita el atributo <i class="typed">gender</i> de cada personaje.</li>
+                    </ul>
+            </ol>
+            **Nota**: puse 4 acciones en total ya que no me decidía con cual quedarme. Ojalá tú como ayudante puedas elegir las 3 mejores 😄 pero si eso no es posible, considera las <strong>últimas</strong> 3 como principales. Ojo que todas están presentes de 
+            alguna u otra forma en la visualización.
+    
+            <h3>2.2 Abstracción de datos</h3>
+
+            <p>Para cada columna del dataset <i class="typed">characters.csv</i> tenemos la siguiente clasificación de atributos:</p>
+            <center>
+            <table>
+                <tr>
+                    <th class="atributo">Atributo</th>
+                    <th class="atributo" style="width: 25%;">Explicación</th>
+                    <th>Clasificación</th>
+                </tr>
+                <tr>
+                    <td class="typed">name</td>
+                    <td>Nombre del personaje.</td>
+                    <td><strong>Categórico</strong>, ya que un nombre propio como lo son los de las personas no tiene ni orden intrínseco ni 
+                        numérico. El resto de clasificaciones <strong>no aplica</strong> a este dato.</td>
+                </tr>
+                <tr>
+                    <td class="typed">gender</td>
+                    <td>Sexo biológico del personaje.</td>
+                    <td><strong>Categórico</strong>, ya que en este contexto el género biológico no tiene orden intrínseco, sino que
+                        permite separar a las personas en dos categorías (femenino y masculino, por simplicidad). Tampoco aplica 
+                        orden numérico. El resto de clasificaciones <strong>no aplica</strong> a este dato.</td>
+                </tr>
+                <tr>
+                    <td class="typed">job</td>
+                    <td>Ocupación del personaje en la saga.</td>
+                    <td><strong>Categórico</strong>, ya que en este contexto la ocupación de los personajes no tiene orden intrínseco
+                        (los trabajos son de áreas diversas, por tanto no pueden ordenarse), sino que permiten separar a los personajes en categorías (estudiante,
+                        profesor, director, auror, etc.) y caracterizarlos. Tampoco aplica orden numérico. El resto de clasificaciones 
+                        <strong>no aplican</strong> a este dato.</td></td>
+                </tr>
+                <tr>
+                    <td class="typed">house</td>
+                    <td>Casa de Hogwarts a la que fue asignado el personaje (si aplica).</td>
+                    <td><strong>Categórico</strong>, ya que los entendidos de Harry Potter sabrán que las casas de Hogwarts no tienen orden intrínseco
+                        (ninguna está por encima de la otra), sino que separan a los estudiantes de la escuela en 4 "categorías" según su personalidad
+                        (<i>Gryffindor</i>, <i>Hufflepuff</i>, <i>Ravenclaw</i>, <i>Slytherin</i>). Tampoco aplica 
+                        orden numérico. El resto de clasificaciones <strong>no aplica</strong> a este dato.</td>
+                </tr>
+                <tr>
+                    <td class="typed">patronus</td>
+                    <td>Espíritu guardian del personaje invocado por su encantamiento <i>Patronus</i>.</td>
+                    <td><strong>Categórico</strong>, ya que los entendidos de Harry Potter sabrán que los <i>Patronus</i> 
+                        no tienen orden intrínseco (no tienen ordenación, uno no es mejor a otro) ni numérico.
+                        Al contrario, permiten clasificar a los magos según puedan o no producir uno y, en caso de poder invocarlo, 
+                        por la forma que éste tenga. El resto de clasificaciones <strong>no aplican</strong> a este dato.</td>
+                </tr>
+                <tr>
+                    <td class="typed">species</td>
+                    <td>Clase de criatura mágica a la que pertenece la especie del personaje.</td>
+                    <td><strong>Categórico</strong>, ya que las criaturas mágicas no tienen asociado un orden intrínseco ni numérico.
+                        Este atributo le permite al Ministerio de Magia agrupar a las criaturas mágicas en categorías (humanos, fantasmas, gigantes, elfos, duendes, etc).
+                        El resto de clasificaciones <strong>no aplica</strong> a este dato.</td>
+                </tr>
+                <tr>
+                    <td class="typed">blood status</td>
+                    <td>Estatus de sangre del personaje.</td>
+                    <td><strong>Categórico</strong>, ya que si bien en la saga se insinúa que los magos de sangre pura se consideran superiores, en la 
+                        actualidad son solo categorías para clasificar los árboles familiares de los cuales provienen los magos de acuerdo al nivel de magia de 
+                        sus ancestros. No tienen un orden intrínseco asociado ya que no hay diferencias prácticas entre magos de una categoría o de otra. 
+                        El resto de clasificaciones <strong>no aplica</strong> a este dato.</td>
+                </tr>
+            </table>
+            </center>
+            <br>
+            Como dato derivado a partir de los datasets <i class="typed">Harry_Potter_1.csv</i>, <i class="typed">Harry_Potter_2.csv</i>, 
+            <i class="typed">Harry_Potter_3.csv</i> y <i class="typed">Harry_Potter_4.csv</i>, contamos con:
+            <br><br>
+            <center>
+                <table>
+                    <tr>
+                        <th class="atributo">Atributo</th>
+                        <th class="atributo" style="width: 25%;">Explicación</th>
+                        <th>Clasificación</th>
+                    </tr>
+                    <tr>
+                        <td class="typed">dialogs</td>
+                        <td>Número de diálogos del personaje en una determinada película de la saga.</td>
+                        <td><strong>Ordenado</strong> y <strong>cuantitativo</strong>, pues podemos comparar y ordenar el número de diálogos de los personajes 
+                            aritméticamente. Los valores posibles de este atributo pueden crecer indefinidamente (hasta el número total de diálogos de la película 
+                            en cuestión) en un rango que se distribuye a lo largo de una sola dirección, por lo que es un atributo <strong>secuencial
+                            </strong> (no hay un potencial valor "cero" que divida el número de diálogos en dos rangos opuestos) y <strong>no cíclico</strong>. </td>
+                    </tr>
+                </table>
+            </center>
+
+            Finalmente, caracterizamos nuestro dataset completo:
+            <ol>
+                <li> <strong>Tipo de datasets utilizados</strong></li>
+                <i class="typed">characters.csv</i> es un dataset de tipo tabular, dado que la información está organizada en filas y columnas, describiendo ítems (personajes) según atributos.
+                Idénticamente se preprocesaron los archivos .csv <i class="typed">Harry_Potter_1.csv</i>, <i class="typed">Harry_Potter_2.csv</i>, 
+                <i class="typed">Harry_Potter_3.csv</i> y <i class="typed">Harry_Potter_4.csv</i> para obtener el archivo <i class="typed">dialogs_v2.json</i>. Este contiene los diálogos por película de cada personaje que participa en ella,
+                lo cual perfectamente podría colocarse en el dataset <i class="typed">characters.csv</i> como columnas extras (por simplicidad para la codificación no lo hice). Por tanto,
+                también cuenta como dataset de tipo tabular.
+                
+                <br><br>
+                <li> <strong>¿Datasets estáticos o dinámicos?</strong></li>
+                A mi parecer los datasets con los que trabajé son estáticos ya que las películas que abarcan mis datos fueron llevadas al cine hasta el 2005 y sus libros se terminaron de publicar en el 2001, es decir, la saga ya finalizó. A su vez la distribución de las películas 
+                por medio de la televisión y Blue-Ray es masiva por lo que es imposible que los datos de sus personajes cambien, mucho menos los diálogos de las películas.
+                Cuento con el estado completo del dataset desde el comienzo del proceso de diseño.
+                <br><br>
+                <li> <strong>¿Qué tipos de datos singulares hay presentes en el dataset? (Atributo, ítem, enlace, posición o grilla)</strong></li>
+                    <ul>
+                        <li><strong>Ítems:</strong> personaje, película </li>
+                        <li><strong>Atributos:</strong> nombre, sexo biológico, trabajo, casa (de Hogwarts), patronus, especie, estatus de sangre (buscan describir propiedades de un personaje de la saga);
+                            dialogs (describe el grado de participación de un personaje dentro de una película de la saga)</li>
+                        <li><strong>Enlace:</strong> dialogs (pues relaciona un personaje (ítem) con el ítem 
+                            película en la cual el personaje adquiere cierta participación).</li>
+                    </ul>
+                    <br>
+                <li><strong>Atributos llave</strong></li>
+                En el dataset de <i class="typed">characters.csv</i> existe un atributo de id, que para efectos del código funciona como identificador de un determinado personaje.
+                En el dataset .json <i class="typed">dialogs_v2.json</i> procesado por mí, utilizo un id para diferenciar la distribución de diálogos que pertenece a cada película.
+                Por la estructura que tienen los archivos .json, este id no tiene un nombre ni tampoco constituye un atributo propiamente tal, solo lo uso como llave para efectos de 
+                simplificar la codificación.
+            </ol>
+        <br>
+
+        <h2 class="subtitle">Nivel 3: Codificación visual y de interacción</h2>
+
+        <h3>3.1 Tipos de gráfico utilizados e idioms principales de cada vista</h3>
+        <p>Realicé una especie de BubblePlot dirigido por fuerzas de D3 para codificar, dada una película seleccionada, el número de diálogos dichos por cada personaje 
+        presente en la película. En este caso utilicé el canal de área bidimensional para codificar el número de diálogos y la posición espacial no codifica nada en particular. 
+        Este tipo de gráficos es bueno para caracterizar distribuciones
+        y ver el número de items totales presentes en nuestro dataset (en este caso, tener rápidamente una idea de cuántos personajes participan o no).
+        Además, utilicé el posicionamiento por fuerzas de D3 para simular que todas las burbujas confluyen en un centro, para dar la idea de que todas las burbujas forman parte de 
+        un total más grande (mostrar relación parte-total).  Además, el hecho que las burbujas estén cercanas ayuda a la comparación con adyacentes.
+        </p>
+
+        <p>Para que el área de la figura tuviera una percepción adecuada por parte de los usuarios (dadas las diferencias por sensación aparente)
+            utilicé una escala de raíz cuadrada para codificar el área del círculo, basándome en las clases de escalas de D3. 
+        </p>
+
+        <p>Por otro lado para la vista secundaria utilicé un gráfico de barras. Este sólo se puede ver al aplicar filtros. Precisamente por cada filtro aparecen nuevas 
+            categorías, y el objetivo de esta vista es resumir la distribución de las burbujas de manera simple, que por medio de la separación de regiones categóricas se 
+            puede tener una idea rápida de cuáles son las categorías. Además, el canal de largo unidimensional es de los más efectivos para expresar maginitud, algo muy útil si se está
+            haciendo un resumen pues es de fácil comprensión. La escala de la altura de las barras es lineal dado que usualmente este tipo de gráficos tan 
+            popularmente extendidos suelen asociarse a escalas lineales. 
+        </p>
+        <p>En el gráfico de barras grafiqué los porcentajes de los diálogos por cada categoría, pues pensé que para un usuario tal vez no es tan útil saber el número 
+            tal cual de diálogos, sino la <strong>proporción</strong>: al fin y al cabo, queremos saber el nivel de participación de cada personaje y decir "1000" diálogos no nos da una idea tan precisa
+            (al menos no para el resumen) como la de decir "el 20% de los diálogos".
+        </p>
+        <h3>3.2 Colormap elegido</h3>
+        <p>
+        En general para el HTML completo intenté utilizar una paleta de colores en relación a la luz que desprenden los hechizos de Harry Potter, que suelen ser verdes, rosados-magenta y rojizos en algunos casos. Por ello las burbujas 
+        del BubblePlot las hice magenta para la vista sin filtros. Además que como son burbujas a mi parecer si dan el efecto de un "hechizo" (percepción personal). Además el color contrasta bien tanto con el fondo como 
+        con las otras burbujas, de manera que cada una se ve de manera clara y distinguible.
+        </p>
+        <p>
+            Para la vista con filtro de género, usé el canal del color tanto para las burbujas como para las barras del resumen de la segunda vista.
+            Los colores los basé en los típicos estereotipos de colores que se le adjudican al género femenino (rosa) y masculino (azul) para que sea 
+            mucho más intuitivo qué parte de la barra (o qué burbuja) es de quién. Además, son colores particularmente distintos y son sólo dos, por lo que es 
+            fácil mirar al bubble plot para inmediatamente hacerse una idea de la distribución por género, todo esto gracias al canal preatentivo del color.
+        </p>
+        <p>Lo mismo pasa con el filtro de las casas, la única diferencia es que cambié el colormap a uno representativo para cada casa. Nuestro usuario objetivo conoce 
+            las películas lo suficiente como para notar cuál color hace referencia a qué casa sin necesidad de una leyenda dentro del BubblePlot. Aún así, como apoyo se encuentra
+            el gráfico de barras de la 2da vista que tiene sus barras respectivas con label y el mismo color para cada categoría. Este aspecto refuerza la complementariedad de las vistas.
+        </p>
+        <p>Utilicé un borde negro alrededor de cada bubble para que sea aún más fácil distinguir una de otra y no se ignore a las burbujas pequeñas.
+            Además, el grosor del borde será un canal que explicaré más adelante cómo utilicé para hacer notar una selección (hover). 
+        </p>
+        <p>Finalmente, para los casos de las burbujas correspondientes a los "Others" (personajes fuera de la lista) o en el caso de que al aplicar el filtro hayan personajes con algún dato desconocido,
+            fue utilizado un color gris que es mucho menos llamativo, para que la información con los otros colores tome la preponderancia.
+        </p>
+
+        <h3>3.3 Interacciones disponibles: opciones de filtrado</h3>
+        <p>Para manejar la complejidad del dataset utilicé métodos de filtrado de ítems para reducir la cantidad de información en pantalla.
+            En particular el filtrado es un método fácil de comprender pero se debe tratar con el trade-off de que el usuario puede olvidar, en este caso, la distribución de los diálogos en
+            las otras películas de la saga que no están siendo seleccionadas o bajo un filtro no seleccionado. Este método permite al usuario explorar y descubrir el dataset de manera ordenada.
+        </p>
+        <p>Para efectos de cómo filtrar, dado el hecho que hay 2 dropdowns (1 para la película y otro para el filtro)
+            consideré que el hecho de que solo con el dropdown se genere el cambio en la visualización podría se agobiante para el usuario que quería cambiar dos dropdown a la vez
+            y ya con solo cambiar el primero se generó una visualización con un filtrado que no quería. Por ello implementé el botón "Lumus" (entendidos de Harry Potter sabrán que es 
+            un hechizo de luz, en particular atingente ya que estamos "viendo cosas que antes no podíamos ver" (apreciación personal)), al cual luego de hacerle click generará la(s) visualización(es)
+            necesarias en base a los parámetros que se encuentran actualmente en los dropdown.
+        </p>
+        <h3>3.4 Idiom elegido para selección mediante hover</h3>
+        <p>Al principio mi idea con el BubblePlot era poder realizar clustering mediante los filtros, 
+            de manera que para el usuario fuera fácil identificar qué parte del total corresponde a cada categoría del filtro 
+            seleccionado. Sin embargo, la implementación por código era muy complicada para mí por lo que pensé en implementaciones que buscaran ese mismo objetivo.
+            Dado un bubblePlot con varios colores como lo es cuando filtramos por casa, la oclusión visual es un tema no menor que le impide
+            al usuario ver qué parte del total de los items corresponde a cada categoría particular. Por ello pensé en la opción de selección mediante hover. 
+            En ella el usuario sólo tiene que poner el mouse encima de alguna de las barras del gráfico de barras de la segunda vista, y con ello 
+            no sólo las otras barras bajan su opacidad, sino que además todas las burbujas que correspondan a otras categorías que no son la seleccionada también bajan
+            la opacidad, de manera que ahora sí que es posible dilucidar más fácil qué partes de la distribución de burbujas pertenecen a cierta categoría.
+            Además, el hover es una manera simple para el usuario que le permite interactuar dinámicamente con las vistas, aumentando su complementariedad. La opacidad es un buen canal para este tipo de efectos.
+        </p>
+        <p>Por otro lado, al hacer hover sobre una burbuja particular el borde de esta se engruesa a más del doble. Esto con el objetivo de que el usuario pueda notar cuál burbuja de todas está seleccionando.
+            (identificar el dato cuyo atributo individual quiero mirar). Además, integré tooltips que se activan cuando uno hace hover sobre una burbuja o barra. 
+            Estos me ayudan a bajar la oclusión del gráfico al mínimo posible, y sólo cuando el usuario quiera identificar el valor individual de algún atributo pueda verlo.
+            En este tooltip se muestra el valor que codifica el área de cada burbuja (es decir, el número de diálogos), así como también el porcentaje individual que conforman esos diálogos dentro del total de la película 
+            seleccionada.
+            En el caso particular de la vista sin filtros, el hover sobre una burbuja muestra la información del personaje al que le corresponde esa burbuja en la vista coordinada de la derecha.
+            Esto cumple con el deseo de visualizar la información básica de los personajes dentro de la visualización.
+        </p>
+
+        <h3>3.5 Organización espacial de vistas</h3>
+        <p>Las vistas están organizadas en una misma fila, cada una en una columna en paralelo. Esta distribución me 
+        parece clara ya que el usuario tiene a la vista y a la misma altura las dos visualizaciones y puede ver 
+        inmediatamente los efectos del hecho que las vistas sean coordinadas, por lo que será de mayor facilidad para él 
+        notar cuáles son los efectos de hacer un click en una comuna y de esta manera usar la visualización de manera intuitiva. 
+        </p>
+        <p>Además, implementé un pequeño párrafo introductorio para cada filtro implementado, cosa que el usuario tenga una 
+            experiencia todavía más guiada para ver la herramienta.
+        </p>
+        </section>
+
+        <div class="holy-grail-sidebar-1 hg-sidebar"></div>
+        <div class="holy-grail-sidebar-2 hg-sidebar"></div>
+
+    </div>
+
+    <footer>
+        <p>Informe EX Daniela Corral Gardella. IIC2026: Visualización de Información 2020-2.</p>
+    </footer>
+</body>
+
+
+
+
+
+
+</body>
+</html>

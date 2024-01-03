@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe Examen - Visualización de información</title>
+    <link rel="stylesheet" href="informe.css">
+</head>
+<body>
+    <div class="title">
+        <h1>
+            Examen - Visualización de información
+        </h1>
+        <h2> 
+            Nicolás Rosenberg - 17640628
+        </h2>
+    </div>
+
+    <div class='part2'>
+        <h3>
+            Primer nivel: Caracterización del dominio (scroll)
+        </h3>
+        <div class='scroll'>
+
+        <p>
+            El deporte es una parte importantísima de la cultura de los Estados Unidos desde el siglo XIX. Este país ha influenciado el deporte mundial en todos los aspectos posibles mediante todo tipo de logros, desarrollo tecnológico, gestión de las distintas disciplinas, pero sobre todo en la comercialización y difusión del deporte profesional y universitario. 
+        </p>
+        <p>
+            A diferencia de otros países donde existe un deporte plenamente dominante, en los estados unidos existen diversas ligas deportivas con excesiva popularidad y cobertura televisiva nacional e internacional, estas ligas son:
+            <ol>
+                <li> National Football League (NFL): Liga profesional de fútbol americano </li>
+                <li> National Basketball Association (NBA): Liga profesional de basquetbol </li>
+                <li> National Hockey League (NHL): Liga profesional de hockey sobre hielo </li>
+                <li> Major League Baseball (MLB): Liga profesional de béisbol </li>
+                <li> NASCAR: Automovilismo </li>
+                <li>  NCAA Football (CFB): Liga universitaria de fútbol americano</li>
+                <li> NCAA Basketball (CBB): Liga universitaria de basquetbol </li>
+            </ol>
+        </p>
+        <p>
+            Otra gran diferencia del deporte norteamericano con respecto al mundo es que la base se desarrolla en conjunto con el sistema educativo. Los deportistas que aspiran a competir en las ligas mayores comienzan compitiendo en el liceo, luego en la universidad y finalmente en un equipo profesional. Esto lo distingue del deporte europeo y sudamericano, donde los propios clubes deportivos forman a los jóvenes que aspiran a competir profesionalmente.
+        </p>
+        <p>
+            Como consecuencia del arraigo que tiene el estadounidense con todo tipo de deportes, vemos como estos “consumen” esta cultura deportiva en todo sentido, como merchandising, televisión/diario/radio o eventos presenciales en enormes estadios que congregan a miles de personas semana a semana.
+        </p>
+        <p>
+            Finalmente, esta gran afición del ciudadano estadounidense, se ve reflejada en seguir e hinchar a equipos en más de un deporte incluso cuando el equipo no pertenece a su ciudad natal o de residencia.
+        </p>
+        <p>
+            Para esta visualización y análisis se ocuparan los siguientes datasets:
+            <ul>
+                <li> Teams.json y stadiums.json: Para cada deporte profesional de equipos se tienen datos de los equipos actuales de cada liga, junto a información de los estadios que cada uno ocupa. <a href="https://sportsdata.io/">(https://sportsdata.io/)</a></li>
+                <li> Usa_dma.geojson: Información geográfica de los Estados Unidos (menos Alaska y Hawaii) dividido por Designated Market Area, división hecha por la empresa Nielsen para poder medir los mercados televisivos y radiales de EEUU.  <a href="https://team.carto.com/u/andrew/tables/dma_master_polygons/public">(https://team.carto.com/u/andrew/tables/dma_master_polygons/public)</a></li>
+                <li> Sports_fandom.csv: Incluye los porcentajes de los resultados de popularidad hechos por Google Trends de cada una de 7 las grandes ligas de EEUU, por dma. <a href="https://www.kaggle.com/fivethirtyeight/fivethirtyeight-nfl-fandom-dataset">(https://www.kaggle.com/fivethirtyeight/fivethirtyeight-nfl-fandom-dataset)</a></li>
+                <li> CitiesData.json: Informacion de sports_fandom pasada a formato json mediante el script loadData.py.</li>
+
+            </ul>
+        </p>
+        </div>
+    </div>
+
+
+
+
+    <div class="part2">
+        <h3>
+            Segundo Nivel: Abstracción de datos y tareas (scroll)
+        </h3>
+        <div class="scroll">
+            
+        <h4>
+            Abstracción de tareas:
+        </h4>
+        <ol>
+            <li> Comparar las preferencias de los estadounidenses frente a las 7 grandes ligas deportivas del país, contrastando las distintas ciudades y estados.</li>
+            <ul>
+                <li> 
+                    <p>
+                        El trasfondo de esta tarea es poder visualizar en qué zonas es más popular el deporte, para así establecer distintas hipótesis y dependencias en un futuro. Un ejemplo que no se trata en esta visualización, pero que podría hacerse en un futuro es establecer alguna dependencia entre el clima de la zona y el deporte más popular (ej: hockey en hielo más popular en el norte).
+                    </p>
+                    <p>
+                        Para realizar esta tarea se ocupará el geojson para visualizar un mapa y sports_fandom para “colorear” los distintos dma correspondientes a su porcentaje.
+                    </p>
+                </li>
+                
+            </ul>
+            <li>Visualizar información de los equipos profesionales de las ligas estadounidenses, junto a las locaciones de sus estadios correspondientes.</li>
+            <ul>
+                <li> 
+                    <p>
+                        El objetivo de esta tarea es poder visualizar geográficamente donde se ubica cada equipo a lo largo del mapa de USA, junto a cierta información como el nombre completo del equipo, ciudad, estado, escudo, nombre del estadio, capacidad del estadio, color local y visitante. </p>
+                    <p>
+                        Para esto se ocupará teams.json y stadiums.json de cada una de las ligas. Se mostrará el logo de cada equipo en el mapa. (cada estadio tiene sus coordenadas). </p>
+                </li> 
+            </ul>
+            <li>Establecer una relación entre el porcentaje del mercado deportivo de cada zona y la existencia o no de un equipo cualquiera sea la liga en ella.</li>
+            <ul>
+                <li> 
+                    <p>
+                        El objetivo de esta tarea es poder ver si existe una relación entre las zonas que tienen equipos locales y el porcentaje de popularidad que tiene cada deporte. Unas posible hipótesis que podría querer analizar con esto es: “La gran popularidad que tiene la NBA en Florida, se debe a la existencia de equipos como Miami Heat y Orlando Magic” o “Como es la NFL tenga tal popularidad en el estado de Nuevo México tenga siendo que no tienen ningun equipo local”, entre otras. 
+                    <p>
+                    <p>
+                        Para poder cumplir con esta tarea se ocupan las dos visualizaciones anteriores junto a un gráfico de barras que muestra los porcentajes de popularidad cada liga cada vez que se seleccione una zona del mapa.
+                    </p>
+                </li> 
+            </ul>
+        </ol>
+        <h4>
+            Abstracción de datos:
+        </h4>
+
+        <p>
+            <b>Dataset 1: sports_fandom.csv</b>
+        </p>
+        <p>
+            Este dataset es de tipo tabla o tabular, ya que se muestran los atributos de diferentes incidentes ocupando filas, columnas y celdas. También es de tipo estático, ya que se conocen todos sus datos en un comienzo y estos no cambian. Todos los datos singulares presentes en este dataset son del tipo atributo (en específico son porcentajes). 
+        </p>
+        <p>
+            <b>DMA</b>
+            <ul>
+                <li> Categórico: El nombre de la zona o ciudad no tiene orden intrínseco.</li>
+            </ul>
+        </p>
+        <p>
+            <b>NFL, NBA, MLB, NHL, NASCAR, CBB, CFB</b>
+            <ul>
+                <li> Ordenado: Los porcentajes de popularidad si cuentan con un orden intrınseco y numérico.</li>
+                <li> Cuantitativo: Si pueden existir comparaciones aritméticas entre los porcentajes de popularidad de cada liga.</li>
+                <li> Secuencial: Los porcentajes en particular sólo pueden tomar valores positivos entre 0 y 100, por lo tanto no existe un valor que divida el rango.</li>
+                <li> No cíclico: El valor de un porcentaje puede aumentar “indefinidamente” hasta 100, luego este no vuelve a 0, sin que simplemente deja de crecer.</li>
+            </ul>
+        </p>
+
+        <p>
+            <b>Dataset 2: teams.json (uno por cada liga profesional en equipos)</b>
+        </p>
+        <p>
+            Este dataset es de tipo json (muy similar a una tabla), ya que se muestran los atributos de diferentes incidentes ocupando objetos javascript del tipo: {ID: 1, Name: ‘Pacers’, City: ‘Indiana’}. También es de tipo estático, ya que se conocen todos sus datos en un comienzo y estos no cambian. Todos los datos singulares presentes en este dataset son del tipo atributo. </p>
+        <p>
+            <b>TeamID:</b>
+            <ul>
+                <li> Categórico: El identificador único de cada equipo no tiene orden intrínseco.</li>
+            </ul>
+        </p>
+        <p>
+            <b>Key</b>
+            <ul>
+                <li>Categórico: La abreviatura cada equipo no tiene orden intrínseco.</li>
+            </ul>
+        </p>
+
+        <p>
+            <b>City</b>
+            <ul>
+                <li>Categórico: La ciudad en la que está ubicado el estadio no tiene orden intrínseco.</li>
+            </ul>
+        </p>
+
+        <p>
+            <b>Name</b>
+            <ul>
+                <li>Categórico: El nombre de cada equipo no tiene orden intrínseco.</li>
+            </ul>
+        </p>
+
+        <p>
+            <b>StadiumID</b>
+            <ul>
+                <li>Categórico: El identificador único del estadio de cada equipo no tiene orden intrínseco. (referencia a stadiums.json)</li>
+            </ul>
+        </p>
+        <p>
+            <b>PrimaryColor y SecondaryColor</b>
+            <ul>
+                <li>Categórico: El código (hex) de los colores local y visitante de cada equipo no tiene orden intrínseco.</li>
+            </ul>
+        </p>
+        <p>
+            <b>WikipediaLogoUrl</b>
+            <ul>
+                <li>Categórico: La url al escudo de cada equipo no tiene un orden intrínseco.</li>
+            </ul>
+        </p>
+
+        <p>
+            <b>Dataset 3: stadiums.json (uno por cada liga profesional en equipos)</b>
+        </p>
+        <p>
+            Este dataset es de tipo json (muy similar a una tabla), ya que se muestran los atributos de diferentes incidentes ocupando objetos javascript del tipo: {ID: 1, Name: ‘Staples Center’, City: ‘Los Angeles’}. También es de tipo estático, ya que se conocen todos sus datos en un comienzo y estos no cambian. Todos los datos singulares presentes en este dataset son del tipo atributo.
+        <p>
+            <b>StadiumID</b>
+            <ul>
+                <li> Categórico: El identificador único de cada estadio no tiene orden intrínseco.</li>
+            </ul>
+        </p>
+        <p>
+            <b>Name</b>
+            <ul>
+                <li>Categórico: El nombre de cada estadio no tiene orden intrínseco.</li>
+            </ul>
+        </p>
+
+        <p>
+            <b>Address</b>
+            <ul>
+                <li>Categórico: La dirección de cada estadio no tiene orden intrínseco</li>
+            </ul>
+        </p>
+
+        <p>
+            <b>City</b>
+            <ul>
+                <li>Categórico: La ciudad a la que pertenece cada equipo no tiene orden intrínseco.</li>
+            </ul>
+        </p>
+
+        <p>
+            <b>State</b>
+            <ul>
+                <li>Categórico: El estado en el que está ubicado el estadio no tiene orden intrínseco.</li>
+            </ul>
+        </p>
+        <p>
+            <b>Capacity</b>
+            <ul>
+                <li> Ordenado: La capacidad de cada estadio si cuenta con un orden intrınseco y numérico.</li>
+                <li> Cuantitativo: Si pueden existir comparaciones aritméticas entre las capacidades de cada estadio.</li>
+                <li> Secuencial: Las capacidades en particular sólo pueden tomar valores positivos, por lo tanto no existe un valor que divida el rango.</li>
+                <li> No cíclico: El valor de un porcentaje puede aumentar “indefinidamente”.</li>
+            </ul>
+        </p>
+        <p>
+            <b>GeoLong y GeoLat</b>
+            <ul>
+                <li>Ordenado: Las coordenadas de cada estadio si cuentan con un orden intrınseco y numérico.</li>
+                <li> Cuantitativo: Si existen comparaciones aritméticas entre las coordenadas.</li>
+                <li>Secuencial: Las coordenadas pueden tomar valores positivos y negativos divididos por un 0 común.</li>
+                <li> No cíclico: Todas las coordenadas se mueven entre un mínimo y un máximo, no hay una vuelta al punto de partida.</li>
+            </ul>
+        </p>
+
+        <p>
+            <b>Dataset 4: usa_dma.geojson</b>
+        </p>
+        <p>
+            Este dataset es de tipo json (muy similar a una tabla), ya que se muestran los atributos de diferentes incidentes ocupando objetos javascript del tipo: {ID: 1, Name: ‘San Diego, CA’, coordinates: [[lat, long], [lat, long],....]}. También es de tipo estático, ya que se conocen todos sus datos en un comienzo y estos no cambian. Todos los datos singulares presentes en este dataset son del tipo atributo
+        </p>
+        <p>
+            Específicamente para ocupar este geojson solo ocuparemos las properties de este, en especifico el nombre de la zona y las coordenadas. Las coordenadas de cada zona son una lista con los puntos exteriores de cada zona de manera de poder trazar líneas entre ellos y delimitar el mapa de los Estados Unidos por DMA. La calificación de las coordenadas es la misma que la anterior (GeoLat y GeoLong).
+        </p>
+    </div>
+    </div>
+    
+    <div class="part2">
+        <h3>
+            Tercer Nivel:  Codificación visual y de interacción (scroll)
+        </h3>
+        <div class='scroll'>
+        <p>
+            <b>Selector de ligas</b>
+            <ul>
+                <li>
+                    Justo sobre los dos idioms principales de la visualización, podemos ver un selector de ligas. Dentro de las opciones podemos ver las 7 principales ligas del deporte estadounidense. Al seleccionar una de estas el mapa coroplético se actualiza, cambiando de color cada zona dependiendo del porcentaje de popularidad que tiene esa ciudad. También, podemos ver que los equipos son actualizados a los pertenecientes a la liga seleccionada. Se agregó este tipo de selector debido a lo intuitivo y fácil que es a la hora de ocuparlo, y se su posicionó sobre el mapa para poder ver cómo este cambia a medida que vamos seleccionando una liga diferente.
+                </li>
+            </ul>
+        </p>
+
+        <p>
+            <b>Mapa coroplético</b>
+            <ul>
+                <li>
+                    Con una liga seleccionada, se mostrará un mapa coroplético de los Estados Unidos, con respecto a los porcentajes de popularidad de la disciplina elegida por el usuario. Para cada liga el mapa tomará una gama de colores distinta, pero siempre estos intentarán maximizar el contraste y la visualización. Por ejemplo, si seleccionamos la Liga NFL, podremos ver en 5 distintos tonos azules que en qué zonas es más popular (azul más intenso) y en qué zonas menos (azul más claro). 
+                </li>
+                <li>
+                    Se utiliza este tipo de visualización debido a la facilidad con la que podemos analizar y contrastar la popularidad de cada deporte con respecto a la zona correspondiente. Se utilizó esta escala de colores por lo intuitivo que es pensar que lo más intenso representa un mayor porcentaje y lo más claro uno menor.
+                </li>
+            </ul>
+        </p>
+
+        <p>
+            <b>Proyección cartográfica utilizada en el mapa</b>
+            <ul>
+                <li>
+                    Se utilizó una proyección tipo Mercator. Se eligió este tipo de proyección cartográfica debido a que con esta podemos identificar el área de cada DMA respetando cierta posición relativa en el mapa, aún cuando se tiene cierta distorsión en la imagen debido a la proyección. Esto cumple a cabalidad nuestro objetivo, que es poder comparar los colores de cada comuna junto a poder seleccionar una para revisar el detalle, respecto de una posición relativa en el mapa.
+                </li>
+            </ul>
+        </p>
+
+        <p>
+            <b>Equipos como puntos en el mapa</b>
+            <ul>
+                <li>
+                    Se utilizó una proyección tipo Mercator. Se eligió este tipo de proyección cartográfica debido a que con esta podemos identificar el área de cada DMA respetando cierta posición relativa en el mapa, aún cuando se tiene cierta distorsión en la imagen debido a la proyección. Esto cumple a cabalidad nuestro objetivo, que es poder comparar los colores de cada comuna junto a poder seleccionar una para revisar el detalle, respecto de una posición relativa en el mapa.
+                </li>
+            </ul>
+        </p>
+
+        <p>
+            <b>Zoom y Panning</b>
+            <ul>
+                <li>
+                    Para llevar a cabo el zoom se seleccionó el scroll (arriba y abajo) del mouse. Y para el panning se utilizó la técnica del drag and drop (click y arrastrar) con el mouse. Se seleccionó esta manera de llevar a cabo estas acciones ya que el mismo método que ocupan gran parte de las webs de mapas como google maps o google earth, y por lo tanto, estas maneras son las más intuitivas, fáciles y comunes que la gente sabe y entiende cómo ocupar.
+                </li>
+            </ul>
+        </p>
+
+        <p>
+            <b>Idiom de interacción para selección de zonas DMA</b>
+            <ul>
+                <li>
+                    Para seleccionar una de las zonas delimitadas, se hace con un simple click. La ciudad seleccionada quedará pintada de rojo y su detalle se mostrará en el lado derecho de la vista (gráfico de barras). Se eligió esta manera de interacción debido a la simpleza, rapidez y a lo intuitivo que es clickear sobre algo para mostrar más información.
+                </li>
+            </ul>
+        </p>
+
+        <p>
+            <b>Idiom de interacción para la selección de un equipo profesional</b>
+            <ul>
+                <li>
+                    Para poder acceder al detalle de un equipo junto a su estadio, basta con hacer “mouseover” sobre el escudo del equipo correspondiente, al hacer esto aparecerá un recuadro con el nombre completo del equipo, ciudad, estado, escudo, nombre del estadio, capacidad del estadio, color local y visitante. Se eligió esta manera de interacción debido a la simpleza, rapidez y a lo intuitivo que es poner el mouse sobre algo para mostrar más información. Al mover el mouse fuera del logo, este recuadro desaparece.
+                </li>
+            </ul>
+        </p>
+
+        <p>
+            <b>Idiom segunda vista (gráfico de barras)</b>
+            <ul>
+                <li>
+                    Para la segunda vista, se eligió un gráfico de barra, en el que podemos ver y contrastar el porcentaje de popularidad de cada liga asociado a la zona DMA seleccionada en el mapa coroplético.
+                </li>
+                <li>
+                    Para representar el porcentaje de popularidad, se ocupó el alto de cada barra de este modo las ligas con barras altas representan una mayor popularidad, cuestión que nos ayuda con la tarea de contrastar la popularidad de cada deporte por ciudad en EEUU. Se eligió un tono rojo para representar las barras debido al buen contraste que tiene con toda la visualización, lo que lo hace agradable a la hora de analizar el mapa y el gráfico simultáneamente.
+                </li>
+            </ul>
+        </p>
+
+        <p>
+            <b>Organización espacial de las vistas</b>
+            <ul>
+                <li>
+                    Para la organización espacial de las vistas, se eligió mostrar el mapa y el segundo idiom (gráfico) de forma horizontal, de esta manera podemos ir seleccionando zonas y estar mirando al mismo tiempo como cambia el gráfico de los porcentajes de popularidad. Esto nos entrega la posibilidad de sacar mejores conclusiones al ver como cambian los datos al ir seleccionando ciudades diferentes. El hecho de tener el selector justo sobre el mapa, nos entrega una funcionalidad similar a la anterior de ir viendo cómo cambian los colores mapa y los puntos (equipos) en él a medida que vamos actualizando la liga seleccionada.
+                </li>
+            </ul>
+        </p>
+
+        </div>
+    </div>
+    
+    
+
+    
+</body>
+</html>

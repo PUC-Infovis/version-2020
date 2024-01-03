@@ -1,0 +1,143 @@
+id;name;gender;job;house;patronus;species;blood_status;birth;death
+1;Harry James Potter;Male;Student;Gryffindor;Stag;Human;Half-blood;31 July,1980;-
+2;Ron (Ronald) Bilius Weasley;Male;Student;Gryffindor;Jack Russell terrier;Human;Pure-blood;1 March,1980;-
+3;Hermione Jean Granger;Female;Student;Gryffindor;Otter;Human;Muggle-born;19 September,1979;-
+4;Albus Dumbledore;Male;Headmaster;Gryffindor;Phoenix;Human;Half-blood;Late August,1881;30 June,1997
+5;Rubeus Hagrid;Male;Keeper of Keys and Grounds, Professor of Care of Magical Creatures;Gryffindor;None;Half-Human/Half-Giant;Half-breed;6 December,1928;-
+6;Neville Longbottom;Male;Student;Gryffindor;Non-corporeal;Human;Pure-blood;30 July,1980;-
+7;Fred Weasley;Male;Student;Gryffindor;Magpie;Human;Pure-blood;1 April,1978;2 May,1998
+8;George Weasley;Male;Student;Gryffindor;Magpie;Human;Pure-blood;1 April,1978;-
+9;Ginny Weasley;Female;Student;Gryffindor;Horse;Human;Pure-blood;11 August,1981;-
+10;Dean Thomas;Male;Student;Gryffindor;Unknown;Human;Muggle-born;1 September,1979-31 August,1980;-
+11;Seamus Finnigan;Male;Student;Gryffindor;Fox;Human;Half-blood;1 September,1979-31 August,1981;-
+12;Lily J. Potter;Female;Unknown;Gryffindor;Doe;Human;Muggle-born;30 January,1960;31 October,1981
+13;James Potter Sr.;Male;Unknown;Gryffindor;Stag;Human;Pure-blood;27 March,1960;31 October,1981
+14;Sirius Black;Male;Unknown;Gryffindor;Unknown;Human;Pure-blood;3 November,1959;18 June,1996
+15;Remus John Lupin;Male;Professor of Defence Against the Dark Arts;Gryffindor;Wolf;Werewolf;Half-blood;10 March,1960;2 May,1998
+16;Peter Pettigrew;Male;Servant of Lord Voldemort;Gryffindor;None;Human;Unknown;1 September,1959-31 August,1960;Late March,1998
+17;Percy Ignatius Weasley;Male;Student|Prefect|Personal assistant to Barty Crouch Snr;Gryffindor;Unknown;Human;Pure-blood;22 August,1976;-
+18;(Bill) William Weasley;Male;Curse-Breaker for Gringotts Bank;Gryffindor;Unknown;Human;Pure-blood;29 November,1970;-
+19;Charles Weasley;Male;Dragonologist;Gryffindor;Unknown;Human;Pure-blood;12 December,1972;-
+20;Lee Jordan;Male;Student;Gryffindor;Unknown;Human;Unknown;1 September,1977-31 August,1978;-
+21;Oliver Wood;Male;Student;Gryffindor;Unknown;Human;Unknown;October,1975-31 August,1976;-
+22;Angelina Johnson;Female;Student;Gryffindor;Unknown;Human;Unknown;October,1977;-
+23;Katie Bell;Female;Student;Gryffindor;Unknown;Human;Unknown;1 September,1978-31 August,1979;-
+24;Alicia Spinnet;Female;Student;Gryffindor;Unknown;Human;Unknown;1 September,1977-31 August,1978;-
+25;Lavender Brown;Female;Student;Gryffindor;Unknown;Human;Pure-blood;1 September,1979-31 August,1980;2 May,1998
+26;Parvati Patil;Female;Student;Gryffindor;Unknown;Human;Unknown;1 September,1979-21 April,1980;-
+27;Romilda Vane;Female;Student;Gryffindor;Unknown;Human;Unknown;1 September,1981-31 August,1982;-
+28;Colin Creevey;Male;Student;Gryffindor;Unknown;Human;Muggle-born;3 May,1981-31 August,1981;2 May,1998
+29;Cormac McLaggen;Male;Student;Gryffindor;Unknown;Human;Unknown;1 September,1978-31 August,1979;-
+30;Minerva McGonagall;Female;Professor of Transfiguration| Head of Gryffindor;Gryffindor;Cat;Human;Half-blood;Unknown;-
+31;Molly Weasley;Female;Unknown;Gryffindor;Unknown;Human;Pure-blood;30 October,1949;-
+32;Arthur Weasley;Male;Head of the Misuse of Muggle Artefacts Office;Gryffindor;Weasel;Human;Pure-blood;6 February,1950;-
+33;Quirinus Quirrell;Male;Defence Against the Dark Arts(1991-1992);Ravenclaw;Non-corporeal;Human;Half-blood;26 September,1970;4 June,1992
+34;Cho Chang;Female;Student;Ravenclaw;Swan;Human;Unknown;1 September,1978-31 August,1979;-
+35;Luna Lovegood;Female;Student;Ravenclaw;Hare;Human;Unknown;13 February,1981;-
+36;Gilderoy Lockhart;Male;Defence Against the Dark Arts(1992-1993);Ravenclaw;Non-corporeal;Human;Half-blood;26 January,1964;-
+37;Filius Flitwick;Male;Professor of Charms | Head of Ravenclaw;Ravenclaw;Non-corporeal;Human(goblin ancestry);Half-breed;17 October,1958;-
+38;Sybill Patricia Trelawney;Female;Professor of Divination;Ravenclaw;Non-corporeal;Human;Half-blood;9 March,1962;-
+39;Garrick Ollivander;Male;Wandmaker;Ravenclaw;Non-corporeal;Human;Half-blood;25 September,1908;-
+40;Myrtle Elizabeth Warren (Moaning Myrtle);Female;Student;Ravenclaw;Unknown;Ghost;Muggle-born;14 June,1928-13 June,1929;13 June,1943
+41;Padma Patil;Female;Student;Ravenclaw;Non-corporeal;Human;Unknown;1 September,1979-21 April,1980;-
+42;Michael Corner;Male;Student;Ravenclaw;Squirrel;Human;Half-blood;1 September,1979-31 August,1980;-
+43;Marietta Edgecombe;Female;Student;Ravenclaw;Unknown;Human;Unknown;,1978-,1979;-
+44;Terry Boot;Male;Student;Ravenclaw;Unknown;Human;Unknown;1 September,1979-21 April,1980;-
+45;Anthony Goldstein;Male;Student;Ravenclaw;Non-corporeal;Human;Half-blood;1 September,1979-31 August,1980;-
+46;Severus Snape;Male;Professor of Potions | Head of Slytherin;Slytherin;Doe;Human;Half-blood;9 January,1960;2 May,1998
+47;Draco Malfoy;Male;Student;Slytherin;Unknown;Human;Pure-blood;5 June,1980;-
+48;Vincent Crabbe;Male;Student;Slytherin;Unknown;Human;Pure-blood;,1979-,1980;2 May,1998
+49;Gregory Goyle;Male;Student;Slytherin;Unknown;Human;Pure-blood;1 September,1979-31 August,1980;-
+50;Bellatrix Lestrange;Female;Unknown;Slytherin;None;Human;Pure-blood;,1951;2 May,1998
+51;Dolores Jane Umbridge;Female;Professor of Defence Against the Dark Arts | Department of Magical Law Enforcement;Slytherin;Cat;Human;Half-blood;26 August,Unknown;-
+52;Horace Eugene Flaccus Slughorn;Male;Professor of Potions;Slytherin;Non-corporeal;Human;Unknown;28 April,Unknown;-
+53;Lucius Malfoy;Male;School Governor;Slytherin;None;Human;Pure-blood;,1954;-
+54;Narcissa Malfoy;Female;Unknown;Slytherin;None;Human;Pure-blood;,1955;-
+55;Regulus Arcturus Black;Male;Unknown;Slytherin;Non-corporeal;Human;Pure-blood;,1961;,1979
+56;Pansy Parkinson;Female;Student;Slytherin;Unknown;Human;Unknown;1 September,1979-31 August,1980;-
+57;Blaise Zabini;Male;Student;Slytherin;Unknown;Human;Unknown;1 September,1979-21 April,1980;-
+58;Tom Marvolo Riddle Voldemort;Male;Student;Slytherin;None;Human;Half-blood;31 December,1926;2 May,1998
+59;Theodore Nott;Male;Student;Slytherin;Unknown;Human;Pure-blood;1 September,1979-21 April,1980;-
+60;Rodolphus Lestrange;Male;Unknown;Slytherin;Unknown;Human;Pure-blood;,Pre 1964;-
+61;Millicent Bulstrode;Female;Student;Slytherin;Unknown;Human;Half-blood;1 September,1979-31 August,1980;-
+62;Graham Montague;Male;Student;Slytherin;Unknown;Human;Unknown;,1981;-
+63;Bloody Baron;Male;Slytherin House Ghost;Slytherin;Unknown;Ghost;Unknown;,Post 982;,11th century
+64;Marcus Flint;Male;Student;Slytherin;Unknown;Human;Unknown;1 September,1975-31 August,1976;-
+65;Penelope Clearwater;Female;Student;Ravenclaw;Non-corporeal;Human;Unknown;1 September,1975-31 August,1976;-
+66;Roger Davies;Male;Student;Ravenclaw;Unknown;Human;Unknown;1 September,1977-31 August,1978;-
+67;Marcus Belby;Male;Student;Ravenclaw;Unknown;Human;Unknown;1 September,1978-31 August,1979;-
+68;Salazar Slytherin;Male;Founder of Slytherin;Slytherin;Unknown;Human;Pure-blood;,Pre 976;,11th century
+69;Godric Gryffindor;Male;Founder of Gryffindor;Gryffindor;Unknown;Human;Unknown;,Pre 976;,11th century
+70;Rowena Ravenclaw;Female;Founder of Ravenclaw;Ravenclaw;Unknown;Human;Unknown;,Pre 976;,11th century
+71;Nicholas de Mimsy-Porpington;Male;Gryffindor House Ghost;Gryffindor;Unknown;Ghost;Unknown;,1401-1475;31 October,1492
+72;Cuthbert Binns;Male;Professor of History of Magic;Unknown;Unknown;Ghost;Unknown;Unknown;,Pre 1970s
+73;Barty Crouch Jr.;Male;Professor of Defence Against the Dark Arts (as Alastor Moody);Unknown;None;Human;Unknown;,1962;,1995-1996
+74;Charity Burbage;Female;Professor of Muggle Studies;Unknown;Non-corporeal;Human;Unknown;,Before 1976;Late July,1997
+75;Firenze;Male;Professor of Divination;Not applicable;None;Centaur;Unknown;;-
+76;Alecto Carrow;Female;Professor of Muggle Studies;Slytherin;Unknown;Human;Unknown;,Pre 1981;-
+77;Amycus Carrow;Male;Professor of Dark Arts;Slytherin;Unknown;Human;Unknown;,Pre 1982;-
+78;Helga Hufflepuff;Female;Founder of Hufflepuff;Hufflepuff;Unknown;Human;Unknown;,Pre 976;,11th century
+79;Fat Friar;Male;Hufflepuff House Ghost;Hufflepuff;Unknown;Ghost;Unknown;,10th century;,Pre 1988
+80;Helena Ravenclaw;Female;Ravenclaw House Ghost;Ravenclaw;Unknown;Ghost;Unknown;,Post 982;,996-1000
+81;Nymphadora Tonks;Female;Auror;Hufflepuff;Jack rabbit, Wolf;Human;Half-blood;1 September,1972-31 August,1973;2 May,1998
+82;Pomona Sprout;Female;Professor of Herbology | Head of Hufflepuff House;Hufflepuff;Non-corporeal;Human;Unknown;15 May, Unknown;-
+83;Newton Scamander;Male;Employee in the Beast Division of the Department for the Regulation and Control of Magical Creatures;Hufflepuff;Unknown;Human;Unknown;24 February,1897;-
+84;Cedric Diggory;Male;Student;Hufflepuff;Unknown;Human;Pure-blood;1 September,1977-30 October,1977;24 June,1995
+85;Justin Finch-Fletchley;Male;Student;Hufflepuff;Non-corporeal;Human;Muggle-born;1 September,1979-31 August,1980;-
+86;Zacharias Smith;Male;Student;Hufflepuff;Unknown;Human;Unknown;1 September,1979-2 May,1981;-
+87;Hannah Abbott;Female;Student;Hufflepuff;Non-corporeal;Human;Half-blood;1 September,1979-31 August,1980;-
+88;Ernest Macmillan;Male;Student;Hufflepuff;Boar;Human;Pure-blood;21 April,1980-31 August,1980;-
+89;Susan Bones;Female;Student;Hufflepuff;Unknown;Human;Half-blood;1 September,1979-31 August,1980;-
+90;Walden Macnair;Male;Executioner for the Committee for the Disposal of Dangerous Creatures;Slytherin;Unknown;Human;Unknown;,In or before 1970s;-
+91;Augustus Rookwood;Male;Unspeakable;Slytherin;None;Human;Unknown;,pre 1964;-
+92;Antonin Dolohov;Male;Death Eater;Slytherin;None;Human;Unknown;,pre 1950;-
+93;Corban Yaxley;Male;Head of the Department of Magical Law Enforcement;Slytherin;None;Human;Unknown;,Pre 1970s;-
+94;Igor Karkaroff;Male;Headmaster of Durmstrang Institute;Unknown;None;Human;Unknown;,Pre 1965;24 June,1995-31 July,1996
+95;Kingsley Shacklebolt;Male;Auror | Minister for Magic;Unknown;Lynx;Human;Pure-blood;,Pre 1973;-
+96;Alastor Moody;Male;Auror;Unknown;Non-corporeal;Human;Pure-blood;,Pre 1960;27 July,1997
+97;Alice Longbottom;Female;Auror;Unknown;Unknown;Human;Pure-blood;;-
+98;Frank Longbottom;Male;Auror;Gryffindor;Unknown;Human;Pure-blood;1 September,1957-31 August,1959;-
+99;Rufus Scrimgeour;Male;Head of Auror Office| Minister for Magic;Unknown;Non-corporeal;Human;Unknown;,Pre 1968;1 August,1997
+100;Cornelius Oswald Fudge;Male;Minister for Magic;Unknown;Non-corporeal;Human;Unknown;,Pre 1964;-
+101;Barty Crouch Sr.;Male;Head of the Department of International Magical Cooperation;Unknown;Non-corporeal;Human;Pure-blood;,Pre 1940;27 May,1995
+102;Amos Diggory;Male;Employee of the Department for the Regulation and Control of Magical Creatures[;Unknown;Non-corporeal;Human;Unknown;Unknown;-
+103;Dedalus Diggle;Male;Unknown;Unknown;Non-corporeal;Human;Unknown;,Pre 1964;-
+104;Elphias Doge;Male;Special Advisor to the Wizengamot;Unknown;Non-corporeal;Human;Pure-blood;1 September,1880-31 August,1881;-
+105;Fleur Isabelle Delacour;Female;Part-time at Gringotts Wizarding Bank;Not applicable;Non-corporeal;Human;Half-breed;,Pre 30 October,1977;-
+106;Aberforth Dumbledore;Male;Owner and Barman of the Hog's Head Inn;Unknown;Goat;Human;Half-blood;1 September,1883-31 August,1884;-
+107;Mundungus Fletcher;Male;Dealer of wizarding artifacts;Unknown;Non-corporeal;Human;Half-blood;,Before 1962;-
+108;Sturgis Podmore;Male;Advance Guard;Unknown;Unknown;Human;Unknown;8 September,1956-7 September,1957;-
+109;Hestia Jones;Female;Advance Guard;Unknown;Unknown;Human;Unknown;,Pre 1978;-
+110;Marlene McKinnon;Female;Unknown;Unknown;Unknown;Human;Unknown;Unknown;July,1981
+111;Fabian Prewett;Male;Unknown;Unknown;Unknown;Human;Pure-blood;Unknown;,1981
+112;Gideon Prewett;Male;Unknown;Unknown;Unknown;Human;Pure-blood;Unknown;,1981
+113;Emmeline Vance;Female;Advance Guard;Unknown;Unknown;Human;Unknown;,Pre 1964;Early July,1996
+114;Edgar Bones;Male;Unknown;Hufflepuff;Unknown;Human;Unknown;Unknown;,1981
+115;Dorcas Meadowes;Female;Unknown;Unknown;Unknown;Human;Unknown;Unknown;,1981
+116;Benjy Fenwick;Male;Unknown;Unknown;Unknown;Human;Unknown;Unknown;,1981
+117;Madame Olympe Maxime;Female;Headmistress of Beauxbatons Academy of Magic;Not applicable;None;Half-Human/Half-Giant;Half-breed;Unknown;-
+118;Gabrielle Delacour;Female;Unknown;Not applicable;Unknown;Human;Half-breed;31 July,1985-30 July,1986;-
+119;Viktor Krum;Male;Seeker for the Bulgarian National Quidditch team;Not applicable;Unknown;Human;Unknown;April-August,1976;-
+120;Petunia Dursley;Female;Unknown;Not applicable;None;Human;Muggle;,Pre 1960;-
+121;Vernon Dursley;Male;Director at Grunnings;Not applicable;None;Human;Muggle;,Pre 1954;-
+122;Dudley Dursley;Male;Unknown;Not applicable;None;Human;Muggle;23 June,1980;-
+123;Marge Dursley;Female;Dog breeder;Not applicable;None;Human;Muggle;,Pre 1954;-
+124;Dennis Creevey;Male;Student;Gryffindor;Unknown;Human;Muggle-born;1 September,1982-31 August,1983;-
+125;Albus Severus Potter;Male;Student;Slytherin;Unknown;Human;Half-blood;1 September,2005-31 August,2006;-
+126;Scorpius Hyperion Malfoy;Male;Student;Slytherin;Unknown;Human;Pure-blood;1 September,2005-31 August,2007;-
+127;Edward Remus Lupin;Male;Student;Hufflepuff;Unknown;Human (Metamorphmagus);Half-blood;April,1998;-
+128;James Sirius Potter;Male;Student;Gryffindor;Unknown;Human;Half-blood;1 September,2003-31 August,2004;-
+129;Rose Granger-Weasley;Female;Student;Gryffindor;Unknown;Human;Half-blood;1 September,2005-31 August,2006;-
+130;Argus Filch;Male;Caretaker of Hogwarts;Not applicable;None;Human;Squib;,Pre 1951;-
+131;Poppy Pomfrey;Female;Matron at Hogwarts School;Unknown;Non-corporeal;Human;Unknown;,Pre 1954;-
+132;Rolanda Hooch;Female;Flying Instructor at Hogwarts;Unknown;Non-corporeal;Human;Unknown;,Pre 1918;-
+133;Irma Pince;Female;Librarian at Hogwarts;Unknown;Non-corporeal;Human;Unknown;,Pre 1966;-
+134;Aurora Sinistra;Female;Astronomer at Hogwarts;Unknown;Unknown;Human;Unknown;,Pre 1968;-
+135;Septima Vector;Female;Professor of Arithmancyat Hogwarts;Unknown;Unknown;Human;Unknown;,Before 1974;-
+136;Wilhelmina Grubbly-Plank;Female;Substitute professor of Care of Magical Creatures at Hogwarts;Unknown;Non-corporeal;Human;Unknown;Unknown;-
+137;Fenrir Greyback;Male;Unknown;Unknown;None;Werewolf;Unknown;,Pre 1945;-
+138;Gellert Grindelwald;Male;Revolutionary leader;Unknown;Unknown;Human;Unknown;,1883;March,1998
+139;Dobby;Male;Malfoy family's house-elf (?-1993) | Hogwarts kitchens worker;Not applicable;None;House-elf;Not applicable;28 June,Unknown;Late March,1998
+140;Madame Rosmerta;Female;Landlady of the Three Broomsticks Inn;Unknown;Non-corporeal;Human;Unknown;,Before 1959;-
+141;Bem;Male;Student;Gryffindor;Unknown;Human;Unknown;1 September,1979-31 August 1980;-
+142;Rita Skeeter;Female;Gossip Correspondent for the Daily Prophet;Unknown;Non-corporeal;Human;Unknown;,1951;-

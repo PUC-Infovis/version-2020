@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel Leal</title>
+
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/index.css">
+    <script type="module" src="assets/js/index.js"></script>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="searcher">
+        <div class="searcher-area">
+          <input id="searcher" type="text" placeholder="Search a password!">
+        </div>
+        <div class="searcher-results", id="searcher-results"></div>
+      </div>
+      <div class="idiom-container">
+        <div class="idiom" id="idiom"></div>
+        <div class="explanation">
+          What you are looking at right now are 350 of
+          <a
+            href="https://haveibeenpwned.com/"
+            target="_blank"
+          >the most leaked passwords on the Have I Been Pwned database</a>.
+          The visualization tool shows how much time it takes to guarantee bruteforce
+          attack on each password depending on the attacker's hardware (the average
+          time is half of the guaranteed time). Consider that, in real life, attackers
+          use much more sophisticated methods to attack passwords, so if your password
+          is on the compiled list, you should be <bold>really</bold> worried,
+          and change it <bold>immediately</bold>. As for what each X axis mark means,
+          <bold>1 GPU</bold> represents a high-end graphics card that can try about
+          <bold>100.000.000.000</bold> password combinations per second.
+          <bold>25 GPUs</bold> represents a cluster of 25 high-end graphics cards
+          that can try about <bold>500.000.000.000</bold> password combinations per second.
+          Finally, <bold>NSA</bold> represents the (not confirmed) theoretical estimated
+          computational power of agencies like the NSA, which can crunch about
+          <bold>1.000.000.000.000</bold> password combinations per second. And just to
+          put a bit of context, <bold>10,000 seconds</bold> are equivalent to
+          <bold>less than 3 hours</bold>, <bold>1,000,000 seconds</bold> are equivalent to
+          <bold>12.5 days</bold>, <bold>1,000,000,000 seconds</bold> are equivalent to
+          <bold>more than 31 years</bold> and <bold>30,000,000,000 seconds</bold>
+          are equivalent to <bold>9.5 centuries</bold>.
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

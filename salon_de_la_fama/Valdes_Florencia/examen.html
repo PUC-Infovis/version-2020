@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Examen</title>
+    <link rel="stylesheet" href="examen.css">
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+  </head>
+
+  <body>
+    <div class="parent">
+      <div class="main-section">
+        <div><svg id='svg-canvas'></svg></div>  
+      </div>
+      <div class="lateral-section">
+        <h2>Visualización de días de entrenamiento</h2>
+        <p>Largo del día representa:</p>
+        <select name="cell_length" id="cell_length">
+          <option value="duration">Duración de la rutina</option>
+          <option value="intensity">Intensidad de la rutina</option>
+        </select>
+        <div class='main-section'>
+          <h3>Estadísticas generales</h3>
+          <svg id='svg-canvas-lateral'></svg>
+        </div>
+      </div>
+    </div>
+    
+  </body>
+  <script src="examen.js"></script>
+</html>

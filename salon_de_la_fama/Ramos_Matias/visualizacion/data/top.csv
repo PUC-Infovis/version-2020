@@ -1,0 +1,604 @@
+title,artist,genre,year,bpm,energy,danceability,dB,liveness,valence,duration_ms,acousticness,speechiness,popularity
+"Hey, Soul Sister",Train,neo mellow,2010,97,0.89,0.67,-4,0.08,0.8,217,0.19,0.04,83
+Love The Way You Lie,Eminem,detroit hip hop,2010,87,0.93,0.75,-5,0.52,0.64,263,0.24,0.23,82
+TiK ToK,Kesha,dance pop,2010,120,0.84,0.76,-3,0.29,0.71,200,0.1,0.14,80
+Bad Romance,Lady Gaga,dance pop,2010,119,0.92,0.7,-4,0.08,0.71,295,0.0,0.04,79
+Just the Way You Are,Bruno Mars,pop,2010,109,0.84,0.64,-5,0.09,0.43,221,0.02,0.04,78
+Baby,Justin Bieber,canadian pop,2010,65,0.86,0.73,-5,0.11,0.54,214,0.04,0.14,77
+Dynamite,Taio Cruz,dance pop,2010,120,0.78,0.75,-4,0.04,0.82,203,0.0,0.09,77
+Secrets,OneRepublic,dance pop,2010,148,0.76,0.52,-6,0.12,0.38,225,0.07,0.04,77
+Empire State of Mind (Part II) Broken Down,Alicia Keys,hip pop,2010,93,0.37,0.48,-8,0.12,0.14,216,0.74,0.03,76
+Only Girl (In The World),Rihanna,barbadian pop,2010,126,0.72,0.79,-4,0.07,0.61,235,0.13,0.04,73
+Club Can't Handle Me (feat. David Guetta),Flo Rida,dance pop,2010,128,0.87,0.62,-4,0.06,0.47,235,0.03,0.03,73
+Marry You,Bruno Mars,pop,2010,145,0.83,0.62,-5,0.1,0.48,230,0.33,0.04,73
+Cooler Than Me - Single Mix,Mike Posner,dance pop,2010,130,0.82,0.77,-5,0.7,0.63,213,0.18,0.05,73
+Telephone,Lady Gaga,dance pop,2010,122,0.83,0.83,-6,0.11,0.71,221,0.01,0.04,73
+Like A G6,Far East Movement,dance pop,2010,125,0.84,0.44,-8,0.12,0.78,217,0.01,0.45,72
+OMG (feat. will.i.am),Usher,atl hip hop,2010,130,0.75,0.78,-6,0.36,0.33,269,0.2,0.03,72
+Eenie Meenie,Sean Kingston,dance pop,2010,121,0.61,0.72,-4,0.11,0.83,202,0.05,0.03,71
+The Time (Dirty Bit),The Black Eyed Peas,dance pop,2010,128,0.81,0.82,-8,0.6,0.44,308,0.07,0.07,70
+Alejandro,Lady Gaga,dance pop,2010,99,0.8,0.63,-7,0.36,0.37,274,0.0,0.05,69
+Your Love Is My Drug,Kesha,dance pop,2010,120,0.61,0.83,-4,0.09,0.76,187,0.01,0.1,69
+Meet Me Halfway,The Black Eyed Peas,dance pop,2010,130,0.63,0.8,-7,0.32,0.4,284,0.0,0.07,68
+Whataya Want from Me,Adam Lambert,australian pop,2010,186,0.68,0.44,-5,0.06,0.45,227,0.01,0.05,66
+Take It Off,Kesha,dance pop,2010,125,0.68,0.73,-5,0.09,0.74,215,0.0,0.03,66
+Misery,Maroon 5,pop,2010,103,0.81,0.7,-5,0.22,0.73,216,0.0,0.04,65
+All The Right Moves,OneRepublic,dance pop,2010,146,0.95,0.53,-4,0.28,0.65,238,0.26,0.05,65
+Animal,Neon Trees,indie pop,2010,148,0.83,0.48,-6,0.38,0.74,212,0.0,0.04,65
+Naturally,Selena Gomez & The Scene,dance pop,2010,133,0.9,0.61,-5,0.05,0.88,203,0.02,0.05,64
+I Like It,Enrique Iglesias,dance pop,2010,129,0.94,0.65,-3,0.06,0.73,231,0.02,0.09,63
+Teenage Dream,Katy Perry,dance pop,2010,120,0.8,0.72,-5,0.13,0.59,228,0.02,0.04,63
+California Gurls,Katy Perry,dance pop,2010,125,0.75,0.79,-4,0.18,0.4,235,0.0,0.05,62
+3,Britney Spears,dance pop,2010,135,0.71,0.7,-2,0.14,0.79,213,0.05,0.05,62
+My First Kiss - feat. Ke$ha,3OH!3,dance pop,2010,138,0.89,0.68,-4,0.36,0.83,192,0.01,0.08,62
+Blah Blah Blah (feat. 3OH!3),Kesha,dance pop,2010,120,0.84,0.75,-3,0.42,0.52,172,0.08,0.12,62
+Imma Be,The Black Eyed Peas,dance pop,2010,92,0.52,0.6,-7,0.31,0.41,258,0.18,0.37,62
+Try Sleeping with a Broken Heart,Alicia Keys,hip pop,2010,111,0.82,0.5,-5,0.13,0.55,249,0.16,0.11,62
+Sexy Bitch (feat. Akon),David Guetta,dance pop,2010,130,0.63,0.81,-5,0.13,0.8,196,0.08,0.05,61
+Bound To You - Burlesque Original Motion Picture Soundtrack,Christina Aguilera,dance pop,2010,164,0.41,0.29,-5,0.13,0.07,264,0.83,0.03,61
+If I Had You,Adam Lambert,australian pop,2010,131,0.91,0.65,-4,0.37,0.79,228,0.01,0.11,59
+Rock That Body,The Black Eyed Peas,dance pop,2010,125,0.91,0.72,-6,0.43,0.84,269,0.02,0.1,59
+Dog Days Are Over,Florence + The Machine,art pop,2010,150,0.81,0.5,-5,0.12,0.26,253,0.03,0.09,58
+Something's Got A Hold On Me - Burlesque Original Motion Picture Soundtrack,Christina Aguilera,dance pop,2010,150,0.85,0.51,-4,0.12,0.72,185,0.47,0.27,58
+Doesn't Mean Anything,Alicia Keys,hip pop,2010,104,0.41,0.71,-7,0.1,0.1,273,0.04,0.03,57
+Hard,Rihanna,barbadian pop,2010,182,0.75,0.31,-4,0.65,0.16,251,0.01,0.11,57
+Loca,Shakira,colombian pop,2010,112,0.87,0.8,-4,0.09,0.85,193,0.19,0.07,56
+You Lost Me,Christina Aguilera,dance pop,2010,43,0.39,0.23,-6,0.14,0.07,257,0.85,0.04,56
+Not Myself Tonight,Christina Aguilera,dance pop,2010,120,0.81,0.76,-5,0.56,0.54,186,0.0,0.04,55
+Written in the Stars (feat. Eric Turner),Tinie Tempah,dance pop,2010,91,0.95,0.64,-4,0.18,0.57,220,0.06,0.07,52
+DJ Got Us Fallin' In Love (feat. Pitbull),Usher,atl hip hop,2010,120,0.86,0.66,-3,0.08,0.65,221,0.03,0.11,52
+Castle Walls (feat. Christina Aguilera),T.I.,atl hip hop,2010,80,0.86,0.45,-5,0.26,0.58,329,0.07,0.39,49
+Break Your Heart,Taio Cruz,dance pop,2010,122,0.9,0.67,-5,0.08,0.63,186,0.0,0.03,33
+Hello,Martin Solveig,big room,2010,128,0.98,0.67,-3,0.1,0.45,191,0.01,0.03,0
+A Thousand Years,Christina Perri,dance pop,2011,139,0.41,0.42,-7,0.11,0.16,285,0.31,0.03,81
+Someone Like You,Adele,british soul,2011,135,0.33,0.56,-8,0.1,0.28,285,0.89,0.03,80
+Give Me Everything,Pitbull,dance pop,2011,129,0.94,0.67,-3,0.3,0.53,252,0.19,0.16,79
+Just the Way You Are,Bruno Mars,pop,2011,109,0.84,0.64,-5,0.09,0.43,221,0.02,0.04,78
+Rolling in the Deep,Adele,british soul,2011,105,0.76,0.73,-5,0.05,0.52,228,0.13,0.03,76
+Run the World (Girls),Beyoncé,dance pop,2011,127,0.9,0.73,-4,0.37,0.76,236,0.0,0.14,76
+Moves Like Jagger - Studio Recording From The Voice Performance,Maroon 5,pop,2011,128,0.76,0.72,-4,0.32,0.62,201,0.01,0.05,76
+Love On Top,Beyoncé,dance pop,2011,94,0.75,0.65,-5,0.6,0.65,267,0.08,0.09,76
+Grenade,Bruno Mars,pop,2011,110,0.56,0.71,-7,0.12,0.23,223,0.15,0.06,75
+Tonight Tonight,Hot Chelle Rae,dance pop,2011,100,0.78,0.69,-5,0.16,0.81,200,0.08,0.12,75
+What the Hell,Avril Lavigne,canadian pop,2011,150,0.93,0.58,-4,0.14,0.88,221,0.0,0.05,74
+Born This Way,Lady Gaga,dance pop,2011,124,0.83,0.59,-5,0.33,0.49,260,0.0,0.16,73
+Monster,Kanye West,chicago rap,2011,125,0.69,0.63,-6,0.67,0.1,379,0.0,0.2,73
+Marry You,Bruno Mars,pop,2011,145,0.83,0.62,-5,0.1,0.48,230,0.33,0.04,73
+Best Thing I Never Had,Beyoncé,dance pop,2011,99,0.65,0.55,-4,0.09,0.3,254,0.14,0.03,73
+Party Rock Anthem,LMFAO,dance pop,2011,130,0.74,0.75,-4,0.27,0.35,262,0.02,0.16,72
+We R Who We R,Kesha,dance pop,2011,120,0.82,0.74,-5,0.12,0.65,205,0.01,0.04,72
+Price Tag,Jessie J,australian pop,2011,175,0.83,0.64,-4,0.27,0.68,223,0.03,0.18,72
+Good Life,OneRepublic,dance pop,2011,95,0.69,0.63,-8,0.13,0.65,253,0.08,0.05,72
+Just Cant Get Enough,The Black Eyed Peas,dance pop,2011,94,0.63,0.66,-9,0.11,0.26,219,0.19,0.18,71
+On The Floor,Jennifer Lopez,dance pop,2011,130,0.78,0.73,-5,0.07,0.57,285,0.11,0.05,69
+What's My Name?,Rihanna,barbadian pop,2011,100,0.79,0.69,-3,0.08,0.58,263,0.23,0.07,69
+Yeah 3x,Chris Brown,dance pop,2011,130,0.88,0.71,-3,0.09,0.7,242,0.0,0.04,69
+Without You (feat. Usher),David Guetta,dance pop,2011,128,0.61,0.61,-4,0.16,0.4,208,0.23,0.03,68
+Sexy And I Know It,LMFAO,dance pop,2011,130,0.86,0.71,-4,0.19,0.8,199,0.1,0.32,67
+The Edge Of Glory,Lady Gaga,dance pop,2011,128,0.77,0.58,-6,0.11,0.36,321,0.0,0.04,67
+E.T.,Katy Perry,dance pop,2011,152,0.87,0.62,-5,0.37,0.76,230,0.02,0.18,66
+Till the World Ends,Britney Spears,dance pop,2011,132,0.71,0.69,-6,0.2,0.45,238,0.02,0.07,65
+I Wanna Go,Britney Spears,dance pop,2011,130,0.55,0.7,-7,0.33,0.79,210,0.0,0.04,64
+Blow,Kesha,dance pop,2011,120,0.73,0.75,-4,0.07,0.81,220,0.0,0.04,64
+You And I,Lady Gaga,dance pop,2011,127,0.7,0.52,-5,0.09,0.52,307,0.09,0.05,64
+Judas,Lady Gaga,dance pop,2011,131,0.93,0.66,-4,0.27,0.53,249,0.0,0.07,63
+Tonight (I'm Fuckin' You),Enrique Iglesias,dance pop,2011,126,0.89,0.65,-4,0.12,0.32,232,0.03,0.05,63
+Please Don't Go,Mike Posner,dance pop,2011,120,0.88,0.7,-4,0.13,0.66,197,0.0,0.03,63
+We Found Love,Rihanna,barbadian pop,2011,128,0.77,0.73,-4,0.11,0.6,215,0.03,0.04,61
+Marry The Night,Lady Gaga,dance pop,2011,131,0.88,0.61,-4,0.46,0.38,265,0.0,0.06,61
+1+1,Beyoncé,dance pop,2011,63,0.38,0.3,-7,0.07,0.26,274,0.38,0.03,60
+Hold It Against Me,Britney Spears,dance pop,2011,133,0.72,0.65,-5,0.24,0.39,229,0.01,0.04,59
+I'm Into You,Jennifer Lopez,dance pop,2011,84,0.75,0.59,-4,0.08,0.7,200,0.02,0.14,59
+Papi,Jennifer Lopez,dance pop,2011,120,0.81,0.71,-5,0.37,0.89,223,0.13,0.06,58
+Cheers (Drink To That),Rihanna,barbadian pop,2011,80,0.91,0.58,-4,0.29,0.73,262,0.02,0.04,58
+S&M Remix,Rihanna,barbadian pop,2011,128,0.81,0.82,-3,0.05,0.89,257,0.05,0.05,54
+Written in the Stars (feat. Eric Turner),Tinie Tempah,dance pop,2011,91,0.95,0.64,-4,0.18,0.57,220,0.06,0.07,52
+Jar of Hearts,Christina Perri,dance pop,2011,75,0.35,0.35,-6,0.12,0.09,247,0.73,0.03,50
+Castle Walls (feat. Christina Aguilera),T.I.,atl hip hop,2011,80,0.86,0.45,-5,0.26,0.58,329,0.07,0.39,49
+Turning Page,Sleeping At Last,acoustic pop,2011,125,0.38,0.3,-8,0.11,0.19,255,0.91,0.03,46
+Super Bass,Nicki Minaj,dance pop,2011,127,0.74,0.77,-7,0.4,0.59,201,0.06,0.23,38
+Raise Your Glass,P!nk,dance pop,2011,122,0.64,0.68,-7,0.12,0.56,208,0.0,0.12,38
+Invading My Mind,Jennifer Lopez,dance pop,2011,129,0.88,0.73,-4,0.32,0.69,201,0.02,0.07,31
+Moment 4 Life - Album Version (Edited),Nicki Minaj,dance pop,2011,130,0.88,0.5,-4,0.22,0.37,279,0.39,0.38,28
+Last Friday Night (T.G.I.F.),Katy Perry,dance pop,2011,126,0.81,0.65,-4,0.67,0.72,231,0.0,0.04,27
+Firework,Katy Perry,dance pop,2011,124,0.83,0.64,-5,0.11,0.65,228,0.14,0.05,25
+Muny - Album Version (Edited),Nicki Minaj,dance pop,2011,98,0.72,0.8,-5,0.19,0.53,227,0.56,0.33,7
+Titanium (feat. Sia),David Guetta,dance pop,2012,126,0.79,0.6,-4,0.13,0.3,245,0.07,0.1,80
+Locked Out of Heaven,Bruno Mars,pop,2012,144,0.7,0.73,-4,0.31,0.87,233,0.05,0.04,79
+Paradise,Coldplay,permanent wave,2012,140,0.59,0.45,-7,0.08,0.2,279,0.05,0.03,79
+Payphone,Maroon 5,pop,2012,110,0.75,0.74,-5,0.29,0.55,231,0.02,0.04,79
+What Makes You Beautiful,One Direction,boy band,2012,125,0.79,0.73,-2,0.06,0.89,200,0.01,0.07,78
+I Knew You Were Trouble.,Taylor Swift,pop,2012,77,0.47,0.62,-7,0.03,0.68,220,0.0,0.04,77
+Call Me Maybe,Carly Rae Jepsen,canadian pop,2012,120,0.58,0.78,-7,0.11,0.66,193,0.01,0.04,76
+Love You Like A Love Song,Selena Gomez & The Scene,dance pop,2012,117,0.68,0.86,-4,0.07,0.92,188,0.08,0.05,76
+Set Fire to the Rain,Adele,british soul,2012,108,0.68,0.61,-4,0.13,0.47,242,0.0,0.03,76
+We Are Never Ever Getting Back Together,Taylor Swift,pop,2012,86,0.68,0.63,-6,0.12,0.75,193,0.01,0.09,75
+Stronger (What Doesn't Kill You),Kelly Clarkson,dance pop,2012,116,0.94,0.56,-4,0.11,0.68,222,0.05,0.05,74
+Try,P!nk,dance pop,2012,104,0.63,0.67,-7,0.09,0.55,248,0.0,0.03,74
+Starships,Nicki Minaj,dance pop,2012,125,0.72,0.75,-2,0.25,0.75,211,0.14,0.08,73
+One More Night,Maroon 5,pop,2012,93,0.82,0.72,-3,0.08,0.62,220,0.06,0.03,73
+Good Time,Owl City,pop,2012,126,0.87,0.56,-4,0.37,0.68,206,0.02,0.14,73
+Glad You Came,The Wanted,boy band,2012,127,0.85,0.72,-4,0.11,0.45,198,0.03,0.06,72
+Beauty And A Beat,Justin Bieber,canadian pop,2012,128,0.84,0.6,-5,0.07,0.53,228,0.0,0.06,72
+International Love,Pitbull,dance pop,2012,120,0.86,0.67,-3,0.34,0.65,227,0.01,0.05,72
+Some Nights,fun.,baroque pop,2012,108,0.74,0.67,-7,0.09,0.39,277,0.02,0.05,72
+Boyfriend,Justin Bieber,canadian pop,2012,97,0.55,0.72,-6,0.13,0.33,171,0.04,0.05,71
+Part Of Me,Katy Perry,dance pop,2012,130,0.92,0.68,-5,0.07,0.77,216,0.0,0.04,71
+Domino,Jessie J,australian pop,2012,127,0.55,0.76,-5,0.04,0.78,232,0.01,0.03,69
+Where Have You Been,Rihanna,barbadian pop,2012,128,0.85,0.72,-6,0.22,0.44,243,0.0,0.09,68
+Wide Awake,Katy Perry,dance pop,2012,160,0.68,0.51,-5,0.39,0.57,221,0.07,0.04,68
+The One That Got Away,Katy Perry,dance pop,2012,134,0.8,0.69,-4,0.16,0.88,227,0.0,0.04,67
+Dance Again,Jennifer Lopez,dance pop,2012,128,0.86,0.79,-5,0.1,0.71,237,0.02,0.07,66
+Turn Up the Music,Chris Brown,dance pop,2012,130,0.84,0.59,-6,0.16,0.64,228,0.0,0.1,65
+Lights - Single Version,Ellie Goulding,dance pop,2012,120,0.8,0.68,-6,0.13,0.78,211,0.03,0.04,65
+We Are Young (feat. Janelle Monáe),fun.,baroque pop,2012,184,0.64,0.38,-6,0.08,0.74,251,0.02,0.08,63
+Diamonds,Rihanna,barbadian pop,2012,92,0.71,0.56,-5,0.11,0.39,225,0.0,0.05,61
+Don't Stop the Party (feat. TJR),Pitbull,dance pop,2012,127,0.96,0.72,-4,0.38,0.95,206,0.01,0.09,59
+You Da One,Rihanna,barbadian pop,2012,127,0.72,0.7,-5,0.13,0.86,200,0.5,0.04,57
+Stereo Hearts (feat. Adam Levine),Gym Class Heroes,dance pop,2012,90,0.8,0.65,-3,0.27,0.8,211,0.03,0.1,54
+It Will Rain,Bruno Mars,pop,2012,150,0.84,0.58,-7,0.08,0.48,258,0.34,0.05,38
+Blow Me (One Last Kiss),P!nk,dance pop,2012,114,0.92,0.6,-3,0.25,0.75,256,0.0,0.04,0
+Underneath the Tree,Kelly Clarkson,dance pop,2013,160,0.81,0.51,-5,0.21,0.69,230,0.0,0.05,88
+Wake Me Up,Avicii,big room,2013,124,0.78,0.53,-6,0.16,0.64,247,0.0,0.05,85
+Story of My Life,One Direction,boy band,2013,121,0.66,0.6,-6,0.12,0.29,245,0.23,0.05,81
+Just Give Me a Reason (feat. Nate Ruess),P!nk,dance pop,2013,95,0.55,0.78,-7,0.13,0.44,243,0.35,0.05,81
+Hall of Fame,The Script,celtic rock,2013,85,0.87,0.42,-4,0.12,0.63,203,0.07,0.06,80
+Roar,Katy Perry,dance pop,2013,180,0.77,0.55,-5,0.35,0.46,224,0.0,0.04,78
+We Can't Stop,Miley Cyrus,dance pop,2013,80,0.62,0.61,-6,0.37,0.48,231,0.01,0.03,78
+Don't You Worry Child - Radio Edit,Swedish House Mafia,big room,2013,129,0.84,0.61,-3,0.12,0.44,213,0.11,0.05,78
+Get Lucky (feat. Pharrell Williams & Nile Rodgers) - Radio Edit,Daft Punk,electro,2013,116,0.81,0.79,-9,0.1,0.86,248,0.04,0.04,77
+Wrecking Ball,Miley Cyrus,dance pop,2013,120,0.42,0.53,-6,0.11,0.35,221,0.41,0.03,77
+Impossible,James Arthur,pop,2013,170,0.7,0.38,-5,0.11,0.3,209,0.14,0.09,77
+Blurred Lines,Robin Thicke,dance pop,2013,120,0.6,0.85,-5,0.08,0.84,264,0.0,0.04,76
+Heart Attack,Demi Lovato,dance pop,2013,174,0.79,0.5,-5,0.24,0.5,211,0.07,0.1,76
+We Are Never Ever Getting Back Together,Taylor Swift,pop,2013,86,0.68,0.63,-6,0.12,0.75,193,0.01,0.09,75
+Die Young,Kesha,dance pop,2013,128,0.7,0.71,-5,0.22,0.8,212,0.0,0.05,75
+Clarity,Zedd,complextro,2013,128,0.78,0.51,-3,0.07,0.18,271,0.04,0.07,75
+Summertime Sadness (Lana Del Rey Vs. Cedric Gervais) - Cedric Gervais Remix,Lana Del Rey,art pop,2013,126,0.81,0.57,-6,0.13,0.11,215,0.02,0.06,74
+Under Control,Calvin Harris,dance pop,2013,126,0.92,0.54,-3,0.12,0.51,184,0.13,0.08,74
+Everybody Talks,Neon Trees,indie pop,2013,155,0.92,0.47,-4,0.31,0.73,177,0.0,0.06,74
+"Hold On, We're Going Home",Drake,canadian hip hop,2013,100,0.41,0.77,-7,0.07,0.29,228,0.0,0.1,73
+Best Song Ever,One Direction,boy band,2013,118,0.88,0.65,-3,0.08,0.49,200,0.02,0.05,73
+Kiss You,One Direction,boy band,2013,90,0.93,0.63,-3,0.32,0.91,183,0.02,0.06,73
+Sweet Nothing (feat. Florence Welch),Calvin Harris,dance pop,2013,128,0.93,0.57,-4,0.06,0.58,213,0.2,0.11,72
+Lose Yourself to Dance,Daft Punk,electro,2013,100,0.66,0.83,-8,0.08,0.67,354,0.08,0.06,72
+Work Bitch,Britney Spears,dance pop,2013,128,0.82,0.63,-7,0.07,0.85,248,0.16,0.16,71
+Brave,Sara Bareilles,acoustic pop,2013,185,0.84,0.55,-4,0.04,0.76,221,0.01,0.05,71
+Can't Hold Us (feat. Ray Dalton),Macklemore & Ryan Lewis,dance pop,2013,146,0.93,0.63,-4,0.1,0.88,258,0.03,0.08,70
+Feel This Moment (feat. Christina Aguilera),Pitbull,dance pop,2013,136,0.76,0.67,-4,0.34,0.54,230,0.04,0.16,70
+Beneath Your Beautiful,Labrinth,pop,2013,84,0.52,0.56,-6,0.1,0.23,272,0.23,0.04,70
+Let Me Love You (Until You Learn To Love Yourself),Ne-Yo,dance pop,2013,125,0.68,0.66,-7,0.37,0.25,252,0.25,0.04,70
+Thrift Shop (feat. Wanz),Macklemore & Ryan Lewis,dance pop,2013,95,0.53,0.78,-7,0.05,0.66,236,0.06,0.29,69
+If I Lose Myself - Alesso vs OneRepublic,OneRepublic,dance pop,2013,126,0.75,0.52,-6,0.14,0.16,215,0.26,0.04,69
+The Way,Ariana Grande,dance pop,2013,82,0.88,0.65,-3,0.08,0.86,227,0.29,0.11,68
+Suit & Tie,Justin Timberlake,dance pop,2013,102,0.6,0.8,-4,0.16,0.36,326,0.1,0.22,68
+#thatPOWER,will.i.am,dance pop,2013,128,0.61,0.8,-6,0.07,0.4,280,0.0,0.06,68
+I Love It (feat. Charli XCX),Icona Pop,candy pop,2013,126,0.91,0.71,-3,0.15,0.82,157,0.01,0.03,67
+Play Hard (feat. Ne-Yo & Akon) - New Edit,David Guetta,dance pop,2013,130,0.87,0.72,-3,0.66,0.68,209,0.04,0.04,67
+Daylight,Maroon 5,pop,2013,120,0.67,0.66,-5,0.26,0.37,225,0.0,0.03,66
+Love Somebody,Maroon 5,pop,2013,120,0.78,0.68,-6,0.12,0.4,230,0.13,0.04,65
+A Little Party Never Killed Nobody (All We Got),Fergie,dance pop,2013,130,0.62,0.76,-6,0.09,0.52,241,0.01,0.18,65
+Move,Little Mix,dance pop,2013,121,0.74,0.85,-5,0.55,0.77,224,0.0,0.09,63
+Walks Like Rihanna,The Wanted,boy band,2013,126,0.82,0.56,-3,0.1,0.43,202,0.01,0.06,62
+Rock N Roll,Avril Lavigne,canadian pop,2013,184,0.96,0.47,-3,0.34,0.67,207,0.01,0.13,61
+Heartbreaker,Justin Bieber,canadian pop,2013,105,0.52,0.56,-7,0.34,0.58,263,0.14,0.1,61
+Mirrors - Radio Edit,Justin Timberlake,dance pop,2013,77,0.6,0.58,-6,0.43,0.65,277,0.14,0.05,60
+Next To Me,Emeli Sandé,dance pop,2013,95,0.8,0.67,-5,0.11,0.35,197,0.09,0.04,60
+Made In The USA,Demi Lovato,dance pop,2013,87,0.86,0.58,-4,0.32,0.59,196,0.0,0.04,60
+Clown,Emeli Sandé,dance pop,2013,130,0.23,0.45,-8,0.11,0.23,221,0.92,0.04,60
+Girl On Fire (feat. Nicki Minaj) - Inferno Version,Alicia Keys,hip pop,2013,93,0.81,0.55,-6,0.15,0.34,271,0.09,0.31,59
+TKO,Justin Timberlake,dance pop,2013,138,0.68,0.61,-7,0.43,0.49,424,0.01,0.24,58
+Come & Get It,Selena Gomez,dance pop,2013,80,0.79,0.55,-4,0.1,0.58,232,0.01,0.05,57
+Live It Up,Jennifer Lopez,dance pop,2013,128,0.73,0.69,-5,0.33,0.65,244,0.01,0.17,57
+We Own The Night,The Wanted,boy band,2013,104,0.94,0.55,-4,0.23,0.56,206,0.01,0.13,56
+Atlas - From The Hunger Games: Catching Fire Soundtrack,Coldplay,permanent wave,2013,136,0.45,0.28,-8,0.11,0.11,236,0.63,0.03,55
+What About Love,Austin Mahone,dance pop,2013,100,0.78,0.63,-7,0.04,0.28,203,0.0,0.04,54
+Take Back the Night,Justin Timberlake,dance pop,2013,107,0.66,0.59,-5,0.64,0.33,353,0.04,0.16,54
+Applause,Lady Gaga,dance pop,2013,140,0.78,0.67,-4,0.11,0.73,212,0.03,0.05,52
+Anything Could Happen,Ellie Goulding,dance pop,2013,103,0.78,0.7,-4,0.14,0.38,286,0.43,0.03,52
+Finally Found You,Enrique Iglesias,dance pop,2013,128,0.88,0.62,-5,0.35,0.66,221,0.01,0.1,52
+Pom Poms,Jonas Brothers,boy band,2013,148,0.98,0.68,-2,0.28,0.9,198,0.07,0.09,52
+#Beautiful,Mariah Carey,dance pop,2013,107,0.76,0.68,-5,0.31,0.45,200,0.29,0.04,51
+How Ya Doin'? (feat. Missy Elliott),Little Mix,dance pop,2013,201,0.95,0.36,-3,0.37,0.51,211,0.09,0.48,50
+Crazy Kids (feat. will.i.am),Kesha,dance pop,2013,128,0.75,0.72,-4,0.13,0.5,229,0.04,0.04,46
+"Ooh La La (from ""The Smurfs 2"")",Britney Spears,dance pop,2013,128,0.57,0.69,-5,0.11,0.73,257,0.02,0.05,45
+People Like Us,Kelly Clarkson,dance pop,2013,128,0.79,0.6,-5,0.36,0.61,259,0.04,0.04,45
+Overdose,Ciara,dance pop,2013,107,0.7,0.77,-6,0.06,0.79,227,0.01,0.03,43
+Right Now - Dyro Radio Edit,Rihanna,barbadian pop,2013,130,0.74,0.53,-6,0.24,0.45,186,0.0,0.04,42
+Give It 2 U,Robin Thicke,dance pop,2013,127,0.83,0.67,-4,0.16,0.58,230,0.1,0.07,41
+Foolish Games,Jewel,alaska indie,2013,132,0.34,0.51,-11,0.12,0.07,250,0.23,0.03,36
+Outta Nowhere (feat. Danny Mercer),Pitbull,dance pop,2013,95,0.84,0.71,-4,0.21,0.66,207,0.16,0.03,35
+Freak,Kelly Rowland,atl hip hop,2013,104,0.78,0.65,-5,0.12,0.45,274,0.13,0.06,28
+All of Me,John Legend,neo mellow,2014,120,0.26,0.42,-7,0.13,0.33,270,0.92,0.03,86
+Stay With Me,Sam Smith,pop,2014,84,0.42,0.42,-6,0.11,0.18,173,0.59,0.04,85
+Summer,Calvin Harris,dance pop,2014,128,0.86,0.6,-4,0.14,0.74,223,0.02,0.03,80
+"Happy - From ""Despicable Me 2""",Pharrell Williams,dance pop,2014,160,0.82,0.65,-5,0.09,0.96,233,0.22,0.18,79
+Rude,MAGIC!,pop,2014,144,0.76,0.77,-5,0.31,0.93,225,0.04,0.04,79
+Shake It Off,Taylor Swift,pop,2014,160,0.8,0.65,-5,0.33,0.94,219,0.06,0.17,78
+Dark Horse,Katy Perry,dance pop,2014,132,0.59,0.65,-6,0.17,0.35,216,0.0,0.05,78
+Hey Brother,Avicii,big room,2014,125,0.78,0.55,-5,0.08,0.46,255,0.03,0.04,78
+Maps,Maroon 5,pop,2014,120,0.71,0.74,-6,0.06,0.88,190,0.02,0.03,78
+Treasure,Bruno Mars,pop,2014,116,0.69,0.87,-5,0.32,0.94,179,0.04,0.04,77
+Let Her Go,Passenger,folk-pop,2014,75,0.54,0.51,-7,0.1,0.24,253,0.39,0.06,77
+Problem,Ariana Grande,dance pop,2014,103,0.81,0.66,-5,0.16,0.63,194,0.02,0.15,75
+Pompeii,Bastille,metropopolis,2014,127,0.72,0.68,-6,0.27,0.57,214,0.08,0.04,73
+Team,Lorde,art pop,2014,100,0.58,0.69,-7,0.31,0.42,193,0.17,0.09,73
+Love Me Again,John Newman,pop,2014,126,0.89,0.5,-5,0.1,0.21,240,0.0,0.04,73
+Latch,Disclosure,house,2014,122,0.73,0.5,-5,0.09,0.52,256,0.02,0.17,72
+Adore You,Miley Cyrus,dance pop,2014,120,0.66,0.58,-5,0.11,0.2,279,0.11,0.03,72
+Love Never Felt So Good,Michael Jackson,pop,2014,118,0.72,0.78,-6,0.07,0.71,246,0.13,0.04,71
+Burn,Ellie Goulding,dance pop,2014,87,0.78,0.56,-5,0.11,0.33,231,0.31,0.04,71
+She Looks So Perfect,5 Seconds of Summer,boy band,2014,160,0.95,0.49,-4,0.33,0.44,202,0.0,0.13,71
+Fancy,Iggy Azalea,australian hip hop,2014,95,0.72,0.91,-4,0.05,0.38,200,0.09,0.07,70
+Talk Dirty (feat. 2 Chainz),Jason Derulo,dance pop,2014,100,0.65,0.76,-7,0.31,0.76,178,0.03,0.23,68
+Gorilla,Bruno Mars,pop,2014,140,0.54,0.72,-7,0.1,0.64,244,0.45,0.04,68
+human,Christina Perri,dance pop,2014,144,0.49,0.44,-6,0.11,0.25,251,0.13,0.04,68
+Young Girls,Bruno Mars,pop,2014,126,0.75,0.56,-5,0.21,0.5,229,0.46,0.03,67
+Wiggle (feat. Snoop Dogg),Jason Derulo,dance pop,2014,82,0.62,0.7,-7,0.16,0.72,193,0.08,0.25,67
+Love Runs Out,OneRepublic,dance pop,2014,120,0.93,0.72,-4,0.08,0.74,225,0.17,0.06,66
+This Is How We Do,Katy Perry,dance pop,2014,96,0.64,0.69,-6,0.15,0.8,204,0.02,0.05,66
+Mmm Yeah (feat. Pitbull),Austin Mahone,dance pop,2014,126,0.92,0.71,-4,0.27,0.98,232,0.0,0.04,65
+A Little Party Never Killed Nobody (All We Got),Fergie,dance pop,2014,130,0.62,0.76,-6,0.09,0.52,241,0.01,0.18,65
+#SELFIE,The Chainsmokers,electropop,2014,128,0.92,0.79,-3,0.08,0.66,184,0.01,0.25,65
+Partition,Beyoncé,dance pop,2014,186,0.44,0.41,-12,0.31,0.17,319,0.03,0.29,65
+Birthday,Katy Perry,dance pop,2014,126,0.67,0.72,-5,0.11,0.84,215,0.09,0.07,65
+G.U.Y.,Lady Gaga,dance pop,2014,110,0.92,0.62,-3,0.12,0.57,233,0.01,0.04,65
+Stay The Night - Featuring Hayley Williams Of Paramore,Zedd,complextro,2014,128,0.74,0.6,-3,0.09,0.46,217,0.11,0.04,64
+"Let It Go - From ""Frozen / Single Version",Demi Lovato,dance pop,2014,140,0.66,0.5,-6,0.27,0.25,226,0.03,0.04,63
+Wings,Birdy,neo mellow,2014,83,0.71,0.47,-5,0.16,0.22,252,0.08,0.03,62
+Can't Remember to Forget You (feat. Rihanna),Shakira,colombian pop,2014,138,0.81,0.69,-4,0.14,0.82,207,0.12,0.07,62
+Shot Me Down (feat. Skylar Grey) - Radio Edit,David Guetta,dance pop,2014,192,0.77,0.35,-4,0.12,0.04,191,0.06,0.05,61
+Say Something,A Great Big World,neo mellow,2014,138,0.15,0.45,-9,0.09,0.09,229,0.87,0.03,61
+A Sky Full of Stars,Coldplay,permanent wave,2014,125,0.68,0.55,-6,0.21,0.16,268,0.01,0.03,60
+Come Get It Bae,Pharrell Williams,dance pop,2014,120,0.8,0.93,-6,0.1,0.9,202,0.27,0.08,59
+Chandelier,Sia,australian dance,2014,174,0.78,0.29,-3,0.07,0.62,216,0.02,0.07,56
+XO,Beyoncé,dance pop,2014,170,0.79,0.47,-9,0.31,0.21,216,0.17,0.26,56
+We Are One (Ole Ola) [The Official 2014 FIFA World Cup Song],Pitbull,dance pop,2014,125,0.94,0.6,-4,0.1,0.55,222,0.0,0.07,56
+Not About Angels,Birdy,neo mellow,2014,116,0.14,0.41,-10,0.09,0.23,190,0.97,0.04,56
+Drunk in Love,Beyoncé,dance pop,2014,140,0.62,0.59,-7,0.18,0.4,323,0.01,0.05,52
+Anaconda,Nicki Minaj,dance pop,2014,130,0.6,0.96,-6,0.21,0.65,260,0.07,0.18,50
+Boom Clap - From the Motion Picture Das Schicksal ist ein mieser Verräter,Charli XCX,candy pop,2014,92,0.81,0.68,-4,0.34,0.64,169,0.07,0.06,50
+La La La (Brasil 2014) (feat. Carlinhos Brown),Shakira,colombian pop,2014,128,0.82,0.8,-5,0.35,0.61,198,0.18,0.04,50
+Tee Shirt - Soundtrack Version,Birdy,neo mellow,2014,76,0.34,0.68,-9,0.09,0.56,160,0.84,0.03,49
+Words as Weapons,Birdy,neo mellow,2014,120,0.35,0.53,-9,0.14,0.19,239,0.28,0.03,44
+You're Mine (Eternal),Mariah Carey,dance pop,2014,149,0.58,0.63,-7,0.38,0.56,224,0.28,0.07,38
+Sheezus,Lily Allen,dance pop,2014,130,0.5,0.78,-7,0.11,0.39,235,0.15,0.04,37
+Cannonball,Lea Michele,hollywood,2014,92,0.82,0.56,-3,0.19,0.57,215,0.02,0.05,37
+It's On Again - Main Soundtrack,Alicia Keys,hip pop,2014,110,0.54,0.64,-9,0.25,0.53,230,0.1,0.11,30
+I Luh Ya Papi,Jennifer Lopez,dance pop,2014,96,0.73,0.74,-6,0.12,0.59,207,0.45,0.42,28
+Not a Bad Thing,Justin Timberlake,dance pop,2014,86,0.73,0.59,-6,0.38,0.46,266,0.27,0.06,0
+Thinking out Loud,Ed Sheeran,pop,2015,79,0.45,0.78,-6,0.18,0.59,282,0.47,0.03,84
+I'm Not The Only One,Sam Smith,pop,2015,82,0.49,0.68,-6,0.08,0.49,239,0.53,0.04,84
+The Hills,The Weeknd,canadian contemporary r&b,2015,113,0.56,0.58,-7,0.14,0.14,242,0.07,0.05,84
+Love Yourself,Justin Bieber,canadian pop,2015,100,0.38,0.61,-10,0.28,0.52,234,0.84,0.44,83
+Uptown Funk,Mark Ronson,dance pop,2015,115,0.61,0.86,-7,0.03,0.93,270,0.01,0.08,82
+Take Me To Church,Hozier,irish singer-songwriter,2015,129,0.66,0.57,-5,0.12,0.44,242,0.63,0.05,81
+Sugar,Maroon 5,pop,2015,120,0.79,0.75,-7,0.09,0.88,235,0.06,0.03,81
+Sorry,Justin Bieber,canadian pop,2015,100,0.76,0.65,-4,0.3,0.41,201,0.08,0.05,81
+FourFiveSeconds,Rihanna,barbadian pop,2015,206,0.27,0.58,-6,0.13,0.35,188,0.88,0.05,80
+"Love Me Like You Do - From ""Fifty Shades Of Grey""",Ellie Goulding,dance pop,2015,190,0.61,0.26,-7,0.13,0.28,253,0.25,0.05,79
+"Earned It (Fifty Shades Of Grey) - From The ""Fifty Shades Of Grey"" Soundtrack",The Weeknd,canadian contemporary r&b,2015,120,0.38,0.66,-6,0.1,0.44,252,0.39,0.03,79
+What Do You Mean?,Justin Bieber,canadian pop,2015,125,0.57,0.85,-8,0.08,0.79,206,0.59,0.1,79
+Stitches,Shawn Mendes,canadian pop,2015,150,0.75,0.75,-7,0.05,0.76,207,0.02,0.07,78
+Want to Want Me,Jason Derulo,dance pop,2015,114,0.68,0.78,-6,0.11,0.66,208,0.01,0.06,77
+My House,Flo Rida,dance pop,2015,94,0.7,0.69,-5,0.13,0.74,192,0.02,0.05,77
+Waves - Robin Schulz Radio Edit,Mr. Probz,tropical house,2015,120,0.51,0.83,-9,0.08,0.45,208,0.01,0.04,77
+Night Changes,One Direction,boy band,2015,120,0.52,0.67,-8,0.12,0.37,227,0.86,0.04,77
+How Deep Is Your Love,Calvin Harris,dance pop,2015,122,0.87,0.74,-4,0.39,0.34,213,0.04,0.07,77
+Never Forget You,Zara Larsson,dance pop,2015,146,0.73,0.58,-6,0.27,0.28,213,0.0,0.05,77
+Love Me Harder,Ariana Grande,dance pop,2015,99,0.71,0.47,-4,0.08,0.24,236,0.01,0.03,76
+Animals,Maroon 5,pop,2015,190,0.74,0.28,-6,0.59,0.33,231,0.0,0.09,76
+Blame,Calvin Harris,dance pop,2015,128,0.86,0.41,-4,0.34,0.35,213,0.03,0.08,76
+Worth It,Fifth Harmony,dance pop,2015,100,0.77,0.88,-4,0.12,0.59,225,0.06,0.09,75
+Break Free,Ariana Grande,dance pop,2015,130,0.7,0.69,-5,0.2,0.28,215,0.01,0.05,75
+Don't,Ed Sheeran,pop,2015,95,0.61,0.81,-7,0.64,0.85,220,0.01,0.07,74
+Elastic Heart,Sia,australian dance,2015,130,0.79,0.42,-5,0.15,0.5,257,0.01,0.05,73
+Rather Be (feat. Jess Glynne),Clean Bandit,dance pop,2015,121,0.59,0.8,-7,0.19,0.55,228,0.16,0.04,73
+Hello,Adele,british soul,2015,158,0.45,0.48,-6,0.09,0.29,295,0.34,0.03,73
+Dear Future Husband,Meghan Trainor,dance pop,2015,79,0.78,0.66,-5,0.32,0.83,184,0.38,0.19,72
+43776,Beyoncé,dance pop,2015,136,0.71,0.75,-5,0.13,0.56,214,0.01,0.13,72
+The Heart Wants What It Wants,Selena Gomez,dance pop,2015,83,0.79,0.62,-5,0.14,0.62,227,0.05,0.04,72
+"Hey Mama (feat. Nicki Minaj, Bebe Rexha & Afrojack)",David Guetta,dance pop,2015,86,0.73,0.6,-4,0.33,0.53,193,0.24,0.15,72
+Genie In a Bottle,Christina Aguilera,dance pop,2015,176,0.8,0.63,-7,0.14,0.91,218,0.21,0.16,72
+Company,Justin Bieber,canadian pop,2015,95,0.8,0.59,-5,0.08,0.43,208,0.13,0.06,72
+Sing,Ed Sheeran,pop,2015,120,0.67,0.82,-4,0.06,0.94,235,0.3,0.05,71
+Jealous - Remix,Nick Jonas,dance pop,2015,93,0.71,0.68,-4,0.44,0.45,222,0.01,0.08,70
+Really Don't Care,Demi Lovato,dance pop,2015,121,0.73,0.71,-4,0.19,0.85,202,0.12,0.09,70
+"Downtown (feat. Melle Mel, Grandmaster Caz, Kool Moe Dee & Eric Nally)",Macklemore & Ryan Lewis,dance pop,2015,110,0.61,0.83,-4,0.29,0.71,293,0.09,0.07,70
+Only Love Can Hurt Like This,Paloma Faith,british soul,2015,91,0.89,0.57,-5,0.33,0.31,233,0.1,0.08,69
+Heartbeat Song,Kelly Clarkson,dance pop,2015,149,0.8,0.49,-4,0.06,0.48,199,0.01,0.05,69
+Up,Olly Murs,dance pop,2015,115,0.85,0.69,-5,0.1,0.64,224,0.02,0.03,69
+Trumpets,Jason Derulo,dance pop,2015,82,0.7,0.63,-5,0.1,0.64,217,0.56,0.24,69
+Runnin' (Lose It All),Naughty Boy,tropical house,2015,139,0.85,0.32,-6,0.48,0.08,213,0.01,0.08,69
+Same Old Love,Selena Gomez,dance pop,2015,98,0.59,0.67,-4,0.21,0.44,229,0.02,0.03,69
+I Want You To Know,Zedd,complextro,2015,130,0.85,0.58,-3,0.14,0.37,240,0.01,0.06,68
+Lips Are Movin,Meghan Trainor,dance pop,2015,139,0.83,0.78,-5,0.11,0.95,183,0.05,0.05,68
+I'll Show You,Justin Bieber,canadian pop,2015,192,0.61,0.36,-7,0.18,0.08,200,0.05,0.1,68
+Here,Alessia Cara,canadian contemporary r&b,2015,120,0.82,0.38,-4,0.08,0.33,199,0.08,0.1,68
+I Lived,OneRepublic,dance pop,2015,120,0.85,0.59,-5,0.27,0.34,235,0.07,0.04,67
+Fireball (feat. John Ryan),Pitbull,dance pop,2015,123,0.94,0.69,-5,0.05,0.79,235,0.09,0.06,67
+Easy Love,Sigala,dance pop,2015,124,0.94,0.68,-4,0.12,0.65,230,0.18,0.06,67
+The Feeling,Justin Bieber,canadian pop,2015,127,0.81,0.53,-6,0.1,0.21,245,0.08,0.06,67
+I Really Like You,Carly Rae Jepsen,canadian pop,2015,122,0.81,0.62,-5,0.22,0.6,205,0.01,0.04,66
+BO$$,Fifth Harmony,dance pop,2015,103,0.87,0.81,-5,0.05,0.74,171,0.01,0.11,66
+Sugar,Maroon 5,pop,2015,120,0.79,0.75,-7,0.09,0.88,235,0.06,0.03,66
+Focus,Ariana Grande,dance pop,2015,100,0.88,0.67,-6,0.44,0.79,211,0.27,0.24,66
+All About That Bass,Meghan Trainor,dance pop,2015,134,0.88,0.81,-4,0.11,0.96,189,0.05,0.05,65
+On My Mind,Ellie Goulding,dance pop,2015,155,0.71,0.7,-7,0.09,0.74,213,0.26,0.05,65
+Love Me Like You,Little Mix,dance pop,2015,106,0.67,0.79,-4,0.28,0.85,198,0.21,0.04,65
+Broken Arrows,Avicii,big room,2015,116,0.67,0.63,-7,0.1,0.29,233,0.05,0.05,65
+Booty,Jennifer Lopez,dance pop,2015,129,0.95,0.71,-4,0.26,0.4,210,0.0,0.05,64
+What Do You Mean? - Acoustic,Justin Bieber,canadian pop,2015,125,0.36,0.77,-11,0.1,0.76,204,0.79,0.04,64
+Mark My Words,Justin Bieber,canadian pop,2015,114,0.26,0.38,-9,0.17,0.52,134,0.88,0.03,63
+Lay It All on Me,Rudimental,dance pop,2015,123,0.75,0.67,-7,0.19,0.48,242,0.14,0.04,62
+American Oxygen,Rihanna,barbadian pop,2015,78,0.75,0.39,-6,0.33,0.48,320,0.05,0.09,61
+Bang Bang,Jessie J,australian pop,2015,150,0.75,0.71,-4,0.38,0.73,199,0.27,0.09,61
+Reality - Radio Edit,Lost Frequencies,belgian edm,2015,122,0.7,0.71,-8,0.07,0.6,159,0.02,0.03,61
+Alive,Sia,australian dance,2015,100,0.76,0.51,-4,0.11,0.44,264,0.25,0.05,61
+Sugar (feat. Francesco Yates),Robin Schulz,dance pop,2015,123,0.82,0.64,-5,0.16,0.64,219,0.02,0.06,60
+Been You,Justin Bieber,canadian pop,2015,113,0.78,0.74,-6,0.32,0.86,199,0.02,0.07,60
+Prayer in C - Robin Schulz Radio Edit,Lilly Wood and The Prick,french indie pop,2015,123,0.89,0.76,-5,0.62,0.78,189,0.02,0.03,58
+See You Again (feat. Charlie Puth),Wiz Khalifa,hip hop,2015,80,0.48,0.69,-8,0.06,0.28,230,0.37,0.08,56
+Heroes (we could be),Alesso,big room,2015,126,0.75,0.52,-4,0.24,0.35,210,0.04,0.06,56
+"Feel The Light - From The ""Home"" Soundtrack",Jennifer Lopez,dance pop,2015,156,0.6,0.47,-6,0.09,0.04,292,0.33,0.05,55
+Perfect,One Direction,boy band,2015,100,0.82,0.65,-5,0.12,0.4,230,0.06,0.08,55
+Ghosttown,Madonna,dance pop,2015,79,0.55,0.54,-7,0.12,0.09,250,0.04,0.04,54
+Bang My Head (feat. Sia & Fetty Wap),David Guetta,dance pop,2015,108,0.87,0.6,-4,0.1,0.59,193,0.05,0.08,54
+Bloodstream,Ed Sheeran,pop,2015,89,0.59,0.48,-6,0.06,0.27,309,0.2,0.05,52
+Living For Love,Madonna,dance pop,2015,123,0.79,0.67,-5,0.25,0.39,219,0.04,0.09,52
+Baby Don't Lie,Gwen Stefani,dance pop,2015,100,0.55,0.69,-5,0.1,0.26,203,0.01,0.03,52
+Don't Be so Hard on Yourself,Jess Glynne,dance pop,2015,120,0.82,0.57,-3,0.16,0.66,211,0.06,0.03,52
+Steal My Girl,One Direction,boy band,2015,77,0.76,0.47,-6,0.14,0.52,227,0.0,0.04,51
+"Celebrate (From the Original Motion Picture ""Penguins of Madagascar"")",Pitbull,dance pop,2015,127,0.85,0.68,-3,0.06,0.93,193,0.01,0.06,50
+We Are Here,Alicia Keys,hip pop,2015,93,0.67,0.64,-6,0.08,0.08,285,0.43,0.04,49
+St Jude,Florence + The Machine,art pop,2015,117,0.43,0.26,-11,0.11,0.09,225,0.75,0.03,47
+Yesterday (feat. Bebe Rexha),David Guetta,dance pop,2015,128,0.78,0.57,-4,0.33,0.28,243,0.02,0.03,46
+Time of Our Lives,Pitbull,dance pop,2015,124,0.8,0.72,-6,0.69,0.72,229,0.09,0.06,45
+Sparks,Hilary Duff,dance pop,2015,122,0.88,0.85,-5,0.1,0.79,186,0.04,0.06,44
+Mr. Put It Down,Ricky Martin,dance pop,2015,128,0.78,0.8,-6,0.04,0.83,196,0.01,0.18,42
+Legendary Lovers,Katy Perry,dance pop,2015,126,0.84,0.62,-5,0.08,0.39,224,0.02,0.08,41
+Spark The Fire,Gwen Stefani,dance pop,2015,120,0.8,0.88,-4,0.2,0.54,202,0.08,0.06,39
+Run Run Run,Kelly Clarkson,dance pop,2015,112,0.37,0.28,-7,0.11,0.08,273,0.45,0.04,36
+Let Me Be Your Lover,Enrique Iglesias,dance pop,2015,112,0.9,0.72,-4,0.06,0.88,238,0.01,0.13,34
+Dangerous,Jennifer Hudson,dance pop,2015,109,0.53,0.9,-5,0.08,0.65,255,0.0,0.05,18
+L.A.LOVE (la la),Fergie,dance pop,2015,202,0.39,0.48,-8,0.26,0.27,193,0.02,0.09,0
+The Hills,The Weeknd,canadian contemporary r&b,2016,113,0.56,0.58,-7,0.14,0.14,242,0.07,0.05,84
+Love Yourself,Justin Bieber,canadian pop,2016,100,0.38,0.61,-10,0.28,0.52,234,0.84,0.44,83
+Cake By The Ocean,DNCE,dance pop,2016,119,0.75,0.77,-5,0.04,0.9,219,0.15,0.05,81
+Don't Let Me Down,The Chainsmokers,electropop,2016,160,0.87,0.53,-5,0.14,0.42,208,0.16,0.17,81
+In the Name of Love,Martin Garrix,big room,2016,134,0.52,0.5,-6,0.45,0.17,196,0.11,0.04,81
+Into You,Ariana Grande,dance pop,2016,108,0.73,0.62,-6,0.14,0.37,244,0.02,0.11,80
+This Is What You Came For,Calvin Harris,dance pop,2016,124,0.93,0.63,-3,0.15,0.47,222,0.2,0.03,80
+Million Reasons,Lady Gaga,dance pop,2016,130,0.42,0.67,-8,0.11,0.15,205,0.49,0.04,80
+Needed Me,Rihanna,barbadian pop,2016,111,0.31,0.67,-8,0.08,0.3,192,0.11,0.24,80
+7 Years,Lukas Graham,danish pop,2016,120,0.47,0.77,-6,0.39,0.34,237,0.29,0.05,80
+"CAN'T STOP THE FEELING! (Original Song from DreamWorks Animation's ""TROLLS"")",Justin Timberlake,dance pop,2016,113,0.83,0.67,-6,0.19,0.7,236,0.01,0.07,79
+Work from Home (feat. Ty Dolla $ign),Fifth Harmony,dance pop,2016,105,0.59,0.8,-6,0.06,0.59,214,0.1,0.04,79
+Scars To Your Beautiful,Alessia Cara,canadian contemporary r&b,2016,97,0.74,0.57,-6,0.11,0.45,230,0.03,0.13,79
+Like I'm Gonna Lose You (feat. John Legend),Meghan Trainor,dance pop,2016,108,0.53,0.63,-7,0.18,0.42,225,0.4,0.04,79
+Work,Rihanna,barbadian pop,2016,92,0.53,0.73,-6,0.09,0.56,219,0.08,0.09,78
+Stitches,Shawn Mendes,canadian pop,2016,150,0.75,0.75,-7,0.05,0.76,207,0.02,0.07,78
+"Me, Myself & I",G-Eazy,hip hop,2016,112,0.67,0.76,-7,0.16,0.38,251,0.02,0.1,78
+I Took A Pill In Ibiza - Seeb Remix,Mike Posner,dance pop,2016,102,0.71,0.66,-7,0.08,0.69,198,0.04,0.11,78
+Dangerous Woman,Ariana Grande,dance pop,2016,134,0.6,0.66,-5,0.36,0.29,236,0.05,0.04,78
+Starving,Hailee Steinfeld,dance pop,2016,100,0.62,0.73,-4,0.11,0.51,182,0.38,0.06,78
+Shout Out to My Ex,Little Mix,dance pop,2016,126,0.75,0.77,-4,0.11,0.8,246,0.02,0.09,77
+Electric Love,BØRNS,electropop,2016,120,0.8,0.61,-8,0.26,0.52,218,0.01,0.05,76
+Confident,Demi Lovato,dance pop,2016,130,0.75,0.59,-6,0.09,0.34,206,0.0,0.07,75
+Too Good,Drake,canadian hip hop,2016,118,0.65,0.79,-8,0.1,0.39,263,0.05,0.1,74
+Roses,The Chainsmokers,electropop,2016,100,0.8,0.71,-7,0.31,0.34,227,0.04,0.06,74
+Cold Water (feat. Justin Bieber & MØ),Major Lazer,dance pop,2016,93,0.8,0.61,-5,0.16,0.5,185,0.07,0.04,73
+Me Too,Meghan Trainor,dance pop,2016,124,0.69,0.93,-6,0.48,0.84,181,0.1,0.1,73
+Light It Up (feat. Nyla & Fuse ODG) [Remix],Major Lazer,dance pop,2016,108,0.88,0.75,-4,0.23,0.75,166,0.04,0.07,73
+Ain't Your Mama,Jennifer Lopez,dance pop,2016,120,0.68,0.76,-6,0.07,0.82,218,0.05,0.23,72
+Close,Nick Jonas,dance pop,2016,124,0.62,0.65,-5,0.14,0.4,234,0.25,0.08,72
+Toothbrush,DNCE,dance pop,2016,105,0.79,0.55,-6,0.47,0.82,232,0.12,0.13,72
+All We Know,The Chainsmokers,electropop,2016,90,0.59,0.66,-9,0.12,0.3,194,0.1,0.03,72
+Final Song,MØ,dance pop,2016,105,0.67,0.7,-6,0.08,0.25,236,0.01,0.03,72
+Company,Justin Bieber,canadian pop,2016,95,0.8,0.59,-5,0.08,0.43,208,0.13,0.06,72
+Hands To Myself,Selena Gomez,dance pop,2016,111,0.5,0.81,-7,0.34,0.47,201,0.01,0.12,71
+All I Ask,Adele,british soul,2016,142,0.28,0.59,-5,0.15,0.34,272,0.88,0.03,71
+"Just Like Fire (From the Original Motion Picture ""Alice Through The Looking Glass"")",P!nk,dance pop,2016,163,0.7,0.63,-6,0.11,0.5,215,0.01,0.15,71
+NO,Meghan Trainor,dance pop,2016,92,0.8,0.56,-4,0.74,0.65,214,0.01,0.22,70
+Kill Em With Kindness,Selena Gomez,dance pop,2016,120,0.88,0.76,-5,0.1,0.4,218,0.01,0.04,70
+Cool Girl,Tove Lo,dance pop,2016,102,0.69,0.67,-7,0.08,0.2,199,0.31,0.11,69
+Runnin' (Lose It All),Naughty Boy,tropical house,2016,139,0.85,0.32,-6,0.48,0.08,213,0.01,0.08,69
+Here,Alessia Cara,canadian contemporary r&b,2016,120,0.82,0.38,-4,0.08,0.33,199,0.08,0.1,68
+Perfect Illusion,Lady Gaga,dance pop,2016,125,0.86,0.61,-5,0.36,0.66,182,0.0,0.04,67
+PILLOWTALK,ZAYN,dance pop,2016,125,0.7,0.59,-4,0.09,0.43,204,0.1,0.05,66
+Out Of The Woods,Taylor Swift,pop,2016,92,0.84,0.55,-7,0.34,0.34,236,0.0,0.04,66
+Rise,Katy Perry,dance pop,2016,101,0.64,0.55,-6,0.11,0.44,203,0.05,0.05,66
+Wherever I Go,OneRepublic,dance pop,2016,100,0.69,0.55,-6,0.27,0.35,170,0.09,0.04,66
+Body Say,Demi Lovato,dance pop,2016,87,0.74,0.63,-5,0.28,0.26,194,0.0,0.04,65
+Don't Be A Fool,Shawn Mendes,canadian pop,2016,175,0.34,0.47,-6,0.1,0.27,216,0.6,0.04,65
+LIKE I WOULD,ZAYN,dance pop,2016,113,0.83,0.56,-6,0.26,0.23,192,0.02,0.11,65
+Cheap Thrills,Sia,australian dance,2016,90,0.8,0.59,-5,0.08,0.73,225,0.06,0.22,64
+I Got You,Bebe Rexha,dance pop,2016,98,0.89,0.61,-5,0.09,0.32,192,0.05,0.05,64
+Run Away With Me,Carly Rae Jepsen,canadian pop,2016,119,0.72,0.56,-6,0.05,0.25,251,0.01,0.05,63
+Cruel (feat. ZAYN),Snakehips,dance pop,2016,110,0.88,0.6,-4,0.16,0.32,228,0.02,0.12,63
+Send My Love (To Your New Lover),Adele,british soul,2016,164,0.52,0.69,-8,0.17,0.56,223,0.04,0.1,61
+WTF (Where They From),Missy Elliott,dance pop,2016,120,0.82,0.93,-3,0.06,0.56,193,0.02,0.2,58
+Desire,Years & Years,dance pop,2016,126,0.78,0.71,-5,0.3,0.64,203,0.3,0.06,58
+When We Were Young,Adele,british soul,2016,144,0.59,0.38,-6,0.09,0.27,291,0.35,0.05,58
+I Know What You Did Last Summer,Shawn Mendes,canadian pop,2016,114,0.77,0.68,-5,0.16,0.72,224,0.11,0.1,57
+Wish That You Were Here - From Miss Peregrines Home for Peculiar Children Original Motion Picture,Florence + The Machine,art pop,2016,94,0.57,0.37,-6,0.13,0.12,403,0.72,0.03,57
+Hurts,Emeli Sandé,dance pop,2016,106,0.64,0.58,-8,0.15,0.18,238,0.02,0.03,57
+Change,Christina Aguilera,dance pop,2016,82,0.54,0.62,-6,0.13,0.2,187,0.68,0.08,54
+Make Me... (feat. G-Eazy),Britney Spears,dance pop,2016,123,0.7,0.7,-7,0.22,0.58,231,0.16,0.1,53
+Keeping Your Head Up,Birdy,neo mellow,2016,122,0.78,0.6,-5,0.19,0.53,208,0.16,0.05,52
+True Colors,Zedd,complextro,2016,126,0.79,0.57,-3,0.1,0.49,225,0.4,0.04,51
+Make Me Like You,Gwen Stefani,dance pop,2016,118,0.71,0.74,-5,0.13,0.8,217,0.04,0.05,50
+Champagne Problems,Nick Jonas,dance pop,2016,108,0.78,0.73,-5,0.09,0.64,193,0.0,0.13,50
+Blown,DNCE,dance pop,2016,130,0.95,0.63,-5,0.1,0.73,197,0.0,0.04,48
+Start,John Legend,neo mellow,2016,110,0.04,0.52,-15,0.09,0.26,310,0.99,0.04,47
+Pep Rally,Missy Elliott,dance pop,2016,90,0.75,0.83,-4,0.2,0.32,263,0.22,0.12,47
+Higher,Carly Rae Jepsen,canadian pop,2016,114,0.87,0.65,-5,0.37,0.44,234,0.01,0.06,46
+Invitation,Britney Spears,dance pop,2016,112,0.65,0.37,-7,0.09,0.16,200,0.03,0.11,44
+One Call Away (feat. Tyga) - Remix,Charlie Puth,dance pop,2016,91,0.69,0.75,-5,0.13,0.52,192,0.26,0.04,41
+Beautiful Birds (feat. Birdy),Passenger,folk-pop,2016,86,0.17,0.39,-13,0.11,0.14,214,0.91,0.03,36
+Little Lies,Hilary Duff,dance pop,2016,124,0.76,0.57,-6,0.04,0.4,204,0.0,0.06,36
+Do You Wanna Come Over?,Britney Spears,dance pop,2016,121,0.7,0.75,-6,0.11,0.45,203,0.01,0.07,34
+BURNITUP!,Janet Jackson,dance pop,2016,123,0.71,0.83,-7,0.31,0.83,250,0.05,0.18,31
+Picky - Remix,Joey Montana,latin,2016,186,0.81,0.7,-3,0.37,0.69,225,0.09,0.07,29
+Behind Your Back,Nelly Furtado,canadian latin,2016,98,0.47,0.8,-10,0.07,0.69,228,0.25,0.04,18
+Million Years Ago,Adele,british soul,2016,0,0.0,0.0,-60,0.0,0.0,227,0.0,0.0,0
+Shape of You,Ed Sheeran,pop,2017,96,0.65,0.83,-3,0.09,0.93,234,0.58,0.08,87
+Closer,The Chainsmokers,electropop,2017,95,0.52,0.75,-6,0.11,0.66,245,0.41,0.03,86
+Starboy,The Weeknd,canadian contemporary r&b,2017,186,0.59,0.68,-7,0.14,0.49,230,0.14,0.28,85
+Treat You Better,Shawn Mendes,canadian pop,2017,83,0.82,0.44,-4,0.11,0.75,188,0.11,0.34,84
+That's What I Like,Bruno Mars,pop,2017,134,0.56,0.85,-5,0.09,0.86,207,0.01,0.04,83
+Let Me Love You,DJ Snake,electronic trap,2017,100,0.72,0.65,-5,0.14,0.16,206,0.09,0.03,82
+I Feel It Coming,The Weeknd,canadian contemporary r&b,2017,93,0.82,0.77,-6,0.07,0.59,269,0.43,0.12,81
+Mercy,Shawn Mendes,canadian pop,2017,148,0.66,0.56,-5,0.11,0.36,209,0.13,0.08,81
+Side To Side,Ariana Grande,dance pop,2017,159,0.74,0.65,-6,0.24,0.61,226,0.05,0.23,80
+Stay,Zedd,complextro,2017,102,0.62,0.69,-5,0.12,0.54,210,0.25,0.06,80
+It Ain't Me (with Selena Gomez),Kygo,edm,2017,100,0.53,0.64,-7,0.09,0.52,221,0.12,0.07,79
+Malibu,Miley Cyrus,dance pop,2017,140,0.78,0.57,-6,0.08,0.34,232,0.08,0.06,78
+Something Just Like This,The Chainsmokers,electropop,2017,103,0.65,0.61,-7,0.17,0.51,248,0.03,0.04,78
+Rockabye (feat. Sean Paul & Anne-Marie),Clean Bandit,dance pop,2017,102,0.76,0.72,-4,0.18,0.74,251,0.41,0.05,78
+I Dont Wanna Live Forever (Fifty Shades Darker),ZAYN,dance pop,2017,118,0.45,0.74,-8,0.33,0.09,245,0.06,0.06,78
+My Way,Calvin Harris,dance pop,2017,120,0.91,0.82,-3,0.16,0.54,219,0.09,0.04,78
+"I'm the One (feat. Justin Bieber, Quavo, Chance the Rapper & Lil Wayne)",DJ Khaled,dance pop,2017,81,0.67,0.61,-4,0.17,0.81,289,0.06,0.04,77
+Praying,Kesha,dance pop,2017,73,0.39,0.58,-7,0.11,0.32,230,0.49,0.03,77
+Despacito - Remix,Luis Fonsi,latin,2017,178,0.82,0.65,-4,0.1,0.82,229,0.23,0.17,76
+The Greatest,Sia,australian dance,2017,192,0.73,0.67,-6,0.06,0.73,210,0.01,0.27,76
+There for You,Martin Garrix,big room,2017,106,0.64,0.61,-8,0.12,0.13,222,0.12,0.06,76
+Paris,The Chainsmokers,electropop,2017,100,0.64,0.65,-7,0.09,0.25,222,0.02,0.03,76
+Crying in the Club,Camila Cabello,dance pop,2017,85,0.62,0.33,-6,0.16,0.6,216,0.33,0.38,75
+Mama,Jonas Blue,dance pop,2017,104,0.79,0.74,-4,0.05,0.57,184,0.1,0.04,75
+Slide (feat. Frank Ocean & Migos),Calvin Harris,dance pop,2017,104,0.8,0.74,-3,0.25,0.51,231,0.5,0.05,75
+Swish Swish,Katy Perry,dance pop,2017,120,0.71,0.84,-5,0.1,0.57,243,0.02,0.04,73
+Chained To The Rhythm,Katy Perry,dance pop,2017,190,0.8,0.45,-5,0.2,0.47,238,0.08,0.17,72
+Cold (feat. Future),Maroon 5,pop,2017,100,0.72,0.69,-6,0.05,0.41,234,0.14,0.11,72
+Love,Lana Del Rey,art pop,2017,99,0.37,0.53,-11,0.11,0.23,273,0.49,0.03,72
+Reggaetón Lento (Remix),CNCO,boy band,2017,94,0.91,0.53,-3,0.1,0.62,189,0.15,0.09,71
+All I Ask,Adele,british soul,2017,142,0.28,0.59,-5,0.15,0.34,272,0.88,0.03,71
+First Time,Kygo,edm,2017,90,0.59,0.63,-7,0.1,0.68,194,0.2,0.11,71
+The Cure,Lady Gaga,dance pop,2017,100,0.51,0.7,-5,0.09,0.52,211,0.08,0.03,71
+"How Far I'll Go - From ""Moana""",Alessia Cara,canadian contemporary r&b,2017,181,0.54,0.31,-10,0.07,0.16,176,0.16,0.35,71
+Bodak Yellow,Cardi B,pop,2017,125,0.72,0.93,-6,0.35,0.46,224,0.07,0.11,70
+Rich Love (with Seeb),OneRepublic,dance pop,2017,105,0.87,0.4,-4,0.36,0.47,201,0.17,0.31,70
+Tired,Alan Walker,electro house,2017,124,0.88,0.69,-4,0.15,0.49,192,0.04,0.06,70
+Came Here for Love,Sigala,dance pop,2017,125,0.87,0.71,-3,0.12,0.72,203,0.03,0.04,70
+24K Magic,Bruno Mars,pop,2017,107,0.8,0.82,-4,0.15,0.63,226,0.03,0.08,69
+Strip That Down (feat. Quavo),Liam Payne,dance pop,2017,106,0.5,0.87,-5,0.08,0.55,202,0.2,0.05,69
+Cut To The Feeling,Carly Rae Jepsen,canadian pop,2017,115,0.91,0.71,-3,0.3,0.65,208,0.01,0.06,69
+OK - Spotify Version,Robin Schulz,dance pop,2017,122,0.81,0.65,-6,0.13,0.58,189,0.12,0.06,69
+Bon appétit,Katy Perry,dance pop,2017,106,0.79,0.8,-6,0.22,0.52,228,0.13,0.06,68
+Summer Bummer (feat. A$AP Rocky & Playboi Carti),Lana Del Rey,art pop,2017,135,0.57,0.76,-9,0.2,0.14,261,0.02,0.13,67
+Get Low (with Liam Payne),Zedd,complextro,2017,108,0.93,0.72,-4,0.05,0.54,205,0.03,0.05,66
+Kissing Strangers,DNCE,dance pop,2017,120,0.74,0.77,-6,0.09,0.86,202,0.05,0.04,66
+Slow Hands,Niall Horan,dance pop,2017,86,0.42,0.74,-7,0.06,0.85,188,0.01,0.05,64
+Younger Now,Miley Cyrus,dance pop,2017,122,0.87,0.55,-5,0.14,0.33,249,0.0,0.06,62
+Body Moves,DNCE,dance pop,2017,102,0.69,0.65,-5,0.04,0.86,236,0.0,0.04,62
+Reality (feat. Janieck Devy) - Radio Edit,Lost Frequencies,belgian edm,2017,122,0.64,0.73,-7,0.08,0.53,158,0.02,0.04,59
+Angel,Fifth Harmony,dance pop,2017,124,0.53,0.74,-6,0.35,0.13,189,0.0,0.04,59
+Touch (feat. Kid Ink),Little Mix,dance pop,2017,102,0.75,0.64,-4,0.49,0.53,203,0.04,0.11,59
+We Don't Talk Anymore - DROELOE Remix,Charlie Puth,dance pop,2017,100,0.82,0.7,-5,0.45,0.67,218,0.49,0.22,59
+Love Incredible (feat. Camila Cabello),Cashmere Cat,downtempo,2017,167,0.5,0.37,-9,0.2,0.21,180,0.06,0.12,59
+No Vacancy (with Sebastián Yatra),OneRepublic,dance pop,2017,100,0.76,0.69,-4,0.14,0.59,223,0.08,0.04,57
+Rich Boy,Galantis,big room,2017,110,0.9,0.74,-2,0.08,0.65,184,0.07,0.05,55
+Lust for Life (with The Weeknd),Lana Del Rey,art pop,2017,100,0.67,0.51,-9,0.36,0.27,264,0.58,0.06,54
+Greenlight (feat. Flo Rida & LunchMoney Lewis),Pitbull,dance pop,2017,115,0.83,0.7,-6,0.36,0.63,245,0.28,0.27,54
+Influence,Tove Lo,dance pop,2017,105,0.59,0.77,-10,0.11,0.33,225,0.1,0.05,54
+Remember I Told You,Nick Jonas,dance pop,2017,113,0.53,0.68,-6,0.04,0.84,202,0.14,0.28,53
+Messin' Around,Pitbull,dance pop,2017,158,0.81,0.57,-5,0.04,0.78,223,0.02,0.05,51
+Water Under the Bridge,Adele,british soul,2017,95,0.84,0.6,-7,0.11,0.47,240,0.02,0.07,49
+Free Me,Sia,australian dance,2017,87,0.46,0.27,-4,0.14,0.21,286,0.85,0.03,44
+Kissing Strangers - Remix,DNCE,dance pop,2017,120,0.77,0.76,-6,0.08,0.81,202,0.08,0.05,43
+A L I E N S,Coldplay,permanent wave,2017,148,0.88,0.43,-5,0.21,0.25,282,0.0,0.04,41
+One Kiss (with Dua Lipa),Calvin Harris,dance pop,2018,124,0.86,0.79,-3,0.08,0.59,215,0.04,0.11,86
+Havana (feat. Young Thug),Camila Cabello,dance pop,2018,105,0.52,0.77,-4,0.13,0.39,217,0.18,0.03,85
+I Like It,Cardi B,pop,2018,136,0.73,0.82,-4,0.37,0.65,253,0.1,0.13,85
+New Rules,Dua Lipa,dance pop,2018,116,0.7,0.76,-6,0.15,0.61,209,0.0,0.07,84
+There's Nothing Holdin' Me Back,Shawn Mendes,canadian pop,2018,122,0.81,0.87,-4,0.08,0.97,199,0.38,0.06,84
+no tears left to cry,Ariana Grande,dance pop,2018,122,0.71,0.7,-6,0.29,0.35,206,0.04,0.06,84
+IDGAF,Dua Lipa,dance pop,2018,97,0.54,0.84,-6,0.08,0.51,218,0.04,0.09,84
+In My Blood,Shawn Mendes,canadian pop,2018,140,0.71,0.62,-7,0.13,0.49,211,0.06,0.07,83
+Wolves,Selena Gomez,dance pop,2018,125,0.8,0.72,-5,0.2,0.31,198,0.12,0.04,83
+Dusk Till Dawn - Radio Edit,ZAYN,dance pop,2018,180,0.44,0.26,-7,0.11,0.1,239,0.1,0.04,83
+Attention,Charlie Puth,dance pop,2018,100,0.61,0.78,-5,0.13,0.8,209,0.11,0.05,83
+Electricity (with Dua Lipa),Silk City,edm,2018,118,0.67,0.59,-6,0.34,0.51,238,0.01,0.05,82
+Love On The Brain,Rihanna,barbadian pop,2018,172,0.64,0.51,-5,0.08,0.38,224,0.07,0.05,82
+"Let Me Go (with Alesso, Florida Georgia Line & watt)",Hailee Steinfeld,dance pop,2018,103,0.71,0.66,-4,0.08,0.74,175,0.03,0.05,82
+Silence,Marshmello,brostep,2018,142,0.76,0.52,-3,0.17,0.29,181,0.26,0.09,82
+Sorry Not Sorry,Demi Lovato,dance pop,2018,144,0.64,0.71,-7,0.26,0.89,204,0.02,0.23,81
+Shallow - Radio Edit,Lady Gaga,dance pop,2018,96,0.33,0.57,-7,0.09,0.28,217,0.42,0.03,80
+These Days,Rudimental,dance pop,2018,92,0.81,0.65,-4,0.17,0.55,211,0.19,0.05,80
+What Lovers Do (feat. SZA),Maroon 5,pop,2018,110,0.6,0.8,-5,0.1,0.42,200,0.08,0.06,79
+Finesse - Remix; feat. Cardi B,Bruno Mars,pop,2018,105,0.86,0.7,-5,0.02,0.93,217,0.02,0.1,78
+Perfect Duet (Ed Sheeran & Beyoncé),Ed Sheeran,pop,2018,95,0.3,0.59,-7,0.12,0.36,260,0.78,0.03,78
+Bad At Love,Halsey,dance pop,2018,118,0.75,0.68,-4,0.09,0.61,181,0.06,0.03,78
+Him & I (with Halsey),G-Eazy,hip hop,2018,88,0.73,0.59,-6,0.31,0.19,269,0.05,0.09,78
+Friends (with BloodPop®),Justin Bieber,canadian pop,2018,105,0.73,0.74,-5,0.3,0.62,189,0.0,0.04,77
+Wild Thoughts (feat. Rihanna & Bryson Tiller),DJ Khaled,dance pop,2018,98,0.67,0.67,-3,0.12,0.63,204,0.03,0.07,76
+My My My!,Troye Sivan,dance pop,2018,103,0.46,0.7,-8,0.05,0.48,205,0.0,0.08,76
+Capital Letters,Hailee Steinfeld,dance pop,2018,100,0.81,0.66,-6,0.05,0.46,219,0.03,0.08,76
+Sick Boy,The Chainsmokers,electropop,2018,90,0.58,0.66,-8,0.12,0.45,193,0.11,0.05,76
+Tequila,Dan + Shay,contemporary country,2018,86,0.59,0.47,-6,0.13,0.5,196,0.03,0.03,76
+Look What You Made Me Do,Taylor Swift,pop,2018,128,0.71,0.77,-6,0.13,0.51,212,0.2,0.12,75
+Youth (feat. Khalid),Shawn Mendes,canadian pop,2018,100,0.6,0.53,-7,0.13,0.32,191,0.56,0.12,75
+Bad Liar,Selena Gomez,dance pop,2018,121,0.41,0.97,-6,0.08,0.73,215,0.19,0.07,75
+Anywhere,Rita Ora,dance pop,2018,107,0.8,0.63,-4,0.1,0.32,215,0.04,0.06,74
+Say Something,Justin Timberlake,dance pop,2018,97,0.63,0.71,-7,0.08,0.37,279,0.1,0.08,74
+Chun-Li,Nicki Minaj,dance pop,2018,129,0.73,0.69,-5,0.11,0.48,192,0.28,0.37,73
+Sign of the Times,Harry Styles,dance pop,2018,120,0.57,0.52,-5,0.11,0.21,341,0.03,0.03,72
+Familiar,Liam Payne,dance pop,2018,93,0.81,0.64,-5,0.08,0.91,197,0.02,0.33,72
+Let Me,ZAYN,dance pop,2018,168,0.57,0.46,-6,0.1,0.19,185,0.24,0.05,72
+Supernova,Ansel Elgort,dance pop,2018,140,0.62,0.77,-5,0.21,0.68,191,0.06,0.1,72
+Nervous,Shawn Mendes,canadian pop,2018,122,0.62,0.84,-7,0.13,0.74,164,0.04,0.08,71
+First Time,Kygo,edm,2018,90,0.59,0.63,-7,0.1,0.68,194,0.2,0.11,71
+End Game,Taylor Swift,pop,2018,159,0.59,0.65,-6,0.11,0.15,245,0.01,0.06,70
+Mi Gente (feat. Beyoncé),J Balvin,latin,2018,105,0.72,0.76,-6,0.23,0.47,210,0.02,0.08,68
+Lemon,N.E.R.D,hip hop,2018,95,0.73,0.92,-7,0.12,0.2,220,0.0,0.09,68
+For You (With Rita Ora),Liam Payne,dance pop,2018,113,0.8,0.54,-5,0.42,0.18,243,0.02,0.03,67
+Want To,Dua Lipa,dance pop,2018,92,0.69,0.57,-5,0.06,0.32,212,0.08,0.12,67
+What I Need (feat. Kehlani),Hayley Kiyoko,dance pop,2018,104,0.79,0.63,-4,0.16,0.41,220,0.05,0.06,67
+Wait,Maroon 5,pop,2018,126,0.6,0.66,-5,0.11,0.45,191,0.1,0.06,67
+What About Us,P!nk,dance pop,2018,114,0.59,0.39,-6,0.09,0.19,272,0.03,0.06,66
+Kissing Strangers,DNCE,dance pop,2018,120,0.74,0.77,-6,0.09,0.86,202,0.05,0.04,66
+2U (feat. Justin Bieber),David Guetta,dance pop,2018,145,0.61,0.53,-7,0.23,0.53,195,0.23,0.06,65
+Walk On Water (feat. Beyoncé),Eminem,detroit hip hop,2018,82,0.44,0.48,-10,0.64,0.62,304,0.81,0.24,65
+This Town,Niall Horan,dance pop,2018,112,0.41,0.68,-8,0.12,0.2,233,0.7,0.03,64
+"Girls (feat. Cardi B, Bebe Rexha & Charli XCX)",Rita Ora,dance pop,2018,94,0.69,0.73,-4,0.1,0.42,221,0.02,0.05,64
+MOVE TO MIAMI,Enrique Iglesias,dance pop,2018,100,0.87,0.76,-4,0.07,0.9,169,0.03,0.05,64
+Miss You (with Major Lazer & Tory Lanez),Cashmere Cat,downtempo,2018,100,0.64,0.75,-5,0.11,0.45,186,0.25,0.09,64
+Filthy,Justin Timberlake,dance pop,2018,97,0.58,0.75,-6,0.25,0.65,294,0.04,0.14,62
+Never Be the Same - Radio Edit,Camila Cabello,dance pop,2018,130,0.69,0.63,-4,0.12,0.25,227,0.16,0.09,57
+Ferrari,Bebe Rexha,dance pop,2018,77,0.48,0.58,-6,0.1,0.42,213,0.02,0.03,57
+Supplies,Justin Timberlake,dance pop,2018,120,0.55,0.79,-7,0.13,0.23,226,0.01,0.05,57
+Boom Boom,RedOne,moroccan pop,2018,110,0.76,0.75,-8,0.2,0.58,248,0.0,0.05,53
+...Ready For It? - BloodPop® Remix,Taylor Swift,pop,2018,160,0.84,0.58,-5,0.1,0.5,190,0.13,0.22,52
+Drip (feat. Migos),Cardi B,pop,2018,130,0.59,0.97,-8,0.08,0.27,264,0.05,0.26,45
+Tell Me You Love Me - NOTD Remix,Demi Lovato,dance pop,2018,102,0.77,0.58,-5,0.09,0.76,182,0.05,0.08,44
+Memories,Maroon 5,pop,2019,91,0.32,0.76,-7,0.08,0.57,189,0.84,0.05,99
+Lose You To Love Me,Selena Gomez,dance pop,2019,102,0.34,0.51,-9,0.21,0.09,206,0.58,0.04,97
+Someone You Loved,Lewis Capaldi,pop,2019,110,0.41,0.5,-6,0.11,0.45,182,0.75,0.03,96
+Señorita,Shawn Mendes,canadian pop,2019,117,0.54,0.76,-6,0.09,0.75,191,0.04,0.03,95
+How Do You Sleep?,Sam Smith,pop,2019,111,0.68,0.48,-5,0.08,0.35,202,0.15,0.09,93
+South of the Border (feat. Camila Cabello & Cardi B),Ed Sheeran,pop,2019,98,0.62,0.86,-6,0.09,0.67,204,0.15,0.08,92
+Trampoline (with ZAYN),SHAED,electropop,2019,127,0.46,0.62,-6,0.14,0.5,184,0.56,0.03,92
+Happier,Marshmello,brostep,2019,100,0.79,0.69,-3,0.17,0.67,214,0.19,0.05,90
+Truth Hurts,Lizzo,escape room,2019,158,0.62,0.72,-3,0.12,0.41,173,0.11,0.11,90
+Good as Hell (feat. Ariana Grande) - Remix,Lizzo,escape room,2019,96,0.89,0.67,-3,0.74,0.48,159,0.3,0.06,90
+Higher Love,Kygo,edm,2019,104,0.68,0.69,-7,0.1,0.4,228,0.02,0.03,88
+Only Human,Jonas Brothers,boy band,2019,94,0.5,0.8,-6,0.06,0.87,183,0.11,0.07,87
+Beautiful People (feat. Khalid),Ed Sheeran,pop,2019,93,0.65,0.64,-8,0.08,0.55,198,0.12,0.19,86
+Sucker,Jonas Brothers,boy band,2019,138,0.73,0.84,-5,0.11,0.95,181,0.04,0.06,86
+Don't Call Me Up,Mabel,dance pop,2019,99,0.88,0.67,-3,0.08,0.23,178,0.3,0.15,86
+I Don't Care (with Justin Bieber),Ed Sheeran,pop,2019,102,0.68,0.8,-5,0.09,0.84,220,0.09,0.04,85
+Talk (feat. Disclosure),Khalid,alternative r&b,2019,136,0.4,0.9,-9,0.06,0.35,198,0.05,0.13,84
+Giant (with Rag'n'Bone Man),Calvin Harris,dance pop,2019,122,0.89,0.81,-4,0.08,0.61,229,0.02,0.04,84
+Takeaway,The Chainsmokers,electropop,2019,100,0.51,0.53,-8,0.1,0.35,210,0.13,0.03,83
+All Around The World (La La La),R3HAB,big room,2019,125,0.86,0.73,-5,0.11,0.52,148,0.48,0.03,82
+Girls Like You (feat. Cardi B),Maroon 5,pop,2019,125,0.54,0.85,-7,0.13,0.45,236,0.57,0.05,81
+Call You Mine,The Chainsmokers,electropop,2019,104,0.7,0.59,-6,0.34,0.52,218,0.2,0.03,81
+No Guidance (feat. Drake),Chris Brown,dance pop,2019,93,0.45,0.7,-7,0.16,0.14,261,0.12,0.15,81
+Antisocial (with Travis Scott),Ed Sheeran,pop,2019,152,0.82,0.72,-5,0.36,0.91,162,0.13,0.05,78
+"Taki Taki (feat. Selena Gomez, Ozuna & Cardi B)",DJ Snake,electronic trap,2019,96,0.8,0.84,-4,0.06,0.62,213,0.16,0.23,77
+Con Calma - Remix,Daddy Yankee,latin,2019,94,0.87,0.74,-3,0.04,0.61,181,0.17,0.05,76
+Find U Again (feat. Camila Cabello),Mark Ronson,dance pop,2019,104,0.66,0.61,-7,0.2,0.16,176,0.01,0.03,75
+Cross Me (feat. Chance the Rapper & PnB Rock),Ed Sheeran,pop,2019,95,0.79,0.75,-6,0.07,0.61,206,0.21,0.12,75
+"No Brainer (feat. Justin Bieber, Chance the Rapper & Quavo)",DJ Khaled,dance pop,2019,136,0.76,0.53,-5,0.09,0.65,260,0.07,0.34,70
+Nothing Breaks Like a Heart (feat. Miley Cyrus),Mark Ronson,dance pop,2019,114,0.79,0.6,-6,0.42,0.24,217,0.01,0.07,69
+Kills You Slowly,The Chainsmokers,electropop,2019,150,0.44,0.7,-9,0.13,0.23,213,0.06,0.06,67

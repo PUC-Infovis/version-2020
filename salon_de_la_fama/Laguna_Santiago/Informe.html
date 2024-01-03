@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Informe Examen</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" media ="screen" href="informe.css">
+</head>
+
+<body>
+    <div class="informe">
+        <h1>Examen</h1>
+        <h2>Santiago Laguna</h2>
+
+        <h3>Caracterización de dominio</h3>
+        <p> 
+            La base de datos utilizada consiste en un ranking de felicidad de una gran cantidad de países. Para generar estos rankings los autores se basaron en una encuesta internacional de autopercepción de la felicidad (Gallup World Survey). Además, junto con los rankings de felicidad, se obtienen diferentes parámetros que estiman la calidad de los países en diferentes aspectos. Si bien estos parámetros (situación financiera, grado de libertad, previsión social, expectativa de vida saludable, nivel de corrupción y generosidad) no influyen directamente en el ranking, ayudan a comparar los distintos países y realizar análisis o supuestos sobre la incidencia de estos parámetros en la felicidad.
+        </p>
+        <p>
+            Los datos fueron obtenidos del sitio Kaggle (www.kaggle.com/mathurinache/world-happiness-report), fueron modificados los nombres de sus atributos para trabajar con mayor simplicidad. Es importante destacar que los datos fueron normalizados para mejorar la experiencia de comparación del usuario y, por este mismo motivo, la corrupción fue invertida para generar un índice de anticorrupción.
+        </p>
+        <p>
+            En esta visualización, el usuario objetivo es una persona que desea realizar análisis sobre la felicidad de los diferentes países y los motivos en los que radica la felicidad en cada caso. En este caso el usuario objetivo puede tener distintas motivaciones para realizar dichos análisis, ya sea para investigar, para tomar alguna decisión personal, por curiosidad o inclusive por el gusto del saber y conocer.
+        </p>
+
+        <h3>Abstracción de tareas</h3>
+        <p>A continuación, se presentan las distintas tareas que se buscan resolver a través de la visualización, las primeras tres corresponden a las tareas principales:</p>
+        <p class="b">Analizar-descubrir distribuciones.</p>
+        <p>Puesto que el usuario quiere aprender y determinar si existe algún patrón en los índices de felicidad por zonas geográficas o si hay concentraciones en algún lugar.</p>
+        <p class="b">Consultar-comparar características.</p>
+        <p>Dado que el usuario requiere consultar los parámetros secundarios que tienen los países, para poder comparar cuáles de estas características tienen mayor influencia en cada país.</p>
+        <p class="b">Buscar-ubicar valores individuales.</p>
+        <p>Se espera que, en la visualización, el usuario pueda encontrar un país específico y ver el rango de su índice de felicidad con facilidad y también de manera exacta.</p>
+        <p class="b">Disfrutar formas.</p>
+        <p>El usuario puede querer usar la herramienta por curiosidad o gusto y apreciar las formas que tienen los distintos países, al mismo tiempo que se consumen los otros datos entregados. La navegabilidad debe ser intuitiva y agradable para el usuario</p>
+        <p class="b">Consultar-resumir características</p>
+        <p>Puesto que el usuario requiere resumir los distintos atributos de calidad de los países, para compararlos con la percepción de la gente. Es decir, resumir de alguna forma los parámetros para comparar la calidad de un país vs la percepción de felicidad.</p>
+
+        <h3>Abstracción de Datos</h3>
+        <p>A continuación, se clasifican los atributos del dataset. Notar que para los atributos que son categóricos las demás clasificaciones no aplican, por lo que serán omitidas:</p>
+        <p class="b">Pais:</p>
+        <p>- Categórico, los nombres de los países no tienen órdenes intrínsecos</p>
+        <p class="b">score:</p>
+        <p>- Ordenado y cuantitativo, puesto que se puede establecer una comparación aritmética exacta entre sus valores.</p>
+        <p>- Es un atributo secuencial, pues el puntaje en el índice de felicidad va en un solo sentido (no hay puntajes negativos)</p>
+        <p>- El puntaje al aumentar no vuelve a un inicio por lo que no es un atributo cíclico</p>
+        <p class="b">LPIB:</p>
+        <p>- Ordenado y cuantitativo, puesto que realizar operaciones con el logaritmo del producto interno bruto per cápita tiene sentido. </p>
+        <p>- Es un atributo secuencial, pues el producto interno bruto va en un solo sentido (no hay productos internos brutos negativos)</p>
+        <p>- El PIB al aumentar no vuelve a un inicio por lo que no es un atributo cíclico</p>
+        <p class="b">PrevSocial:</p>
+        <p>- Ordenado y cuantitativo, puesto que se puede establecer una comparación aritmética exacta entre sus valores.</p>
+        <p>- Es un atributo secuencial, pues el índice va en un solo sentido (no hay índices de previsión social negativos)</p>
+        <p>- El índice de previsión social al aumentar no vuelve a un inicio por lo que no es un atributo cíclico.</p>
+        <p class="b">HLY:</p>
+        <p>- Ordenado y cuantitativo, puesto que se puede establecer una comparación aritmética exacta entre sus valores.</p>
+        <p>- Es un atributo secuencial, pues la expectativa de vida saludable va en un solo sentido (no hay expectativa de vida negativa)</p>
+        <p>- La expectativa de vida saludable al aumentar no vuelve a un inicio por lo que no es un atributo cíclico.</p>
+        <p class="b">Libertad:</p>
+        <p>- Ordenado y cuantitativo, puesto que se puede establecer una comparación aritmética exacta entre sus valores.</p>
+        <p>- Es un atributo secuencial, pues el índice va en un solo sentido (no hay índices de libertad negativos)</p>
+        <p>- El índice de libertad al aumentar no vuelve a un inicio por lo que no es un atributo cíclico.</p>
+        <p class="b">Generosidad:</p>
+        <p>- Ordenado y cuantitativo, puesto que se puede establecer una comparación aritmética exacta entre sus valores.</p>
+        <p>- Es un atributo secuencial, pues el índice va en un solo sentido (no hay índices de previsión social negativos). Notar que originalmente era un atributo divergente (había países con índice negativo), pero el índice fue normalizado, pues deseamos comparar los distintos índices.</p>
+        <p>- El índice de generosidad al aumentar no vuelve a un inicio por lo que no es un atributo cíclico.</p>
+        <p class="b">AntiCorrup:</p>
+        <p>- Ordenado y cuantitativo, puesto que se puede establecer una comparación aritmética exacta entre sus valores.</p>
+        <p>- Es un atributo secuencial, pues el índice va en un solo sentido (no hay índices de previsión social negativos).</p>
+        <p>- El índice de anticorrupción al aumentar no vuelve a un inicio por lo que no es un atributo cíclico.</p>
+
+        <h3>Codifiaciones visuales y de interacción</h3>
+        <p class="b">Primera tarea:</p>
+        <p>Como idiom visual para analizar la distribución de felicidad por zonas geográficas, se utiliza un mapa coroplético. En particular se utiliza una escala ordinal que nos provee d3, aproximando los valores de los índices de autopercepción de la felicidad, los canales de magnitud en este caso son la saturación y luminancia. Esto permite mejorar la expresividad y efectividad de la visualización, pues se pueden distinguir diferencias con el ojo humano de manera intuitiva. </p>
+        <p class="b">Segunda tarea:</p>
+        <p>Se utiliza un idiom de interacción para seleccionar un país y ver sus características, consiste en la selección y des-selección mediante click con el mouse. Además, se cambia el color del país seleccionado, de manera que se pueda distinguir el país de manera intuitiva.</p>
+        <p>El idiom visual para visualizar las características secundarias de los países, consiste en un gráfico de barras. Las marcas son las mismas barras (rectángulos), que utilizan como canal de identidad la posición horizontal (para indicar a qué característica corresponde). Mientras que se utiliza la altura como canal de magnitud (para expresar el puntaje normalizado de dicho atributo). El motivo de estas decisiones fue maximizar la efectividad de los canales utilizados, puesto que todos son altamente intuitivos para el usuario.</p>
+        <p class="b">Tercera tarea:</p>
+        <p>Se utiliza un idiom de interacción para identificar los países y su índice de felicidad normalizado con facilidad, consiste en agregar zooming y panning al mapa coroplético. En particular se utilizan límites tanto de zoom como pan, para facilitar el manejo sobre estos. Como idiom visual para expresar el valor de la felicidad normalizada, se agrega una barra al gráfico de características. En particular, el canal de identidad es la posición horizontal y el matiz (pues es de un color distinto a las otras barras). Por otro lado, el canal de magnitud es la altura. Estas decisiones también se basan maximizar la efectividad de los canales utilizados. Adicionalmente, se agrega un idiom de interacción al ubicar el mouse por sobre las distintas barras para entregar el número exacto de los índices. Esto basado en el principio de entregar detalles cuando son pedidos.</p>
+        <p class="b">Cuarta tarea:</p>
+        <p>Como idiom visual se utiliza el mismo mapa coroplético, con la proyección de Mercator. Dado que la marca es la forma (contorno) de cada país, esta es la proyección más adecuada para expresar de la mejor manera este atributo. Si bien esta proyección no expresa correctamente los tamaños de los países, este no es un atributo importante para la visualización. Para mejorar la experiencia de usario, se modifica el cursor al pasar por sobre un país, para indicarle que puede hacer click. También con el fin de mejorar la experiencia de usuario, se agregan transiciones al realizar las distintas selecciones.</p>
+        <p class="b">Quinta tarea:</p>
+        <p>A fin de expresar una puntuación de resumen de las características secundarias de cada país, se agrega otra barra al gráfico de características como idiom visual. En particular, el canal de identidad es la posición horizontal y el color (pues tiene un matiz relativamente similar a las características que lo componen, con menor luminancia y, al mismo tiempo, el matiz genera un contraste respecto al índice de felicidad). Por otro lado, el canal de magnitud es la altura. Esto, a fin de maximizar la efectividad de los canales utilizados.</p>
+    </div>
+
+
+</body>
+</html>

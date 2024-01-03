@@ -1,0 +1,206 @@
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:300,400);
+*{
+    box-sizing: border-box;
+}
+body {
+    
+    background-color: white;
+    font-family: 'Lato', sans-serif;
+    color: #221B21;
+}
+
+
+html {
+    scroll-behavior: smooth;
+  }
+
+#principal{
+    position: relative;
+}
+
+#map, #first-scatter {
+    width: 80%;
+    margin: auto;
+    height: 48%;
+    position: relative;
+}
+
+#scene0, #scene1, #scene2, #principal{
+    width: 1200px;
+    margin: auto;
+    height: 100vh; 
+}
+
+#map-full, #scatter-full, .xl-title {
+    width: 80%;
+    margin: auto;
+    height: 60%;
+    position: relative;
+}
+
+
+.xl-title{
+    font-size: 100px;
+    font-weight: 900;
+    text-align: center;
+    line-height: 450px;
+}
+
+.subtitle{
+    font-size: 80%;
+}
+
+.subtitle0{
+    height: 30%;
+}
+#explicacion1, #explicacion2{
+    height: 30%;
+}
+.subtitle0{
+    text-align: right;
+    font-size: 30px;
+    line-height: 0;
+    font-style: italic;
+}
+
+h1{
+font-style: italic;
+}
+h3{
+    font-weight: 400;
+    font-size: 18px;
+}
+
+
+
+
+
+.info-box{
+    width: 270px;
+    height: 270px;
+    overflow: hidden;
+    z-index: 1000;
+    background-color: white;
+    border: 2px solid black;
+
+    position: absolute;
+}
+
+.top-right-box{
+    border-radius: 50%;
+    /* border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%; */
+}
+
+.bottom-right-box{
+    border-radius: 50%;
+    /* border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-top-right-radius: 50%; */
+}
+
+.top-left-box{
+    border-radius: 50%;
+    /* border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%; */
+}
+
+.bottom-left-box{
+    border-radius: 50%;
+    /* border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-top-left-radius: 50%; */
+}
+.content-box{
+    margin: auto;
+    padding-top: 35px;
+    padding-right: 10px;
+    padding-left: 10px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+text{
+    color: #221B21;
+    font-size: 80%;
+    cursor: default;
+}
+
+.tick text{
+    font-size: 16px;
+}
+
+.label-ax{
+    font-size: 18px;;
+    font-style: italic;
+}
+
+.country-name{
+    margin-right: 20px;
+    margin-left: 20px;
+    font-weight: 700;
+    font-size: 25px;
+
+}
+
+.rank{
+    text-align: center;
+    font-size: 40px;
+    font-style: italic;
+    font-weight: 900;
+}
+.rank span{
+    margin-left: 5px;
+    text-align: left;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.rank .span-total{
+    font-size: 18px;
+}
+.score{
+    padding-bottom: 5px;
+}
+
+.maximo, .minimo, .normal{
+    font-size: 15px;
+}
+
+/* BOTON */
+.contenedor-boton{
+    display: flex;
+    justify-content: center;
+    height: 10%;
+    z-index: 1000;
+    padding-top: 10px;
+}
+.button{
+    z-index: 1001;
+}
+.negrita{
+    font-weight: bold;
+}
+
+.contenedor-parrafos{
+    position: relative;
+}
+.parrafo-left, .parrafo-right{
+    padding: 5px;
+    float: left;
+    height: 100%;
+    margin:0;
+    width: 50%;
+    overflow: hidden;
+}
+.clear{
+    clear: both;
+}
+#float-intro{
+    width: 20%;
+    position: absolute;
+    left: 0;
+}

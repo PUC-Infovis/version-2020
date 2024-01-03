@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Informe Examen</title>
+        <link rel="stylesheet" href="style.css" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/d3/6.2.0/d3.min.js"
+            integrity="sha512-C2RveGuPIWqkaLAluvoxyiaN1XYNe5ss11urhZWZYBUA9Ydgj+hfGKPcxCzTwut1/fmjEZR7Ac35f2aycT8Ogw=="
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body>
+        <h1 class="title">Informe Examen</h1>
+        <h2 class="title">- Matías Eynaudi -</h2>
+
+        <div class="context-container">
+            <div class="paper">
+                <h4>Contexto y naturaleza de los datos:</h4>
+                    <p>
+                        El proyecto cuenta con 2 datasets <span class="tag">poke_def.json</span> y
+                        <span class="tag">poke_stats.json</span>, ambos con información referente a la serie Pokemon. 
+                    </p>
+                    <div class="small-divider"></div>
+                    <h5 class="tag">poke_def.json</h5>
+                    <p>El primero mencionado
+                        contiene información sobre cada pokemon (alrededor de 500 entradas) y como estos se ven afectados por ataque provenientes de cada tipo de pokemon existente</p>
+                        <p>
+                            Por ejemplo, Bulbasaur posee en su columna "Fire" un *2.0, lo que significa que el daño que recibe Bulbasaur al ser atacado por un pokemon tipo fuego se debe multiplicar por 2.
+                        </p>
+                        <div class="small-divider"></div>
+                        <h5 class="tag">poke_stats.json</h5>
+                    <p>
+                        El segundo dataset corresponde a una tabla con la información detallada de cada pokemon, como su valor de ataque, defensa, su velocidad, su salud y tipo de pokemon.
+                    </p>
+            </div>
+        </div>
+
+        <h3 class="subtitle">Tareas</h3>
+        <div class="divider"></div>
+        <div class="task-container">
+            <div class="task">
+                <h4>Resumir + Todo el dataset</h4>
+                <p>Sería agradable tener la información de un solo pokemon comprimida en un espacio sencillo de analizar y observar</p>
+            </div>
+            <div class="task">
+                <h4>Buscar + Características</h4>
+                <p>Se requiera la posibilidad de buscar y encontrar pokemon especificos en el dataset mediante filtros u otros mecanismos</p>
+            </div>
+            <div class="task">
+                <h4>Comparar + Varios atributos del dataset</h4>
+                <p>Se busca poder hacer una comparación de stats entre 2 pokemon, ademas observar debilidades y fortalezas</p>
+            </div>
+        </div>
+        <h3 class="subtitle">Abstracción de Datos</h3>
+        <div class="divider"></div>
+        <div class="data-type-container">
+            <h4 class="subtitle italic">Tipos de dataset</h4>
+            <p>
+                Existen 2 datasets: <span class="bold">poke_def.json</span> y
+                <span class="bold">poke_stats.json</span>. Ambos corresponden a tipos de datasets <span class="italic">tabulares</span> y 
+                <span class="italic">estáticos</span>. Asimismo ambos datasets presentan datos singulares de tipo atributo, e items.
+
+            </p>
+            <p>
+                Como atributo llave para ambos datasets se usará el nombre del pokemon, pues este es único en ambos casos. 
+                Además la cantidad de pokemon en estos datasets es la misma, y no solo eso, sino que pokemons presente coinciden para poder realizar un cruce de información.
+            </p>
+        </div>
+        <div class="attr-type-container">
+            <h4 class="subtitle italic">Atributos</h4>
+            <div class="small-divider"></div>
+            <h5 class="tag">poke_def.json</h5>
+            <div class="card-container">
+                <div class="attr-type-card">
+                    <p class="attr-name">Nombre</p>
+                    <div class="attr-element-container">
+                        <p>Categórico u Ordenado</p>
+                        <p>Categórico</p>
+                    </div>
+                    <div class="attr-element-container">
+                        <p>Ordinal o Cuantitativo</p>
+                        <p>No aplica</p>
+                    </div>
+                    <div class="attr-element-container">
+                        <p>Secuencial o Divergente</p>
+                        <p>No aplica</p>
+                    </div>
+                    <div class="attr-element-container">
+                        <p>Cíclico o No Cíclico</p>
+                        <p>No aplica</p>
+                    </div>
+                </div>
+                <div class="attr-type-card">
+                    <p class="attr-name">Todo el resto (corresponden con los tipos de pokemon)</p>
+                    <div class="attr-element-container">
+                        <p>Categórico u Ordenado</p>
+                        <p>Ordenado</p>
+                    </div>
+                    <div class="attr-element-container">
+                        <p>Ordinal o Cuantitativo</p>
+                        <p>Cuantitativo</p>
+                    </div>
+                    <div class="attr-element-container">
+                        <p>Secuencial o Divergente</p>
+                        <p>Secuencial</p>
+                    </div>
+                    <div class="attr-element-container">
+                        <p>Cíclico o No Cíclico</p>
+                        <p>No Cíclico</p>
+                    </div>
+                </div>
+            </div>
+            <div class="small-divider"></div>
+            <h5 class="tag">poke_stats.json</h5>
+                <div class="card-container">
+                    <div class="attr-type-card">
+                        <p class="attr-name">Nombre</p>
+                        <div class="attr-element-container">
+                            <p>Categórico u Ordenado</p>
+                            <p>Categórico</p>
+                        </div>
+                        <div class="attr-element-container">
+                            <p>Ordinal o Cuantitativo</p>
+                            <p>No aplica</p>
+                        </div>
+                        <div class="attr-element-container">
+                            <p>Secuencial o Divergente</p>
+                            <p>No aplica</p>
+                        </div>
+                        <div class="attr-element-container">
+                            <p>Cíclico o No Cíclico</p>
+                            <p>No aplica</p>
+                        </div>
+                    </div>
+                    <div class="attr-type-card">
+                        <p class="attr-name">Type</p>
+                        <div class="attr-element-container">
+                            <p>Categórico u Ordenado</p>
+                            <p>Categórico</p>
+                        </div>
+                        <div class="attr-element-container">
+                            <p>Ordinal o Cuantitativo</p>
+                            <p>No aplica</p>
+                        </div>
+                        <div class="attr-element-container">
+                            <p>Secuencial o Divergente</p>
+                            <p>No aplica</p>
+                        </div>
+                        <div class="attr-element-container">
+                            <p>Cíclico o No Cíclico</p>
+                            <p>No aplica</p>
+                        </div>
+                    </div>
+                    <div class="attr-type-card">
+                        <p class="attr-name">Attack</p>
+                        <div class="attr-element-container">
+                            <p>Categórico u Ordenado</p>
+                            <p>Ordenado</p>
+                        </div>
+                        <div class="attr-element-container">
+                            <p>Ordinal o Cuantitativo</p>
+                            <p>Cuantitativo</p>
+                        </div>
+                        <div class="attr-element-container">
+                            <p>Secuencial o Divergente</p>
+                            <p>Secuencial</p>
+                        </div>
+                        <div class="attr-element-container">
+                            <p>Cíclico o No Cíclico</p>
+                            <p>No Cíclico</p>
+                        </div>
+                    </div>
+                    <div class="attr-type-card">
+                        <p class="attr-name">Defense</p>
+                        <div class="attr-element-container">
+                            <p>Categórico u Ordenado</p>
+                            <p>Ordenado</p>
+                        </div>
+                        <div class="attr-element-container">
+                            <p>Ordinal o Cuantitativo</p>
+                            <p>Cuantitativo</p>
+                        </div>
+                        <div class="attr-element-container">
+                            <p>Secuencial o Divergente</p>
+                            <p>Secuencial</p>
+                        </div>
+                        <div class="attr-element-container">
+                            <p>Cíclico o No Cíclico</p>
+                            <p>No Cíclico</p>
+                        </div>
+                    </div>
+                    <div class="attr-type-card">
+                        <p class="attr-name">Speed</p>
+                        <div class="attr-element-container">
+                            <p>Categórico u Ordenado</p>
+                            <p>Ordenado</p>
+                        </div>
+                        <div class="attr-element-container">
+                            <p>Ordinal o Cuantitativo</p>
+                            <p>Cuantitativo</p>
+                        </div>
+                        <div class="attr-element-container">
+                            <p>Secuencial o Divergente</p>
+                            <p>Secuencial</p>
+                        </div>
+                        <div class="attr-element-container">
+                            <p>Cíclico o No Cíclico</p>
+                            <p>No Cíclico</p>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <h3 class="subtitle">Codificaciones visuales y/o interacción</h3>
+        <div class="divider"></div>
+        <div class="data-type-container">
+            <h4 class="subtitle italic">Barra lateral (interacción)</h4>
+            <p>Para realizar la segunda tarea descrita se implementó una barra lateral fija, que contiene los diferentes filtros, en particular, se puede filtrar por tipo de pokemon y buscar por nombre.
+                El filtro por tipo de pokemon no es un filtro excluyente, sino aditivo, es decir, si escojo tipo agua y eléctrico, se me mostrarán tanto pokemones tipo agua como tipo eléctrico.
+                <br />
+            </p>
+            <p>
+                Para interactuar, solo se debe hacer click sobre el tipo de pokemon que se desea buscar o escribir en el input de texto el nombre que se desea encontrar.
+            </p>
+
+            <h4 class="subtitle italic">Tarjetas Pokemon (Visualización)</h4>
+            <p>La primera tarea buscaba resumir información y para ello se implementaron tarjetas comprimidas donde se puede observar la información referente a un pokemon específico.
+                Además posee un grafico de "telaraña" donde se expresa el factor por el cual se debe multiplicar el daño que recibe el pokemon, ésto segun el tipo de daño que esté recibiendo.
+            </p>
+            <p>
+            Para hacer más sencilla la visualización del gráfico, los colores en los bordes (circulos en los vértices externos) representan el tipo de pokemon al que se refiere, y estos colores coinciden con los de la barra lateral.
+            Se buscó que estos colores tuvieran sentido con el tipo en sí, y a la vez que fuese sencillo separarlos visualmente (que no sean muy parecidos entre sí), para lograr que el gráfico fuese más simple de analizar.
+            </p>
+
+            <h4 class="subtitle italic">Footer comparativo (Interacción y visualización)</h4>
+            <p>
+                La última tarea se ve cubierta por esta sección de la visualización, aqui se podrán comparar dos pokemon seleccionados del dataset presente en forma de tarjetas. Para ello uno 
+                debe hacer click en una tarjeta y ésta será agregada a la sección inferior de la página. Una vez que se hayan seleccionado 2 pokemon, se podrá hacer efectiva la comparación.
+            </p>
+            <p>
+            Para observar la comparación, se debe hacer "hover" sobre la sección inferior de la pagina. Luego esta crecerá y se mostrará la comparación de las características de ambos pokemon, asi como 
+            el comportamiento del primer pokemon seleccionado ante el daño inflingido por el segundo pokemon.
+            </p>
+            <p>
+                Si se quiere seleccionar otra pareja de pokemon se debe tomar en cuenta que la seleccion funciona bajo un sistema de turnos, es decir, el primer click que se haga
+                sobre una tarjeta corresponderá al primer pokemon seleccionado (izquierda en la visualización), el segundo click corresponderá al segundo pokemon seleccionado (derecha). Pero 
+                si se vuelve a hacer click sobre una tarjeta, este pokemon reemplazará al primer pokemon de la comparación (izquierda), luego se reemplaza el de la derecha y así continuamente.
+            </p>
+            <p>
+                Esta sección es colapsable/desplegable para que cuando no esté en uso, se haga más visible la sección de tarjetas. Por otro lado, cuando esta sección está colapsada, de todas formas
+                se pueden visualizar los pokemon que actualmente se encuentran seleccionados, mediante pequeños retratos dispuestos sobre la sección colapsada.
+            </p>
+        </div>
+
+    </body>
+</html>

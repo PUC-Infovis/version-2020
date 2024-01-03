@@ -1,0 +1,48 @@
+.vis {
+    width: 95vw;
+    height: 90vh;
+    margin-top: 4vh;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#principal {
+    width: 59%;
+    height: 90vh;
+    background: #f2f2f2;
+    float: left;
+    border-style: solid;
+    border-radius: 1vh;
+}
+
+#detalle {
+    margin-left: 61%;
+    height: 75vh;
+    background: #f2f2f2;
+    border-style: solid;
+    border-radius: 1vh;
+}
+
+h1, h2, h3 {
+    margin: 1.5% 0%;
+}
+
+.seccion {
+    margin: 2% 0%;
+}
+p, h4, h5, h6 {
+    text-align: justify;
+}
+
+.b { /*https://uniwebsidad.com/libros/referencia-css2/font-weight#:~:text=La%20propiedad%20font%2Dweight%20permite,Donec%20dignissim.*/
+    font-weight: bold;
+}
+
+body {  /* https://stackoverflow.com/questions/3942254/how-to-specify-font-attributes-for-all-elements-on-an-html-web-page */
+    font-family: sans-serif;
+}
+
+.pointer {
+    cursor: pointer;
+}

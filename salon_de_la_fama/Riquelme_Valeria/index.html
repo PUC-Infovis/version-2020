@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Examen</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style/style.css'>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,400;0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div id="scene0">
+        <div class="xl-title">
+           Sobre el Amor
+        </div>
+        <div class="subtitle0">
+            ... y  su relación con la Felicidad.
+        </div>
+        <div class="contenedor-boton"><a class= "button-down" href="#scene1">Continuar</a></div>
+        
+    </div>
+    <div id="scene1">
+    
+        <div id="explicacion1">
+            <h1 class= "intro">
+                Amor en el Mundo
+            </h1>
+            <div class="contenedor-parrafos">
+                <div class="parrafo-left">
+                    Entre el año 2006 y 2007 se realizó una encuesta a nivel global en la que se le preguntó a las personas lo siguiente: 
+                    <br>
+                    <span class="negrita">"Del 1 al 10, ¿qué tan amad@ te sentiste ayer?" </span>
+                    <br>
+                    En el siguiente mapa, los colores representan el puntaje promedio que obtuvo cada país en la encuesta <span class="negrita">(ver leyenda)</span>.
+
+                </div>
+                <div class="parrafo-right">
+                    Por otro lado, en el año 2015 se midió el nivel de felicidad de cada país. El puntaje obtenido se explicó por
+                    factores como el PIB per capita, expectativa de vida, libertad, entre otros. 
+                    <br>
+                    Al hacer click en un territorio, podrás ver la posición que ocupa este país en el <span class="negrita">ranking global del amor y la felicidad</span>, 
+                    junto con el detalle de su puntaje.
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div id="map-full"></div>
+        
+        <div class="contenedor-boton"><a class= "button-down" href="#scene2">Continuar</a></div>
+    </div>
+    <div id="scene2">
+    
+        <div id="explicacion2">
+            <h1 class= "intro">
+                Felicidad y Amor
+            </h1>
+            <div class="contenedor-parrafos">
+                <div class="parrafo-left">
+                    El siguiente gráfico muestra como se distribuyen los países según su Puntuación de Felicidad y su Puntuación de Amor. 
+                    <br><br>
+                    Las líneas que van desde los puntos al eje diagonal representan la diferencia entre las puntuaciones. Se destaca con rosado 
+                    y celeste, los países con mayor y menor diferencia entre ambas puntuaciones, respectivamente. 
+
+                </div>
+                <div class="parrafo-right">
+                    Al hacer zoom en el gráfico, aparecerán los nombres de los países que están representados por los puntos. Al pasarles 
+                    el cursor, se desplegará información detallada del lugar que ocupa ese país en los rankings. 
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div id="scatter-full"></div>
+        <div class="contenedor-boton"><a class= "button-down" href="#principal">Continuar</a></div>
+    </div>
+    <div id="principal">
+        <h1 id="float-intro" class="intro">Prueba ambas visualizaciones juntas</h1>
+        <div id="map"></div>
+        <div id="first-scatter" class= "scatter"></div>
+    </div>
+    <script src='scatter1.js'></script>
+    <script src='map.js'></script>
+    <script src='infoBox.js'></script>
+    <script src='callFunc.js'></script>
+</body>
+</html>

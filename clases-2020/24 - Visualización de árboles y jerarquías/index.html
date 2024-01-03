@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Visualización de árboles y jerarquías</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../dist/reveal.css">
+		<link rel="stylesheet" href="../dist/theme/fdo.css" id="theme">
+		<link rel="stylesheet" href="../plugin/highlight/dracula.css">
+	</head>
+
+	<body>
+
+		<!-- ?print-pdf -->
+
+		<div class="reveal">
+
+			<div class="slides">
+
+				<section data-auto-animate data-auto-animate-unmatched="fade">
+					<h3>¡Hola 👋! Espera mientras comienza la sesión.</h3>
+				</section>
+
+				<section data-auto-animate data-auto-animate-unmatched="fade">
+					<h3>Antes que todo, ¿cómo están?</h3>
+				</section>
+
+				<section data-auto-animate data-auto-animate-unmatched="fade">
+					<h1>Visualización de Información</h1>
+					<h2 style="color: black;">IIC2026 2020-2</h2>
+				</section>
+
+				<section data-auto-animate data-auto-animate-unmatched="fade">
+					<h1>Visualización de árboles y jerarquías</h1>
+					<h1 style="font-size: 1.6em; color: black;">Visualización de Información</h1>
+					<h2 style="font-size: 1.3em; color: black;">IIC2026 2020-2</h2>
+				</section>
+
+				<section data-auto-animate data-auto-animate-unmatched="fade">
+					<h3>Repaso</h3>
+				</section>
+
+				<section data-auto-animate data-auto-animate-unmatched="fade">
+					<h3>Repaso</h3>
+					
+					<br>
+
+					<h4 style="color: black;">1. Jerarquía y árboles</h4>
+					<h4 style="color: black;">2. Contención</h4>
+					<h4 style="color: black;">3. Jerarquía en D3.js</h4>
+					<h4 style="color: black;">4. <i>Idioms</i> jerárquicos en D3.js</h4>
+
+				</section>
+
+				<section data-auto-animate data-auto-animate-unmatched="fade">
+					<h1 style="font-size: 1.6em;">Jerarquías y árboles</h1>
+
+          <img src="./assets/arbol1.png" height="300" />
+					<p style="font-size: 0.5em; color: grey;">(Fuente: Libro "Visualization, Analysis and Design" )</p>
+
+
+				</section>
+
+				<section data-auto-animate data-auto-animate-unmatched="fade">
+
+					<h1 style="font-size: 1.6em;">Posicionamiento dirigido por fuerzas</h1>
+
+					<br>
+
+					<video src="./assets/fuerza2.mov" height="400" data-autoplay loop>
+					</video>
+
+					<br>
+					<p style="font-size: 0.5em; color: grey;">(Fuente: <a href="https://observablehq.com/@d3/force-directed-tree"> Force-Directed Tree (Observable) </a> )</p>
+
+
+				</section>
+
+				<section data-auto-animate data-auto-animate-unmatched="fade">
+					<h1 style="font-size: 1.6em;"><i>Idiom</i> nodo-enlace</h1>
+
+          <img src="./assets/arbol-nodo-enlace.png" height="450" />
+					<p style="font-size: 0.5em; color: grey;">(Fuente: Libro "Visualization, Analysis and Design" )</p>
+
+
+				</section>
+
+
+				<section data-auto-animate data-auto-animate-unmatched="fade">
+					<h1 style="font-size: 1.6em;">Contención</h1>
+
+					<img src="./assets/mapa_de_arbol.svg" height="275" />
+					<img src="./assets/circle_packing.png" height="250" />
+
+					<p style="font-size: 0.5em; color: grey;">(Fuente: <a href="https://datavizcatalogue.com/ES/metodos/mapa_de_arbol.html">Mapa de árbol (DataViz Catalogue)</a> )</p>
+					<p style="font-size: 0.5em; color: grey;">(Fuente: <a href="https://observablehq.com/@d3/zoomable-circle-packing?collection=@d3/d3-hierarchy">Zoomable Circle Packing (Observable)</a> )</p>
+
+
+				</section>
+
+
+				<section data-auto-animate data-auto-animate-unmatched="fade">
+					<h1 style="font-size: 1.6em;">¡Muchas opciones con jerarquías!</h1>
+
+					<br>
+
+          <img src="./assets/variedad_para_arboles.png" height="150" />
+					<p style="font-size: 0.5em; color: grey;">(Fuente: Libro "Visualization, Analysis and Design" )</p>
+
+
+				</section>
+
+
+				<section data-auto-animate data-auto-animate-unmatched="fade">
+					<h1 style="font-size: 1.6em;">D3.js provee mucha personalización</h1>
+
+					<br>
+
+					<ul>
+						<li> <a href="https://observablehq.com/@d3/treemap?collection=@d3/d3-hierarchy">Distintas formas de dividir el espacio en <i>treemaps</i></a></li>
+						
+						<br>
+						<li> <a href="https://observablehq.com/@d3/nested-treemap">Fijar espaciado entre padre e hijo en <i>treemap</i> </a></li>
+					</ul>
+
+				</section>
+
+				<section data-auto-animate data-auto-animate-unmatched="fade">
+
+					<h3><i>Marimekko Chart</i></h3>
+
+
+					<p >Se pueden aplicar como <i>idioms</i> para datos que no parecen jerárquicos: <a href="https://observablehq.com/@d3/marimekko-chart?collection=@d3/d3-hierarchy"><i>Marimekko Chart</i></a></p>
+
+					<img src="./assets/marimekko_chart.png" height="400" />
+
+					<p style="font-size: 0.5em; color: grey;">(Fuente imagen: <a href="https://datavizcatalogue.com/methods/marimekko_chart.html">Marimekko Chart (DataViz Catalogue)</a> )</p>
+
+
+				</section>
+				
+
+				<section data-auto-animate data-auto-animate-unmatched="fade">
+					<h3>¡Visualización del día!</h3>
+
+					<img src="./assets/viz_del_dia.png" height="400px"/>
+
+          
+          <p>Visualización de aportes de exportaciones de Chile mediante <i>treemap</i>.</p>
+          <p>Propuesta por estudiante Claudio Salvador.</p>
+					<p style="font-size: 0.5em; color: grey">(Fuente: <a href="https://atlas.cid.harvard.edu/explore?country=42&product=undefined&year=2018&productClass=HS&target=Product&partner=undefined&startYear=2018">Atlas of Economic Complexity - Chile </a>)</p>
+
+				</section>
+
+
+
+
+
+
+
+				<section data-auto-animate data-auto-animate-unmatched="fade">
+          <h3>Próximos eventos:</h3>
+          
+					<br>
+
+					<p>Hoy termina plazo de <span style="color: #f92696;">Hito 3</span> y se publica enunciado de <span style="color: #f92696;">Examen</span> (tres semanas de plazo - 10 de diciembre).</p>
+
+				</section>
+
+				<section data-auto-animate data-auto-animate-unmatched="fade">
+          <h3>Próximos eventos:</h3>
+          
+					<br>
+
+					<p>Hoy termina plazo de <span style="color: #f92696;">Hito 3</span> y se publica enunciado de <span style="color: #f92696;">Examen</span> (tres semanas de plazo - 10 de diciembre).</p>
+
+
+					<br>
+
+					<p>¡Queda la última sesión de repaso de material!  <span style="color: #f92696;">Validación en visualización</span> (martes 24).</p>
+
+
+				</section>
+
+				<section data-auto-animate data-auto-animate-unmatched="fade">
+          <h3>Próximos eventos:</h3>
+          
+					<br>
+
+					<p>Hoy termina plazo de <span style="color: #f92696;">Hito 3</span> y se publica enunciado de <span style="color: #f92696;">Examen</span> (tres semanas de plazo - 10 de diciembre).</p>
+
+
+					<br>
+
+					<p>¡Queda la última sesión de repaso de material!  <span style="color: #f92696;">Validación en visualización</span> (martes 24).</p>
+
+					<br>
+
+					<p>Desde el jueves 26, usaremos el horario del curso como <span style="color: #f92696;">espacio de trabajo para examen</span> (jueves 26, martes 1 y jueves 3).</p>
+
+
+				</section>
+
+
+				<section data-auto-animate data-auto-animate-unmatched="fade">
+					<h1>Visualización de árboles y jerarquías</h1>
+					<h1 style="font-size: 1.6em; color: black;">Visualización de Información</h1>
+					<h2 style="font-size: 1.3em; color: black;">IIC2026 2020-2</h2>
+					<br>
+					<h2 style="font-size: 1.3em;">¡Nos vemos!</h2>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="../dist/reveal.js"></script>
+		<script src="../plugin/highlight/highlight.js"></script>
+		<script>
+			Reveal.initialize({
+				center: true,
+				hash: true,
+				plugins: [ RevealHighlight ]
+			});
+		</script>
+
+	</body>
+</html>
